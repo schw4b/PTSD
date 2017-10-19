@@ -180,7 +180,7 @@ $(document).ready(function () {
 <h2>Libraries</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBpbnN0YWxsLnBhY2thZ2VzKFwiZ2dwbG90MlwiKVxuIyBpbnN0YWxsLnBhY2thZ2VzKFwiY293cGxvdFwiKVxuIyBpbnN0YWxsLnBhY2thZ2VzKFwiZm9yZWlnblwiKVxuIyBpbnN0YWxsLnBhY2thZ2VzKFwidGVzdGl0XCIpXG4jIGluc3RhbGwucGFja2FnZXMoXCJjYXJcIilcbiMgaW5zdGFsbC5wYWNrYWdlcyhcInJlc2hhcGUyXCIpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGNvd3Bsb3QpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBpbnN0YWxsLnBhY2thZ2VzKFwiZ2dwbG90MlwiKVxuIyBpbnN0YWxsLnBhY2thZ2VzKFwiY293cGxvdFwiKVxuIyBpbnN0YWxsLnBhY2thZ2VzKFwiZm9yZWlnblwiKVxuIyBpbnN0YWxsLnBhY2thZ2VzKFwidGVzdGl0XCIpXG4jIGluc3RhbGwucGFja2FnZXMoXCJjYXJcIilcbiMgaW5zdGFsbC5wYWNrYWdlcyhcInJlc2hhcGUyXCIpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGNvd3Bsb3QpXG5saWJyYXJ5KGZvcmVpZ24pXG5saWJyYXJ5KHRlc3RpdClcbmxpYnJhcnkoY2FyKVxubGlicmFyeShyZXNoYXBlMilcbmBgYCJ9 -->
 <pre class="r"><code># install.packages(&quot;ggplot2&quot;)
 # install.packages(&quot;cowplot&quot;)
 # install.packages(&quot;foreign&quot;)
@@ -188,18 +188,8 @@ $(document).ready(function () {
 # install.packages(&quot;car&quot;)
 # install.packages(&quot;reshape2&quot;)
 library(ggplot2)
-library(cowplot)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYY293cGxvdOKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmdncGxvdDLigJk6XG5cbiAgICBnZ3NhdmVcbiJ9 -->
-<pre><code>
-Attaching package: ‘cowplot’
-
-The following object is masked from ‘package:ggplot2’:
-
-    ggsave</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShmb3JlaWduKVxubGlicmFyeSh0ZXN0aXQpXG5saWJyYXJ5KGNhcilcbmxpYnJhcnkocmVzaGFwZTIpXG5gYGAifQ== -->
-<pre class="r"><code>library(foreign)
+library(cowplot)
+library(foreign)
 library(testit)
 library(car)
 library(reshape2)</code></pre>
@@ -232,10 +222,10 @@ PATH_FIGURES = file.path(PATH, 'figures')</code></pre>
 <!-- rnb-output-begin eyJkYXRhIjoiL2hvbWUvc2ltb24vRHJvcGJveC9EYXRhL1BUU0QvZGF0YS9QVFNEX1NrYWxlbl8xIDA2IDIwMTdfR0VTQU1ULnNhdjogVmVyeSBsb25nIHN0cmluZyByZWNvcmQocykgZm91bmQgKHJlY29yZCB0eXBlIDcsIHN1YnR5cGUgMTQpLCBlYWNoIHdpbGwgYmUgaW1wb3J0ZWQgaW4gY29uc2VjdXRpdmUgc2VwYXJhdGUgdmFyaWFibGVzL2hvbWUvc2ltb24vRHJvcGJveC9EYXRhL1BUU0QvZGF0YS9QVFNEX1NrYWxlbl8xIDA2IDIwMTdfR0VTQU1ULnNhdjogTG9uZyBzdHJpbmcgdmFsdWUgbGFiZWxzIHJlY29yZCBmb3VuZCAocmVjb3JkIHR5cGUgNywgc3VidHlwZSAyMSksIGJ1dCBpZ25vcmVkVW5kZWNsYXJlZCBsZXZlbChzKSA3IGFkZGVkIGluIHZhcmlhYmxlOiB3b2huc2l0dWF0aW9uVW5kZWNsYXJlZCBsZXZlbChzKSA0IGFkZGVkIGluIHZhcmlhYmxlOiBzY2h3aWVyaWdlc0VyZWlnbmlzXG4ifQ== -->
 <pre><code>/home/simon/Dropbox/Data/PTSD/data/PTSD_Skalen_1 06 2017_GESAMT.sav: Very long string record(s) found (record type 7, subtype 14), each will be imported in consecutive separate variables/home/simon/Dropbox/Data/PTSD/data/PTSD_Skalen_1 06 2017_GESAMT.sav: Long string value labels record found (record type 7, subtype 21), but ignoredUndeclared level(s) 7 added in variable: wohnsituationUndeclared level(s) 4 added in variable: schwierigesEreignis</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXNzZXJ0KG5yb3coZCkgPT0gTilcbiMgU29tZSBpZHMgYXJlIGR1YmxpY2F0ZXMgYnV0IGluIGZhY3QgZGlmZmVyZW50IHN1YmplY3RzLCB0aHVzIHdlIHJlY3JlYXRlIHRoZSBJRHNcbiNkJGlkID0gYXMuZmFjdG9yKDE6TilcbmcxX3NhbiA9IGQkYXJiZWl0c29ydD09J1Nhbml0w6R0LCBBbWJ1bGFueidcbmcyX2ZldSA9IGQkYXJiZWl0c29ydD09J0ZldWVyd2VocidcbmczX3BvbCA9IGQkYXJiZWl0c29ydD09J1BvbGl6ZWknXG5nNF9zcGkgPSBkJGFyYmVpdHNvcnQ9PSdTcGl0YWxub3RmYWxsJ1xuZzVfcHN5ID0gZCRhcmJlaXRzb3J0PT0nUHN5Y2hpYXRyaWUnXG4jIyBDcmVhdGUgc3ViZ3JvdXBzXG5kLmcxX3NhbiA9IHN1YnNldChkLCBnMV9zYW4pXG5kLmcyX2ZldSA9IHN1YnNldChkLCBnMl9mZXUpXG5kLmczX3BvbCA9IHN1YnNldChkLCBnM19wb2wpXG5kLmc0X3NwaSA9IHN1YnNldChkLCBnNF9zcGkpXG5kLmc1X3BzeSA9IHN1YnNldChkLCBnNV9wc3kpXG5sYWJlbHMgPSBjKCdTYW5pdMOkdCwgQW1idWxhbnonLCAnRmV1ZXJ3ZWhyJywgJ1BvbGl6ZWknLCAnU3BpdGFsbm90ZmFsbCcsICdQc3ljaGlhdHJpZScpXG5OX3Blckdyb3VwID0gc3VtbWFyeShkJGFyYmVpdHNvcnQpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXNzZXJ0KG5yb3coZCkgPT0gTilcbiMgU29tZSBpZHMgYXJlIGR1YmxpY2F0ZXMgYnV0IGluIGZhY3QgZGlmZmVyZW50IHN1YmplY3RzLCB0aHVzIHdlIHJlY3JlYXRlIHRoZSBJRHNcbmQkaWRfbmV3ID0gYXMuZmFjdG9yKDE6TilcbmcxX3NhbiA9IGQkYXJiZWl0c29ydD09J1Nhbml0w6R0LCBBbWJ1bGFueidcbmcyX2ZldSA9IGQkYXJiZWl0c29ydD09J0ZldWVyd2VocidcbmczX3BvbCA9IGQkYXJiZWl0c29ydD09J1BvbGl6ZWknXG5nNF9zcGkgPSBkJGFyYmVpdHNvcnQ9PSdTcGl0YWxub3RmYWxsJ1xuZzVfcHN5ID0gZCRhcmJlaXRzb3J0PT0nUHN5Y2hpYXRyaWUnXG4jIyBDcmVhdGUgc3ViZ3JvdXBzXG5kLmcxX3NhbiA9IHN1YnNldChkLCBnMV9zYW4pXG5kLmcyX2ZldSA9IHN1YnNldChkLCBnMl9mZXUpXG5kLmczX3BvbCA9IHN1YnNldChkLCBnM19wb2wpXG5kLmc0X3NwaSA9IHN1YnNldChkLCBnNF9zcGkpXG5kLmc1X3BzeSA9IHN1YnNldChkLCBnNV9wc3kpXG5sYWJlbHMgPSBjKCdTYW5pdMOkdCwgQW1idWxhbnonLCAnRmV1ZXJ3ZWhyJywgJ1BvbGl6ZWknLCAnU3BpdGFsbm90ZmFsbCcsICdQc3ljaGlhdHJpZScpXG5OX3Blckdyb3VwID0gc3VtbWFyeShkJGFyYmVpdHNvcnQpXG5gYGAifQ== -->
 <pre class="r"><code>assert(nrow(d) == N)
 # Some ids are dublicates but in fact different subjects, thus we recreate the IDs
-#d$id = as.factor(1:N)
+d$id_new = as.factor(1:N)
 g1_san = d$arbeitsort=='Sanität, Ambulanz'
 g2_feu = d$arbeitsort=='Feuerwehr'
 g3_pol = d$arbeitsort=='Polizei'
@@ -260,29 +250,29 @@ N_perGroup = summary(d$arbeitsort)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShkJHdvaG5zaXR1YXRpb24pXG5gYGAifQ== -->
 <pre class="r"><code>summary(d$wohnsituation)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbGxlaW5lIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMTg4IFxuICAgICAgICAgICAgICAgIG1pdCBtZWluZW0vciBQYXJ0bmVyL2luIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMzgwIFxuYWxsZWluZXJ6aWVoZW5kIG1pdCBtZWluZW0obikgS2luZChlcm4pIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDE3IFxuICAgICAgICAgICAgICAgIG1pdCBlaW5lbS9yIEtvbGxlZ2VuL2luIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA1IFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGluIGVpbmVyIFdHIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDMzIFxuICAgIG1pdCBtZWluZW0vciBQYXJ0bmVyL2luICYgS2luZChlcm4pIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMzY4IFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA3IFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA0IFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOQSdzIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA3IFxuIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbGxlaW5lIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMTkwIFxuICAgICAgICAgICAgICAgIG1pdCBtZWluZW0vciBQYXJ0bmVyL2luIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMzgxIFxuYWxsZWluZXJ6aWVoZW5kIG1pdCBtZWluZW0obikgS2luZChlcm4pIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDE4IFxuICAgICAgICAgICAgICAgIG1pdCBlaW5lbS9yIEtvbGxlZ2VuL2luIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA1IFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGluIGVpbmVyIFdHIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDM3IFxuICAgIG1pdCBtZWluZW0vciBQYXJ0bmVyL2luICYgS2luZChlcm4pIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMzY5IFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA3IFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOQSdzIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxIFxuIn0= -->
 <pre><code>                                alleine 
-                                    188 
+                                    190 
                 mit meinem/r Partner/in 
-                                    380 
+                                    381 
 alleinerziehend mit meinem(n) Kind(ern) 
-                                     17 
+                                     18 
                 mit einem/r Kollegen/in 
                                       5 
                             in einer WG 
-                                     33 
+                                     37 
     mit meinem/r Partner/in &amp; Kind(ern) 
-                                    368 
+                                    369 
                                       7 
-                                      4 
+                                      1 
                                    NA's 
-                                      7 </code></pre>
+                                      1 </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZCRpZFt3aGljaChkJHdvaG5zaXR1YXRpb249PVwiN1wiKV0gIyA0IGNhc2VzIGhhdmUgZmFjdG9yIFwiN1wiXG5gYGAifQ== -->
 <pre class="r"><code>d$id[which(d$wohnsituation==&quot;7&quot;)] # 4 cases have factor &quot;7&quot;</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEzOTAgIDQ2MyAxMzA3IDEzNThcbiJ9 -->
-<pre><code>[1] 1390  463 1307 1358</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEzOTBcbiJ9 -->
+<pre><code>[1] 1390</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShkJHNjaHdpZXJpZ2VzRXJlaWduaXMpXG5gYGAifQ== -->
 <pre class="r"><code>summary(d$schwierigesEreignis)</code></pre>
@@ -298,15 +288,67 @@ alleinerziehend mit meinem(n) Kind(ern)
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZCRpZFt3aGljaChkJHNjaHdpZXJpZ2VzRXJlaWduaXM9PVwiNFwiKV1cbmBgYCJ9 -->
 <pre class="r"><code>d$id[which(d$schwierigesEreignis==&quot;4&quot;)]</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMzI3ICAzNDYgMTAxNSAxMTYwIDEyNjcgMTMyOCAxMzU2IDEzNjkgMTM3NiAxMzc3IDEzNzggMTM4OVxuWzEzXSAxMzkxIDEzOTYgMTM5NyAgMzgyICA0MTIgMTMxMiAxMzE3IDEzNTcgMTM1OCAxMzYyXG4ifQ== -->
-<pre><code> [1]  327  346 1015 1160 1267 1328 1356 1369 1376 1377 1378 1389
-[13] 1391 1396 1397  382  412 1312 1317 1357 1358 1362</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMzI3ICAzNDYgMTAxNSAxMTYwIDEyNjcgMTMyOCAxMzU2IDEzNjkgMTM3NiAxMzc3IDEzNzggMTM4OSAxMzkxXG5bMTRdIDEzOTYgMTM5NyAgMzgyICA0MTIgMTMxMiAxMzE3IDEzNTcgMTM1OCAxMzYyXG4ifQ== -->
+<pre><code> [1]  327  346 1015 1160 1267 1328 1356 1369 1376 1377 1378 1389 1391
+[14] 1396 1397  382  412 1312 1317 1357 1358 1362</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
 <div id="descriptives" class="section level2">
 <h2>Descriptives</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI25hbWVzKGQpXG5zdW1tYXJ5KGRbLGMoMTAsXG4gICAgICAgICAgICAgMTY0OjE2NiwxNzE6MTcyLDE1LDYsNCw1LFxuICAgICAgICAgICAgIDE2OjE4LDIwOjIyLDI1KV0pXG5gYGAifQ== -->
+<pre class="r"><code>#names(d)
+summary(d[,c(10,
+             164:166,171:172,15,6,4,5,
+             16:18,20:22,25)])</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgUFRTU19Ta2FsYSAgICAgY29wZV9wcm9ibGZvY19hY3RpdmUgY29wZV9keXNmdW5jdF9zdWJzdFxuIE1pbi4gICA6IDAuMDAwICAgTWluLiAgIDoxLjAwMCAgICAgICAgTWluLiAgIDoxLjAwMCAgICAgIFxuIDFzdCBRdS46IDIuMDAwICAgMXN0IFF1LjozLjMzMyAgICAgICAgMXN0IFF1LjoxLjAwMCAgICAgIFxuIE1lZGlhbiA6IDUuMDAwICAgTWVkaWFuIDozLjY2NyAgICAgICAgTWVkaWFuIDoxLjAwMCAgICAgIFxuIE1lYW4gICA6IDYuMTMyICAgTWVhbiAgIDozLjcyMSAgICAgICAgTWVhbiAgIDoxLjI1OSAgICAgIFxuIDNyZCBRdS46IDkuMDAwICAgM3JkIFF1Ljo0LjMzMyAgICAgICAgM3JkIFF1LjoxLjUwMCAgICAgIFxuIE1heC4gICA6MjQuMDAwICAgTWF4LiAgIDo1LjAwMCAgICAgICAgTWF4LiAgIDozLjUwMCAgICAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIGNvcGVfZHlzZnVuY3RfYXZvaWQgICAgICAgICBUcmF1bWFBcmJlaXQgICAgICAgIFRyYXVtYVZvckJlcnVmXG4gTWluLiAgIDoxLjAwMCAgICAgICBLZWluZSBUcmF1bWF0YToxMjYgICBLZWluZSBUcmF1bWF0YTo2NjYgICBcbiAxc3QgUXUuOjEuNTAwICAgICAgID4xIFRyYXVtYXRhICAgOjg3NiAgID4xIFRyYXVtYXRhICAgOjMzNiAgIFxuIE1lZGlhbiA6Mi4wMDAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gTWVhbiAgIDoxLjg4NiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAzcmQgUXUuOjIuNTAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIE1heC4gICA6NS4wMDAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgIFNXRV9Ta2FsYSAgICAgICAgIGRhdWVyICAgICAgICAgICBhbHRlciAgICAgIGdlc2NobGVjaHRcbiBNaW4uICAgOjEwLjAwICAgTWluLiAgIDogMC4yNSAgIE1pbi4gICA6MjEuMCAgIEZyYXU6MjczICBcbiAxc3QgUXUuOjI3LjAwICAgMXN0IFF1LjogNi4wMCAgIDFzdCBRdS46MzIuMCAgIE1hbm46NzI5ICBcbiBNZWRpYW4gOjI5LjAwICAgTWVkaWFuIDoxMi4wMCAgIE1lZGlhbiA6MzguNSAgICAgICAgICAgICBcbiBNZWFuICAgOjI4Ljk1ICAgTWVhbiAgIDoxNC43MiAgIE1lYW4gICA6MzkuNiAgICAgICAgICAgICBcbiAzcmQgUXUuOjMxLjAwICAgM3JkIFF1LjoyMi4wMCAgIDNyZCBRdS46NDcuMCAgICAgICAgICAgICBcbiBNYXguICAgOjQwLjAwICAgTWF4LiAgIDo0NS4wMCAgIE1heC4gICA6NjYuMCAgICAgICAgICAgICBcbiBOQSdzICAgOjE0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBHSFFfUHN5ICAgICAgICAgIEdIUV9FbW90ICAgICAgICAgR0hRX1NVTSAgICAgICAgICBCU0NMX0dTSSAgICAgIFxuIE1pbi4gICA6IDAuMDAwICAgTWluLiAgIDogMC4wMDAgICBNaW4uICAgOiAwLjAwMCAgIE1pbi4gICA6MC4wMDAwMCAgXG4gMXN0IFF1LjogMy4wMDAgICAxc3QgUXUuOiAyLjAwMCAgIDFzdCBRdS46IDYuMDAwICAgMXN0IFF1LjowLjA2MTIyICBcbiBNZWRpYW4gOiA0LjAwMCAgIE1lZGlhbiA6IDMuMDAwICAgTWVkaWFuIDogOC4wMDAgICBNZWRpYW4gOjAuMTgzNjcgIFxuIE1lYW4gICA6IDMuODI2ICAgTWVhbiAgIDogMy43ODggICBNZWFuICAgOiA5LjIxOSAgIE1lYW4gICA6MC4yODM4MCAgXG4gM3JkIFF1LjogNC4wMDAgICAzcmQgUXUuOiA1LjAwMCAgIDNyZCBRdS46MTEuMDAwICAgM3JkIFF1LjowLjM2NzM1ICBcbiBNYXguICAgOjEyLjAwMCAgIE1heC4gICA6MTUuMDAwICAgTWF4LiAgIDozMy4wMDAgICBNYXguICAgOjIuMTIyNDUgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU1QgICAgICAgIEJTQ0xfUFNESSAgICAgc3VpemlkZ2VkYW5rZW5cbiBNaW4uICAgOiAwLjAwMCAgIE1pbi4gICA6MC41MDAgICBOZWluOjk0NiAgICAgIFxuIDFzdCBRdS46IDMuMDAwICAgMXN0IFF1LjoxLjAwMCAgIEphICA6IDUwICAgICAgXG4gTWVkaWFuIDogNy4wMDAgICBNZWRpYW4gOjEuMjczICAgTkEnczogIDYgICAgICBcbiBNZWFuICAgOiA5LjQwMiAgIE1lYW4gICA6MS4zNjkgICAgICAgICAgICAgICAgIFxuIDNyZCBRdS46MTQuMDAwICAgM3JkIFF1LjoxLjU1MCAgICAgICAgICAgICAgICAgXG4gTWF4LiAgIDo0NS4wMDAgICBNYXguICAgOjYuMDAwICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgIE5BJ3MgICA6MTE3ICAgICAgICAgICAgICAgICAgIFxuIn0= -->
+<pre><code>   PTSS_Skala     cope_problfoc_active cope_dysfunct_subst
+ Min.   : 0.000   Min.   :1.000        Min.   :1.000      
+ 1st Qu.: 2.000   1st Qu.:3.333        1st Qu.:1.000      
+ Median : 5.000   Median :3.667        Median :1.000      
+ Mean   : 6.132   Mean   :3.721        Mean   :1.259      
+ 3rd Qu.: 9.000   3rd Qu.:4.333        3rd Qu.:1.500      
+ Max.   :24.000   Max.   :5.000        Max.   :3.500      
+                                                          
+ cope_dysfunct_avoid         TraumaArbeit        TraumaVorBeruf
+ Min.   :1.000       Keine Traumata:126   Keine Traumata:666   
+ 1st Qu.:1.500       &gt;1 Traumata   :876   &gt;1 Traumata   :336   
+ Median :2.000                                                 
+ Mean   :1.886                                                 
+ 3rd Qu.:2.500                                                 
+ Max.   :5.000                                                 
+                                                               
+   SWE_Skala         dauer           alter      geschlecht
+ Min.   :10.00   Min.   : 0.25   Min.   :21.0   Frau:273  
+ 1st Qu.:27.00   1st Qu.: 6.00   1st Qu.:32.0   Mann:729  
+ Median :29.00   Median :12.00   Median :38.5             
+ Mean   :28.95   Mean   :14.72   Mean   :39.6             
+ 3rd Qu.:31.00   3rd Qu.:22.00   3rd Qu.:47.0             
+ Max.   :40.00   Max.   :45.00   Max.   :66.0             
+ NA's   :14                                               
+    GHQ_Psy          GHQ_Emot         GHQ_SUM          BSCL_GSI      
+ Min.   : 0.000   Min.   : 0.000   Min.   : 0.000   Min.   :0.00000  
+ 1st Qu.: 3.000   1st Qu.: 2.000   1st Qu.: 6.000   1st Qu.:0.06122  
+ Median : 4.000   Median : 3.000   Median : 8.000   Median :0.18367  
+ Mean   : 3.826   Mean   : 3.788   Mean   : 9.219   Mean   :0.28380  
+ 3rd Qu.: 4.000   3rd Qu.: 5.000   3rd Qu.:11.000   3rd Qu.:0.36735  
+ Max.   :12.000   Max.   :15.000   Max.   :33.000   Max.   :2.12245  
+                                                                     
+    BSCL_PST        BSCL_PSDI     suizidgedanken
+ Min.   : 0.000   Min.   :0.500   Nein:946      
+ 1st Qu.: 3.000   1st Qu.:1.000   Ja  : 50      
+ Median : 7.000   Median :1.273   NA's:  6      
+ Mean   : 9.402   Mean   :1.369                 
+ 3rd Qu.:14.000   3rd Qu.:1.550                 
+ Max.   :45.000   Max.   :6.000                 
+                  NA's   :117                   </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <div id="global-gender-arbeitsort-and-group" class="section level3">
 <h3>Global Gender, Arbeitsort and Group</h3>
 <!-- rnb-text-end -->
@@ -321,11 +363,11 @@ alleinerziehend mit meinem(n) Kind(ern)
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShkJGFyYmVpdHNvcnQpXG5gYGAifQ== -->
 <pre class="r"><code>summary(d$arbeitsort)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiU2FuaXTDpHQsIEFtYnVsYW56ICAgICAgICAgRmV1ZXJ3ZWhyICAgICAgICAgICBQb2xpemVpIFxuICAgICAgICAgICAgICAgOTcgICAgICAgICAgICAgICAyMzkgICAgICAgICAgICAgICA0OTkgXG4gICAgU3BpdGFsbm90ZmFsbCAgICAgICBQc3ljaGlhdHJpZSBcbiAgICAgICAgICAgICAgIDg1ICAgICAgICAgICAgICAgIDgyIFxuIn0= -->
-<pre><code>Sanität, Ambulanz         Feuerwehr           Polizei 
-               97               239               499 
-    Spitalnotfall       Psychiatrie 
-               85                82 </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiU2FuaXTDpHQsIEFtYnVsYW56ICAgICAgICAgRmV1ZXJ3ZWhyICAgICAgICAgICBQb2xpemVpICAgICBTcGl0YWxub3RmYWxsIFxuICAgICAgICAgICAgICAgOTcgICAgICAgICAgICAgICAyMzkgICAgICAgICAgICAgICA0OTkgICAgICAgICAgICAgICAgODUgXG4gICAgICBQc3ljaGlhdHJpZSBcbiAgICAgICAgICAgICAgIDgyIFxuIn0= -->
+<pre><code>Sanität, Ambulanz         Feuerwehr           Polizei     Spitalnotfall 
+               97               239               499                85 
+      Psychiatrie 
+               82 </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShkJGdyb3VwKVxuYGBgIn0= -->
 <pre class="r"><code>summary(d$group)</code></pre>
@@ -338,6 +380,12 @@ alleinerziehend mit meinem(n) Kind(ern)
                                           NA's 
                                              1 </code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hpY2goaXMubmEoZCRncm91cCkpXG5gYGAifQ== -->
+<pre class="r"><code>which(is.na(d$group))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcbiJ9 -->
+<pre><code>[1] 1</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -348,20 +396,20 @@ alleinerziehend mit meinem(n) Kind(ern)
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFwcGx5KGQkYWx0ZXIsIGQkYXJiZWl0c29ydCwgbWVhbilcbmBgYCJ9 -->
 <pre class="r"><code>tapply(d$alter, d$arbeitsort, mean)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiU2FuaXTDpHQsIEFtYnVsYW56ICAgICAgICAgRmV1ZXJ3ZWhyICAgICAgICAgICBQb2xpemVpIFxuICAgICAgICAgMzguNzAxMDMgICAgICAgICAgNDIuMjU5NDEgICAgICAgICAgMzguNDM2ODcgXG4gICAgU3BpdGFsbm90ZmFsbCAgICAgICBQc3ljaGlhdHJpZSBcbiAgICAgICAgIDM4Ljc0MTE4ICAgICAgICAgIDQwLjkzOTAyIFxuIn0= -->
-<pre><code>Sanität, Ambulanz         Feuerwehr           Polizei 
-         38.70103          42.25941          38.43687 
-    Spitalnotfall       Psychiatrie 
-         38.74118          40.93902 </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiU2FuaXTDpHQsIEFtYnVsYW56ICAgICAgICAgRmV1ZXJ3ZWhyICAgICAgICAgICBQb2xpemVpICAgICBTcGl0YWxub3RmYWxsIFxuICAgICAgICAgMzguNzAxMDMgICAgICAgICAgNDIuMjU5NDEgICAgICAgICAgMzguNDM2ODcgICAgICAgICAgMzguNzQxMTggXG4gICAgICBQc3ljaGlhdHJpZSBcbiAgICAgICAgIDQwLjkzOTAyIFxuIn0= -->
+<pre><code>Sanität, Ambulanz         Feuerwehr           Polizei     Spitalnotfall 
+         38.70103          42.25941          38.43687          38.74118 
+      Psychiatrie 
+         40.93902 </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFwcGx5KGQkYWx0ZXIsIGQkYXJiZWl0c29ydCwgc2QpXG5gYGAifQ== -->
 <pre class="r"><code>tapply(d$alter, d$arbeitsort, sd)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiU2FuaXTDpHQsIEFtYnVsYW56ICAgICAgICAgRmV1ZXJ3ZWhyICAgICAgICAgICBQb2xpemVpIFxuICAgICAgICAxMC4wMjkyOTYgICAgICAgICAgOC4xNjIxOTkgICAgICAgICAgOS41ODcxMzYgXG4gICAgU3BpdGFsbm90ZmFsbCAgICAgICBQc3ljaGlhdHJpZSBcbiAgICAgICAgIDkuNTg4MTI5ICAgICAgICAgMTEuNTY0NDcwIFxuIn0= -->
-<pre><code>Sanität, Ambulanz         Feuerwehr           Polizei 
-        10.029296          8.162199          9.587136 
-    Spitalnotfall       Psychiatrie 
-         9.588129         11.564470 </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiU2FuaXTDpHQsIEFtYnVsYW56ICAgICAgICAgRmV1ZXJ3ZWhyICAgICAgICAgICBQb2xpemVpICAgICBTcGl0YWxub3RmYWxsIFxuICAgICAgICAxMC4wMjkyOTYgICAgICAgICAgOC4xNjIxOTkgICAgICAgICAgOS41ODcxMzYgICAgICAgICAgOS41ODgxMjkgXG4gICAgICBQc3ljaGlhdHJpZSBcbiAgICAgICAgMTEuNTY0NDcwIFxuIn0= -->
+<pre><code>Sanität, Ambulanz         Feuerwehr           Polizei     Spitalnotfall 
+        10.029296          8.162199          9.587136          9.588129 
+      Psychiatrie 
+        11.564470 </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -393,64 +441,6 @@ Frau Mann
 $Psychiatrie
 Frau Mann 
   56   26 </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="cope" class="section level3">
-<h3>Cope</h3>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA9IGNiaW5kKCAgc3VtbWFyeShkJFNXRV9Ta2FsYSksXG4gICAgICAgICAgYyhzdW1tYXJ5KGQkUFRTU19Ta2FsYSksMCksXG4gICAgICAgICAgYyhzdW1tYXJ5KGQkY29wZV9wcm9ibGZvY19hY3RpdmUpLDApLFxuICAgICAgICAgIGMoc3VtbWFyeShkJGNvcGVfZHlzZnVuY3Rfc3Vic3QpLDApLFxuICAgICAgICAgIGMoc3VtbWFyeShkJGNvcGVfZHlzZnVuY3RfYXZvaWQpLDApLFxuICAgICAgICAgIGMoc3VtbWFyeShkJGFsdGVyKSwwKSxcbiAgICAgICAgICBjKHN1bW1hcnkoZCRkYXVlciksMClcbiAgICAgICAgICApXG5jb2xuYW1lcyh4KT1jKFwiU1dFXCIsXCJQVFNTXCIsXCJjb3BlX2FjXCIsXCJjb3BlX3N1YlwiLFwiY29wZV9hdm9pZFwiLFwiYWx0ZXJcIixcImRhdWVyXCIpXG5wcmludCh4KVxuYGBgIn0= -->
-<pre class="r"><code>x = cbind(  summary(d$SWE_Skala),
-          c(summary(d$PTSS_Skala),0),
-          c(summary(d$cope_problfoc_active),0),
-          c(summary(d$cope_dysfunct_subst),0),
-          c(summary(d$cope_dysfunct_avoid),0),
-          c(summary(d$alter),0),
-          c(summary(d$dauer),0)
-          )
-colnames(x)=c(&quot;SWE&quot;,&quot;PTSS&quot;,&quot;cope_ac&quot;,&quot;cope_sub&quot;,&quot;cope_avoid&quot;,&quot;alter&quot;,&quot;dauer&quot;)
-print(x)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgIFNXRSAgICAgIFBUU1MgIGNvcGVfYWMgY29wZV9zdWIgY29wZV9hdm9pZCAgICBhbHRlclxuTWluLiAgICAxMC4wMDAwMCAgMC4wMDAwMDAgMS4wMDAwMDAgMS4wMDAwMDAgICAxLjAwMDAwMCAyMS4wMDAwMFxuMXN0IFF1LiAyNy4wMDAwMCAgMi4wMDAwMDAgMy4zMzMzMzMgMS4wMDAwMDAgICAxLjUwMDAwMCAzMi4wMDAwMFxuTWVkaWFuICAyOS4wMDAwMCAgNS4wMDAwMDAgMy42NjY2NjcgMS4wMDAwMDAgICAyLjAwMDAwMCAzOC41MDAwMFxuTWVhbiAgICAyOC45NDYzNiAgNi4xMzE3MzcgMy43MjA1NTkgMS4yNTk0ODEgICAxLjg4NTcyOSAzOS42MDQ3OVxuM3JkIFF1LiAzMS4wMDAwMCAgOS4wMDAwMDAgNC4zMzMzMzMgMS41MDAwMDAgICAyLjUwMDAwMCA0Ny4wMDAwMFxuTWF4LiAgICA0MC4wMDAwMCAyNC4wMDAwMDAgNS4wMDAwMDAgMy41MDAwMDAgICA1LjAwMDAwMCA2Ni4wMDAwMFxuTkEncyAgICAxNC4wMDAwMCAgMC4wMDAwMDAgMC4wMDAwMDAgMC4wMDAwMDAgICAwLjAwMDAwMCAgMC4wMDAwMFxuICAgICAgICAgICBkYXVlclxuTWluLiAgICAgMC4yNTAwMFxuMXN0IFF1LiAgNi4wMDAwMFxuTWVkaWFuICAxMi4wMDAwMFxuTWVhbiAgICAxNC43MTY4MlxuM3JkIFF1LiAyMi4wMDAwMFxuTWF4LiAgICA0NS4wMDAwMFxuTkEncyAgICAgMC4wMDAwMFxuIn0= -->
-<pre><code>             SWE      PTSS  cope_ac cope_sub cope_avoid    alter
-Min.    10.00000  0.000000 1.000000 1.000000   1.000000 21.00000
-1st Qu. 27.00000  2.000000 3.333333 1.000000   1.500000 32.00000
-Median  29.00000  5.000000 3.666667 1.000000   2.000000 38.50000
-Mean    28.94636  6.131737 3.720559 1.259481   1.885729 39.60479
-3rd Qu. 31.00000  9.000000 4.333333 1.500000   2.500000 47.00000
-Max.    40.00000 24.000000 5.000000 3.500000   5.000000 66.00000
-NA's    14.00000  0.000000 0.000000 0.000000   0.000000  0.00000
-           dauer
-Min.     0.25000
-1st Qu.  6.00000
-Median  12.00000
-Mean    14.71682
-3rd Qu. 22.00000
-Max.    45.00000
-NA's     0.00000</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShkJFRyYXVtYUFyYmVpdClcbmBgYCJ9 -->
-<pre class="r"><code>summary(d$TraumaArbeit)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiS2VpbmUgVHJhdW1hdGEgICAgPjEgVHJhdW1hdGEgXG4gICAgICAgICAgIDEyNiAgICAgICAgICAgIDg3NiBcbiJ9 -->
-<pre><code>Keine Traumata    &gt;1 Traumata 
-           126            876 </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShkJFRyYXVtYVZvckJlcnVmKVxuYGBgIn0= -->
-<pre class="r"><code>summary(d$TraumaVorBeruf)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiS2VpbmUgVHJhdW1hdGEgICAgPjEgVHJhdW1hdGEgXG4gICAgICAgICAgIDY2NiAgICAgICAgICAgIDMzNiBcbiJ9 -->
-<pre><code>Keine Traumata    &gt;1 Traumata 
-           666            336 </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShkJGdlc2NobGVjaHQpXG5gYGAifQ== -->
-<pre class="r"><code>summary(d$geschlecht)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRnJhdSBNYW5uIFxuIDI3MyAgNzI5IFxuIn0= -->
-<pre><code>Frau Mann 
- 273  729 </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -530,8 +520,8 @@ Psychiatrie                0.78    0.220</code></pre>
 <div id="multiple-regressions" class="section level2">
 <h2>Multiple regressions</h2>
 <p>We perform subgroup analyses</p>
-<div id="ptss" class="section level3">
-<h3>PTSS</h3>
+<div id="alle" class="section level3">
+<h3>Alle</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgZ2VzY2hsZWNodCwgZGF0YT1kKVxudmlmKGZpdCkgPiA0XG5gYGAifQ== -->
@@ -540,11 +530,13 @@ Psychiatrie                0.78    0.220</code></pre>
            SWE_Skala + dauer + geschlecht, data=d)
 vif(fit) &gt; 4</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiY29wZV9wcm9ibGZvY19hY3RpdmUgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgIGNvcGVfZHlzZnVuY3RfYXZvaWQgICAgICAgICBUcmF1bWFBcmJlaXQgXG4gICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSBcbiAgICAgIFRyYXVtYVZvckJlcnVmICAgICAgICAgICAgU1dFX1NrYWxhICAgICAgICAgICAgICAgIGRhdWVyICAgICAgICAgICBnZXNjaGxlY2h0IFxuICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgXG4ifQ== -->
-<pre><code>cope_problfoc_active  cope_dysfunct_subst  cope_dysfunct_avoid         TraumaArbeit 
-               FALSE                FALSE                FALSE                FALSE 
-      TraumaVorBeruf            SWE_Skala                dauer           geschlecht 
-               FALSE                FALSE                FALSE                FALSE </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiY29wZV9wcm9ibGZvY19hY3RpdmUgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgIGNvcGVfZHlzZnVuY3RfYXZvaWQgXG4gICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSBcbiAgICAgICAgVHJhdW1hQXJiZWl0ICAgICAgIFRyYXVtYVZvckJlcnVmICAgICAgICAgICAgU1dFX1NrYWxhIFxuICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgXG4gICAgICAgICAgICAgICBkYXVlciAgICAgICAgICAgZ2VzY2hsZWNodCBcbiAgICAgICAgICAgICAgIEZBTFNFICAgICAgICAgICAgICAgIEZBTFNFIFxuIn0= -->
+<pre><code>cope_problfoc_active  cope_dysfunct_subst  cope_dysfunct_avoid 
+               FALSE                FALSE                FALSE 
+        TraumaArbeit       TraumaVorBeruf            SWE_Skala 
+               FALSE                FALSE                FALSE 
+               dauer           geschlecht 
+               FALSE                FALSE </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQpXG5gYGAifQ== -->
 <pre class="r"><code>summary(fit)</code></pre>
@@ -586,13 +578,53 @@ F-statistic: 40.99 on 8 and 979 DF,  p-value: &lt; 2.2e-16</code></pre>
 <h3>Sanität</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzFfc2FuKVxudmlmKGZpdCkgPiA0XG5zdW1tYXJ5KGZpdClcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzFfc2FuKVxudmlmKGZpdCkgPiA0XG5gYGAifQ== -->
 <pre class="r"><code>fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
            SWE_Skala + dauer + alter + geschlecht, data=d.g1_san)
-vif(fit) &gt; 4
-summary(fit)</code></pre>
+vif(fit) &gt; 4</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiY29wZV9wcm9ibGZvY19hY3RpdmUgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgIGNvcGVfZHlzZnVuY3RfYXZvaWQgXG4gICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSBcbiAgICAgICAgVHJhdW1hQXJiZWl0ICAgICAgIFRyYXVtYVZvckJlcnVmICAgICAgICAgICAgU1dFX1NrYWxhIFxuICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgXG4gICAgICAgICAgICAgICBkYXVlciAgICAgICAgICAgICAgICBhbHRlciAgICAgICAgICAgZ2VzY2hsZWNodCBcbiAgICAgICAgICAgICAgIEZBTFNFICAgICAgICAgICAgICAgIEZBTFNFICAgICAgICAgICAgICAgIEZBTFNFIFxuIn0= -->
+<pre><code>cope_problfoc_active  cope_dysfunct_subst  cope_dysfunct_avoid 
+               FALSE                FALSE                FALSE 
+        TraumaArbeit       TraumaVorBeruf            SWE_Skala 
+               FALSE                FALSE                FALSE 
+               dauer                alter           geschlecht 
+               FALSE                FALSE                FALSE </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQpXG5gYGAifQ== -->
+<pre class="r"><code>summary(fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKyBcbiAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkICsgVHJhdW1hQXJiZWl0ICsgVHJhdW1hVm9yQmVydWYgKyBTV0VfU2thbGEgKyBcbiAgICBkYXVlciArIGFsdGVyICsgZ2VzY2hsZWNodCwgZGF0YSA9IGQuZzFfc2FuKVxuXG5SZXNpZHVhbHM6XG4gICAgTWluICAgICAgMVEgIE1lZGlhbiAgICAgIDNRICAgICBNYXggXG4tOS43Mzk1IC0zLjcxNjEgLTAuNjEzNCAgMi44ODM2IDEzLjQ5NzEgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIEVzdGltYXRlIFN0ZC4gRXJyb3IgdCB2YWx1ZSBQcig+fHR8KSAgIFxuKEludGVyY2VwdCkgICAgICAgICAgICAgICAtMTkuMTM2OTkgICAgNi44ODA1OCAgLTIuNzgxICAwLjAwNjY0ICoqXG5jb3BlX3Byb2JsZm9jX2FjdGl2ZSAgICAgICAgMC4xOTg4MiAgICAwLjcxOTg0ICAgMC4yNzYgIDAuNzgzMDUgICBcbmNvcGVfZHlzZnVuY3Rfc3Vic3QgICAgICAgICAzLjYyOTYyICAgIDEuMjYxMDAgICAyLjg3OCAgMC4wMDUwMyAqKlxuY29wZV9keXNmdW5jdF9hdm9pZCAgICAgICAgIDEuNjYxNjUgICAgMC44NTg3MiAgIDEuOTM1ICAwLjA1NjI0IC4gXG5UcmF1bWFBcmJlaXQ+MSBUcmF1bWF0YSAgICAgNC4xODk5NyAgICAyLjE4MDM3ICAgMS45MjIgIDAuMDU3OTIgLiBcblRyYXVtYVZvckJlcnVmPjEgVHJhdW1hdGEgICAxLjE2ODEyICAgIDEuMTgyMjkgICAwLjk4OCAgMC4zMjU4OCAgIFxuU1dFX1NrYWxhICAgICAgICAgICAgICAgICAgIDAuMzk4MTkgICAgMC4xNTA0NSAgIDIuNjQ3ICAwLjAwOTY1ICoqXG5kYXVlciAgICAgICAgICAgICAgICAgICAgICAtMC4wMTg2MyAgICAwLjEwNjk2ICAtMC4xNzQgIDAuODYyMTQgICBcbmFsdGVyICAgICAgICAgICAgICAgICAgICAgICAwLjA1ODI5ICAgIDAuMDkzNzEgICAwLjYyMiAgMC41MzU1NSAgIFxuZ2VzY2hsZWNodE1hbm4gICAgICAgICAgICAgIDAuMDUwMzMgICAgMS4xNDU5NyAgIDAuMDQ0ICAwLjk2NTA3ICAgXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuUmVzaWR1YWwgc3RhbmRhcmQgZXJyb3I6IDUuMTMxIG9uIDg3IGRlZ3JlZXMgb2YgZnJlZWRvbVxuTXVsdGlwbGUgUi1zcXVhcmVkOiAgMC4yNjg3LFx0QWRqdXN0ZWQgUi1zcXVhcmVkOiAgMC4xOTMgXG5GLXN0YXRpc3RpYzogMy41NTEgb24gOSBhbmQgODcgREYsICBwLXZhbHVlOiAwLjAwMDg1ODFcbiJ9 -->
+<pre><code>
+Call:
+lm(formula = PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst + 
+    cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf + SWE_Skala + 
+    dauer + alter + geschlecht, data = d.g1_san)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.7395 -3.7161 -0.6134  2.8836 13.4971 
+
+Coefficients:
+                           Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)               -19.13699    6.88058  -2.781  0.00664 **
+cope_problfoc_active        0.19882    0.71984   0.276  0.78305   
+cope_dysfunct_subst         3.62962    1.26100   2.878  0.00503 **
+cope_dysfunct_avoid         1.66165    0.85872   1.935  0.05624 . 
+TraumaArbeit&gt;1 Traumata     4.18997    2.18037   1.922  0.05792 . 
+TraumaVorBeruf&gt;1 Traumata   1.16812    1.18229   0.988  0.32588   
+SWE_Skala                   0.39819    0.15045   2.647  0.00965 **
+dauer                      -0.01863    0.10696  -0.174  0.86214   
+alter                       0.05829    0.09371   0.622  0.53555   
+geschlechtMann              0.05033    1.14597   0.044  0.96507   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 5.131 on 87 degrees of freedom
+Multiple R-squared:  0.2687,    Adjusted R-squared:  0.193 
+F-statistic: 3.551 on 9 and 87 DF,  p-value: 0.0008581</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -600,13 +632,53 @@ summary(fit)</code></pre>
 <h3>Feuerwehr</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzJfZmV1KVxudmlmKGZpdCkgPiA0XG5zdW1tYXJ5KGZpdClcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzJfZmV1KVxudmlmKGZpdCkgPiA0XG5gYGAifQ== -->
 <pre class="r"><code>fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
            SWE_Skala + dauer + alter + geschlecht, data=d.g2_feu)
-vif(fit) &gt; 4
-summary(fit)</code></pre>
+vif(fit) &gt; 4</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiY29wZV9wcm9ibGZvY19hY3RpdmUgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgIGNvcGVfZHlzZnVuY3RfYXZvaWQgXG4gICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSBcbiAgICAgICAgVHJhdW1hQXJiZWl0ICAgICAgIFRyYXVtYVZvckJlcnVmICAgICAgICAgICAgU1dFX1NrYWxhIFxuICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgXG4gICAgICAgICAgICAgICBkYXVlciAgICAgICAgICAgICAgICBhbHRlciAgICAgICAgICAgZ2VzY2hsZWNodCBcbiAgICAgICAgICAgICAgIEZBTFNFICAgICAgICAgICAgICAgIEZBTFNFICAgICAgICAgICAgICAgIEZBTFNFIFxuIn0= -->
+<pre><code>cope_problfoc_active  cope_dysfunct_subst  cope_dysfunct_avoid 
+               FALSE                FALSE                FALSE 
+        TraumaArbeit       TraumaVorBeruf            SWE_Skala 
+               FALSE                FALSE                FALSE 
+               dauer                alter           geschlecht 
+               FALSE                FALSE                FALSE </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQpXG5gYGAifQ== -->
+<pre class="r"><code>summary(fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKyBcbiAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkICsgVHJhdW1hQXJiZWl0ICsgVHJhdW1hVm9yQmVydWYgKyBTV0VfU2thbGEgKyBcbiAgICBkYXVlciArIGFsdGVyICsgZ2VzY2hsZWNodCwgZGF0YSA9IGQuZzJfZmV1KVxuXG5SZXNpZHVhbHM6XG4gICAgTWluICAgICAgMVEgIE1lZGlhbiAgICAgIDNRICAgICBNYXggXG4tNy44MDMzIC0yLjU3MzAgLTAuODc0MiAgMS41NTQ4IDE0Ljg4NzIgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIEVzdGltYXRlIFN0ZC4gRXJyb3IgdCB2YWx1ZSBQcig+fHR8KSAgICBcbihJbnRlcmNlcHQpICAgICAgICAgICAgICAgLTEyLjQ4MDc5ICAgIDMuNzcxNjggIC0zLjMwOSAwLjAwMTA4NyAqKiBcbmNvcGVfcHJvYmxmb2NfYWN0aXZlICAgICAgIC0wLjA5Njg5ICAgIDAuNDEyMzIgIC0wLjIzNSAwLjgxNDQyMiAgICBcbmNvcGVfZHlzZnVuY3Rfc3Vic3QgICAgICAgICAyLjk0MjYxICAgIDAuNjEyMzIgICA0LjgwNiAyLjc5ZS0wNiAqKipcbmNvcGVfZHlzZnVuY3RfYXZvaWQgICAgICAgICAxLjE4MjU4ICAgIDAuMzc2MjYgICAzLjE0MyAwLjAwMTg5MyAqKiBcblRyYXVtYUFyYmVpdD4xIFRyYXVtYXRhICAgICAxLjM2OTYzICAgIDAuNjg0NjcgICAyLjAwMCAwLjA0NjYzNSAqICBcblRyYXVtYVZvckJlcnVmPjEgVHJhdW1hdGEgIC0wLjAyNzU3ICAgIDAuNjExOTUgIC0wLjA0NSAwLjk2NDEwMCAgICBcblNXRV9Ta2FsYSAgICAgICAgICAgICAgICAgICAwLjI2NTIzICAgIDAuMDcyNjUgICAzLjY1MSAwLjAwMDMyNCAqKipcbmRhdWVyICAgICAgICAgICAgICAgICAgICAgICAwLjAyMjI2ICAgIDAuMDQ0NDggICAwLjUwMCAwLjYxNzIyNCAgICBcbmFsdGVyICAgICAgICAgICAgICAgICAgICAgICAwLjA0MDg2ICAgIDAuMDQ1OTMgICAwLjg5MCAwLjM3NDU1NiAgICBcbmdlc2NobGVjaHRNYW5uICAgICAgICAgICAgICAwLjc0NTM2ICAgIDEuMzA2MDAgICAwLjU3MSAwLjU2ODc0OCAgICBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG5SZXNpZHVhbCBzdGFuZGFyZCBlcnJvcjogMy45NTEgb24gMjI5IGRlZ3JlZXMgb2YgZnJlZWRvbVxuTXVsdGlwbGUgUi1zcXVhcmVkOiAgMC4yNDk3LFx0QWRqdXN0ZWQgUi1zcXVhcmVkOiAgMC4yMjAyIFxuRi1zdGF0aXN0aWM6IDguNDY3IG9uIDkgYW5kIDIyOSBERiwgIHAtdmFsdWU6IDYuNTYxZS0xMVxuIn0= -->
+<pre><code>
+Call:
+lm(formula = PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst + 
+    cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf + SWE_Skala + 
+    dauer + alter + geschlecht, data = d.g2_feu)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7.8033 -2.5730 -0.8742  1.5548 14.8872 
+
+Coefficients:
+                           Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)               -12.48079    3.77168  -3.309 0.001087 ** 
+cope_problfoc_active       -0.09689    0.41232  -0.235 0.814422    
+cope_dysfunct_subst         2.94261    0.61232   4.806 2.79e-06 ***
+cope_dysfunct_avoid         1.18258    0.37626   3.143 0.001893 ** 
+TraumaArbeit&gt;1 Traumata     1.36963    0.68467   2.000 0.046635 *  
+TraumaVorBeruf&gt;1 Traumata  -0.02757    0.61195  -0.045 0.964100    
+SWE_Skala                   0.26523    0.07265   3.651 0.000324 ***
+dauer                       0.02226    0.04448   0.500 0.617224    
+alter                       0.04086    0.04593   0.890 0.374556    
+geschlechtMann              0.74536    1.30600   0.571 0.568748    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.951 on 229 degrees of freedom
+Multiple R-squared:  0.2497,    Adjusted R-squared:  0.2202 
+F-statistic: 8.467 on 9 and 229 DF,  p-value: 6.561e-11</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -614,13 +686,53 @@ summary(fit)</code></pre>
 <h3>Polizei</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzNfcG9sKVxudmlmKGZpdCkgPiA0XG5zdW1tYXJ5KGZpdClcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzNfcG9sKVxudmlmKGZpdCkgPiA0XG5gYGAifQ== -->
 <pre class="r"><code>fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
            SWE_Skala + dauer + alter + geschlecht, data=d.g3_pol)
-vif(fit) &gt; 4
-summary(fit)</code></pre>
+vif(fit) &gt; 4</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiY29wZV9wcm9ibGZvY19hY3RpdmUgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgIGNvcGVfZHlzZnVuY3RfYXZvaWQgXG4gICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSBcbiAgICAgICAgVHJhdW1hQXJiZWl0ICAgICAgIFRyYXVtYVZvckJlcnVmICAgICAgICAgICAgU1dFX1NrYWxhIFxuICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgXG4gICAgICAgICAgICAgICBkYXVlciAgICAgICAgICAgICAgICBhbHRlciAgICAgICAgICAgZ2VzY2hsZWNodCBcbiAgICAgICAgICAgICAgICBUUlVFICAgICAgICAgICAgICAgICBUUlVFICAgICAgICAgICAgICAgIEZBTFNFIFxuIn0= -->
+<pre><code>cope_problfoc_active  cope_dysfunct_subst  cope_dysfunct_avoid 
+               FALSE                FALSE                FALSE 
+        TraumaArbeit       TraumaVorBeruf            SWE_Skala 
+               FALSE                FALSE                FALSE 
+               dauer                alter           geschlecht 
+                TRUE                 TRUE                FALSE </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQpXG5gYGAifQ== -->
+<pre class="r"><code>summary(fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKyBcbiAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkICsgVHJhdW1hQXJiZWl0ICsgVHJhdW1hVm9yQmVydWYgKyBTV0VfU2thbGEgKyBcbiAgICBkYXVlciArIGFsdGVyICsgZ2VzY2hsZWNodCwgZGF0YSA9IGQuZzNfcG9sKVxuXG5SZXNpZHVhbHM6XG4gICAgTWluICAgICAgMVEgIE1lZGlhbiAgICAgIDNRICAgICBNYXggXG4tOS44OTY2IC0zLjIxMzQgLTAuODM4MSAgMi44Mjc1IDE0LjkyNTUgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIEVzdGltYXRlIFN0ZC4gRXJyb3IgdCB2YWx1ZSBQcig+fHR8KSAgICBcbihJbnRlcmNlcHQpICAgICAgICAgICAgICAgLTcuMDk3NDQyICAgMi42MzE5NDMgIC0yLjY5NyAwLjAwNzI0NiAqKiBcbmNvcGVfcHJvYmxmb2NfYWN0aXZlICAgICAgLTAuNTAxNDc3ICAgMC4yNjc3ODUgIC0xLjg3MyAwLjA2MTcwOSAuICBcbmNvcGVfZHlzZnVuY3Rfc3Vic3QgICAgICAgIDMuNjk1MjgxICAgMC40Njk4NjQgICA3Ljg2NSAyLjM5ZS0xNCAqKipcbmNvcGVfZHlzZnVuY3RfYXZvaWQgICAgICAgIDEuMzkwMDA2ICAgMC4yOTU2MDIgICA0LjcwMiAzLjM1ZS0wNiAqKipcblRyYXVtYUFyYmVpdD4xIFRyYXVtYXRhICAgIDEuNjQ3ODE2ICAgMC42Mzg2NzYgICAyLjU4MCAwLjAxMDE2OSAqICBcblRyYXVtYVZvckJlcnVmPjEgVHJhdW1hdGEgIDEuMjY1MTQ0ICAgMC40NDE2MTUgICAyLjg2NSAwLjAwNDM1MiAqKiBcblNXRV9Ta2FsYSAgICAgICAgICAgICAgICAgIDAuMjI5OTM1ICAgMC4wNjE5MTggICAzLjcxNCAwLjAwMDIyOCAqKipcbmRhdWVyICAgICAgICAgICAgICAgICAgICAgIDAuMDA2MDE2ICAgMC4wNTY3NTIgICAwLjEwNiAwLjkxNTYyMiAgICBcbmFsdGVyICAgICAgICAgICAgICAgICAgICAgIDAuMDI0MzM2ICAgMC4wNTY1MjkgICAwLjQzMSAwLjY2NzAxNiAgICBcbmdlc2NobGVjaHRNYW5uICAgICAgICAgICAgLTEuOTY0OTEwICAgMC41MzkwOTYgIC0zLjY0NSAwLjAwMDI5NiAqKipcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG5SZXNpZHVhbCBzdGFuZGFyZCBlcnJvcjogNC40OTIgb24gNDg5IGRlZ3JlZXMgb2YgZnJlZWRvbVxuTXVsdGlwbGUgUi1zcXVhcmVkOiAgMC4zMTAzLFx0QWRqdXN0ZWQgUi1zcXVhcmVkOiAgMC4yOTc2IFxuRi1zdGF0aXN0aWM6IDI0LjQ0IG9uIDkgYW5kIDQ4OSBERiwgIHAtdmFsdWU6IDwgMi4yZS0xNlxuIn0= -->
+<pre><code>
+Call:
+lm(formula = PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst + 
+    cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf + SWE_Skala + 
+    dauer + alter + geschlecht, data = d.g3_pol)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.8966 -3.2134 -0.8381  2.8275 14.9255 
+
+Coefficients:
+                           Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)               -7.097442   2.631943  -2.697 0.007246 ** 
+cope_problfoc_active      -0.501477   0.267785  -1.873 0.061709 .  
+cope_dysfunct_subst        3.695281   0.469864   7.865 2.39e-14 ***
+cope_dysfunct_avoid        1.390006   0.295602   4.702 3.35e-06 ***
+TraumaArbeit&gt;1 Traumata    1.647816   0.638676   2.580 0.010169 *  
+TraumaVorBeruf&gt;1 Traumata  1.265144   0.441615   2.865 0.004352 ** 
+SWE_Skala                  0.229935   0.061918   3.714 0.000228 ***
+dauer                      0.006016   0.056752   0.106 0.915622    
+alter                      0.024336   0.056529   0.431 0.667016    
+geschlechtMann            -1.964910   0.539096  -3.645 0.000296 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.492 on 489 degrees of freedom
+Multiple R-squared:  0.3103,    Adjusted R-squared:  0.2976 
+F-statistic: 24.44 on 9 and 489 DF,  p-value: &lt; 2.2e-16</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -628,13 +740,53 @@ summary(fit)</code></pre>
 <h3>Spitalnotfall</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzRfc3BpKVxudmlmKGZpdCkgPiA0XG5zdW1tYXJ5KGZpdClcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzRfc3BpKVxudmlmKGZpdCkgPiA0XG5gYGAifQ== -->
 <pre class="r"><code>fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
            SWE_Skala + dauer + alter + geschlecht, data=d.g4_spi)
-vif(fit) &gt; 4
-summary(fit)</code></pre>
+vif(fit) &gt; 4</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiY29wZV9wcm9ibGZvY19hY3RpdmUgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgIGNvcGVfZHlzZnVuY3RfYXZvaWQgXG4gICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSBcbiAgICAgICAgVHJhdW1hQXJiZWl0ICAgICAgIFRyYXVtYVZvckJlcnVmICAgICAgICAgICAgU1dFX1NrYWxhIFxuICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgXG4gICAgICAgICAgICAgICBkYXVlciAgICAgICAgICAgICAgICBhbHRlciAgICAgICAgICAgZ2VzY2hsZWNodCBcbiAgICAgICAgICAgICAgICBUUlVFICAgICAgICAgICAgICAgICBUUlVFICAgICAgICAgICAgICAgIEZBTFNFIFxuIn0= -->
+<pre><code>cope_problfoc_active  cope_dysfunct_subst  cope_dysfunct_avoid 
+               FALSE                FALSE                FALSE 
+        TraumaArbeit       TraumaVorBeruf            SWE_Skala 
+               FALSE                FALSE                FALSE 
+               dauer                alter           geschlecht 
+                TRUE                 TRUE                FALSE </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQpXG5gYGAifQ== -->
+<pre class="r"><code>summary(fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKyBcbiAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkICsgVHJhdW1hQXJiZWl0ICsgVHJhdW1hVm9yQmVydWYgKyBTV0VfU2thbGEgKyBcbiAgICBkYXVlciArIGFsdGVyICsgZ2VzY2hsZWNodCwgZGF0YSA9IGQuZzRfc3BpKVxuXG5SZXNpZHVhbHM6XG4gICAgTWluICAgICAgMVEgIE1lZGlhbiAgICAgIDNRICAgICBNYXggXG4tOC41MDc1IC0zLjIwNzAgLTAuMjUxNSAgMi44Njc1IDEwLjA3MDIgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICBcbihJbnRlcmNlcHQpICAgICAgICAgICAgICAgIDAuNjc3NTQgICAgNy4wODA1MyAgIDAuMDk2ICAgMC45MjQwICBcbmNvcGVfcHJvYmxmb2NfYWN0aXZlICAgICAgLTAuMzU5ODEgICAgMC42OTM2OCAgLTAuNTE5ICAgMC42MDU1ICBcbmNvcGVfZHlzZnVuY3Rfc3Vic3QgICAgICAgIDIuODI0NTYgICAgMS41MDg5OSAgIDEuODcyICAgMC4wNjUxIC5cbmNvcGVfZHlzZnVuY3RfYXZvaWQgICAgICAgIDAuNjU2OTUgICAgMC43OTYwMiAgIDAuODI1ICAgMC40MTE4ICBcblRyYXVtYUFyYmVpdD4xIFRyYXVtYXRhICAgIDguMzM3NDUgICAgNC4zOTE2NyAgIDEuODk4ICAgMC4wNjE1IC5cblRyYXVtYVZvckJlcnVmPjEgVHJhdW1hdGEgLTEuMDcwNzUgICAgMC45NTQ2NCAgLTEuMTIyICAgMC4yNjU2ICBcblNXRV9Ta2FsYSAgICAgICAgICAgICAgICAgLTAuMzA4NDcgICAgMC4xNjAyMCAgLTEuOTI2ICAgMC4wNTc5IC5cbmRhdWVyICAgICAgICAgICAgICAgICAgICAgIDAuMDEyODQgICAgMC4xMDQxMCAgIDAuMTIzICAgMC45MDIyICBcbmFsdGVyICAgICAgICAgICAgICAgICAgICAgIDAuMTQyMDAgICAgMC4xMDMwOCAgIDEuMzc4ICAgMC4xNzI0ICBcbmdlc2NobGVjaHRNYW5uICAgICAgICAgICAgLTMuODA4NzEgICAgMS40ODM2NSAgLTIuNTY3ICAgMC4wMTIyICpcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG5SZXNpZHVhbCBzdGFuZGFyZCBlcnJvcjogNC4yNTEgb24gNzUgZGVncmVlcyBvZiBmcmVlZG9tXG5NdWx0aXBsZSBSLXNxdWFyZWQ6ICAwLjMxOTgsXHRBZGp1c3RlZCBSLXNxdWFyZWQ6ICAwLjIzODEgXG5GLXN0YXRpc3RpYzogMy45MTcgb24gOSBhbmQgNzUgREYsICBwLXZhbHVlOiAwLjAwMDQwNzNcbiJ9 -->
+<pre><code>
+Call:
+lm(formula = PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst + 
+    cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf + SWE_Skala + 
+    dauer + alter + geschlecht, data = d.g4_spi)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-8.5075 -3.2070 -0.2515  2.8675 10.0702 
+
+Coefficients:
+                          Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept)                0.67754    7.08053   0.096   0.9240  
+cope_problfoc_active      -0.35981    0.69368  -0.519   0.6055  
+cope_dysfunct_subst        2.82456    1.50899   1.872   0.0651 .
+cope_dysfunct_avoid        0.65695    0.79602   0.825   0.4118  
+TraumaArbeit&gt;1 Traumata    8.33745    4.39167   1.898   0.0615 .
+TraumaVorBeruf&gt;1 Traumata -1.07075    0.95464  -1.122   0.2656  
+SWE_Skala                 -0.30847    0.16020  -1.926   0.0579 .
+dauer                      0.01284    0.10410   0.123   0.9022  
+alter                      0.14200    0.10308   1.378   0.1724  
+geschlechtMann            -3.80871    1.48365  -2.567   0.0122 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.251 on 75 degrees of freedom
+Multiple R-squared:  0.3198,    Adjusted R-squared:  0.2381 
+F-statistic: 3.917 on 9 and 75 DF,  p-value: 0.0004073</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -642,13 +794,54 @@ summary(fit)</code></pre>
 <h3>Psychiatrie</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzVfcHN5KVxudmlmKGZpdCkgPiA0XG5zdW1tYXJ5KGZpdClcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzVfcHN5KVxudmlmKGZpdCkgPiA0XG5gYGAifQ== -->
 <pre class="r"><code>fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
            SWE_Skala + dauer + alter + geschlecht, data=d.g5_psy)
-vif(fit) &gt; 4
-summary(fit)</code></pre>
+vif(fit) &gt; 4</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiY29wZV9wcm9ibGZvY19hY3RpdmUgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgIGNvcGVfZHlzZnVuY3RfYXZvaWQgXG4gICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSAgICAgICAgICAgICAgICBGQUxTRSBcbiAgICAgICAgVHJhdW1hQXJiZWl0ICAgICAgIFRyYXVtYVZvckJlcnVmICAgICAgICAgICAgU1dFX1NrYWxhIFxuICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgICAgICAgICAgICAgICAgRkFMU0UgXG4gICAgICAgICAgICAgICBkYXVlciAgICAgICAgICAgICAgICBhbHRlciAgICAgICAgICAgZ2VzY2hsZWNodCBcbiAgICAgICAgICAgICAgIEZBTFNFICAgICAgICAgICAgICAgIEZBTFNFICAgICAgICAgICAgICAgIEZBTFNFIFxuIn0= -->
+<pre><code>cope_problfoc_active  cope_dysfunct_subst  cope_dysfunct_avoid 
+               FALSE                FALSE                FALSE 
+        TraumaArbeit       TraumaVorBeruf            SWE_Skala 
+               FALSE                FALSE                FALSE 
+               dauer                alter           geschlecht 
+               FALSE                FALSE                FALSE </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQpXG5gYGAifQ== -->
+<pre class="r"><code>summary(fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKyBcbiAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkICsgVHJhdW1hQXJiZWl0ICsgVHJhdW1hVm9yQmVydWYgKyBTV0VfU2thbGEgKyBcbiAgICBkYXVlciArIGFsdGVyICsgZ2VzY2hsZWNodCwgZGF0YSA9IGQuZzVfcHN5KVxuXG5SZXNpZHVhbHM6XG4gICBNaW4gICAgIDFRIE1lZGlhbiAgICAgM1EgICAgTWF4IFxuLTcuNzgyIC0yLjQzNiAgMC4wNTQgIDIuODQ5ICA4LjUzNiBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHQgdmFsdWUgUHIoPnx0fCkgICBcbihJbnRlcmNlcHQpICAgICAgICAgICAgICAgMTIuNDQ3NDcgICAgNi43MjU3OCAgIDEuODUxICAwLjA2OTMxIC4gXG5jb3BlX3Byb2JsZm9jX2FjdGl2ZSAgICAgICAwLjgxMjU3ICAgIDAuNzg5MjAgICAxLjAzMCAgMC4zMDc0NyAgIFxuY29wZV9keXNmdW5jdF9zdWJzdCAgICAgICAgMS4yNjQyMyAgICAwLjgwNTcyICAgMS41NjkgIDAuMTIyMDcgICBcbmNvcGVfZHlzZnVuY3RfYXZvaWQgICAgICAgIDEuMDM0MjIgICAgMC42NjU2MyAgIDEuNTU0ICAwLjEyNTY4ICAgXG5UcmF1bWFBcmJlaXQ+MSBUcmF1bWF0YSAgICAxLjExOTQ2ICAgIDEuODI3NTggICAwLjYxMyAgMC41NDI1OCAgIFxuVHJhdW1hVm9yQmVydWY+MSBUcmF1bWF0YSAgMS41MzE0NCAgICAxLjAzNzM4ICAgMS40NzYgIDAuMTQ1MjggICBcblNXRV9Ta2FsYSAgICAgICAgICAgICAgICAgLTAuNDQ3MzIgICAgMC4xNTAxMSAgLTIuOTgwICAwLjAwNDIxICoqXG5kYXVlciAgICAgICAgICAgICAgICAgICAgICAwLjEzNDEwICAgIDAuMDgxNzkgICAxLjY0MCAgMC4xMDY1MCAgIFxuYWx0ZXIgICAgICAgICAgICAgICAgICAgICAtMC4wNTUyNiAgICAwLjA3NzE3ICAtMC43MTYgIDAuNDc2NzkgICBcbmdlc2NobGVjaHRNYW5uICAgICAgICAgICAgIDAuMDMwOTIgICAgMS4xMjI0MSAgIDAuMDI4ICAwLjk3ODEyICAgXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuUmVzaWR1YWwgc3RhbmRhcmQgZXJyb3I6IDMuODcgb24gNTggZGVncmVlcyBvZiBmcmVlZG9tXG4gICgxNCBvYnNlcnZhdGlvbnMgZGVsZXRlZCBkdWUgdG8gbWlzc2luZ25lc3MpXG5NdWx0aXBsZSBSLXNxdWFyZWQ6ICAwLjMwODYsXHRBZGp1c3RlZCBSLXNxdWFyZWQ6ICAwLjIwMTMgXG5GLXN0YXRpc3RpYzogMi44NzYgb24gOSBhbmQgNTggREYsICBwLXZhbHVlOiAwLjAwNzA3M1xuIn0= -->
+<pre><code>
+Call:
+lm(formula = PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst + 
+    cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf + SWE_Skala + 
+    dauer + alter + geschlecht, data = d.g5_psy)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-7.782 -2.436  0.054  2.849  8.536 
+
+Coefficients:
+                          Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)               12.44747    6.72578   1.851  0.06931 . 
+cope_problfoc_active       0.81257    0.78920   1.030  0.30747   
+cope_dysfunct_subst        1.26423    0.80572   1.569  0.12207   
+cope_dysfunct_avoid        1.03422    0.66563   1.554  0.12568   
+TraumaArbeit&gt;1 Traumata    1.11946    1.82758   0.613  0.54258   
+TraumaVorBeruf&gt;1 Traumata  1.53144    1.03738   1.476  0.14528   
+SWE_Skala                 -0.44732    0.15011  -2.980  0.00421 **
+dauer                      0.13410    0.08179   1.640  0.10650   
+alter                     -0.05526    0.07717  -0.716  0.47679   
+geschlechtMann             0.03092    1.12241   0.028  0.97812   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.87 on 58 degrees of freedom
+  (14 observations deleted due to missingness)
+Multiple R-squared:  0.3086,    Adjusted R-squared:  0.2013 
+F-statistic: 2.876 on 9 and 58 DF,  p-value: 0.007073</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -734,7 +927,7 @@ library(semPlot)</code></pre>
 <h3>Model</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kZWwgPSAnUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgXG4gICAgICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArXG4gICAgICAgICAgICAgICAgICAgICAgVHJhdW1hQXJiZWl0ICtcbiAgICAgICAgICAgICAgICAgICAgICBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgICAgICAgICAgICAgU1dFX1NrYWxhICtcbiAgICAgICAgICAgICAgICAgICAgICBkYXVlciArXG4gICAgICAgICAgICAgICAgICAgICAgZ2VzY2hsZWNodFxuICAgICAgICAgR0hRID1+IEdIUV9Qc3kgKyBHSFFfRW1vdCArIEdIUV9TVU0gXG4gICAgICAgICBCU0NMID1+IEJTQ0xfR1NJICsgQlNDTF9QU1QgKyBCU0NMX1BTRElcbiAgICAgICAgIEJTQ0wgfiBQVFNTX1NrYWxhXG4gICAgICAgICBHSFEgPX4gUFRTU19Ta2FsYVxuICAgICAgICAgc3VpemlkZ2VkYW5rZW4gfiBQVFNTX1NrYWxhJ1xuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kZWwgPSAnUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgXG4gICAgICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArXG4gICAgICAgICAgICAgICAgICAgICAgVHJhdW1hQXJiZWl0ICtcbiAgICAgICAgICAgICAgICAgICAgICBUcmF1bWFWb3JCZXJ1ZiArXG4gICAgICAgICAgICAgICAgICAgICAgU1dFX1NrYWxhICtcbiAgICAgICAgICAgICAgICAgICAgICBkYXVlciArXG4gICAgICAgICAgICAgICAgICAgICAgZ2VzY2hsZWNodFxuICAgICAgICAgR0hRID1+IEdIUV9Qc3kgKyBHSFFfRW1vdCArIEdIUV9TVU0gXG4gICAgICAgICBCU0NMID1+IEJTQ0xfR1NJICsgQlNDTF9QU1QgKyBCU0NMX1BTRElcbiAgICAgICAgIEJTQ0wgfiBQVFNTX1NrYWxhXG4gICAgICAgICBHSFEgfiBQVFNTX1NrYWxhXG4gICAgICAgICBzdWl6aWRnZWRhbmtlbiB+IFBUU1NfU2thbGEnXG5gYGAifQ== -->
 <pre class="r"><code>model = 'PTSS_Skala ~ cope_problfoc_active + 
                       cope_dysfunct_subst +
                       cope_dysfunct_avoid +
@@ -746,38 +939,631 @@ library(semPlot)</code></pre>
          GHQ =~ GHQ_Psy + GHQ_Emot + GHQ_SUM 
          BSCL =~ BSCL_GSI + BSCL_PST + BSCL_PSDI
          BSCL ~ PTSS_Skala
-         GHQ =~ PTSS_Skala
+         GHQ ~ PTSS_Skala
          suizidgedanken ~ PTSS_Skala'</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kZWwgPSAnU3RyZXNzID1+IFBUU1NfU2thbGEgK1xuICAgICAgICAgICAgICAgICAgICAgIFRyYXVtYUFyYmVpdCArXG4gICAgICAgICAgICAgICAgICAgICAgVHJhdW1hVm9yQmVydWYgK1xuICAgICAgICAgICAgICAgICAgICAgIFNXRV9Ta2FsYSArXG4gICAgICAgICAgICAgICAgICAgICAgZGF1ZXIgK1xuICAgICAgICAgICAgICAgICAgICAgIGdlc2NobGVjaHRcbiAgICAgICAgIENvcGluZyA9fiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArXG4gICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZFxuICAgICAgICAgV29obGJlZmluZGVuID1+IEdIUV9Qc3kgKyBHSFFfRW1vdCArIEdIUV9TVU0gXG4gICAgICAgICBCZWxhc3R1bmcgPX4gQlNDTF9HU0kgKyBCU0NMX1BTVCArIEJTQ0xfUFNESVxuICAgICAgICAgU3RyZXNzIH4gV29obGJlZmluZGVuICsgQmVsYXN0dW5nICsgQ29waW5nJ1xuYGBgIn0= -->
-<pre class="r"><code>model = 'Stress =~ PTSS_Skala +
-                      TraumaArbeit +
-                      TraumaVorBeruf +
-                      SWE_Skala +
-                      dauer +
-                      geschlecht
-         Coping =~ cope_problfoc_active +
-                   cope_dysfunct_subst +
-                   cope_dysfunct_avoid
-         Wohlbefinden =~ GHQ_Psy + GHQ_Emot + GHQ_SUM 
-         Belastung =~ BSCL_GSI + BSCL_PST + BSCL_PSDI
-         Stress ~ Wohlbefinden + Belastung + Coping'</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBtb2RlbCA9ICdTdHJlc3MgPX4gUFRTU19Ta2FsYSArXG4jICAgICAgICAgICAgICAgICAgICAgICBUcmF1bWFBcmJlaXQgK1xuIyAgICAgICAgICAgICAgICAgICAgICAgVHJhdW1hVm9yQmVydWYgK1xuIyAgICAgICAgICAgICAgICAgICAgICAgU1dFX1NrYWxhICtcbiMgICAgICAgICAgICAgICAgICAgICAgIGRhdWVyICtcbiMgICAgICAgICAgICAgICAgICAgICAgIGdlc2NobGVjaHRcbiMgICAgICAgICAgQ29waW5nID1+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICtcbiMgICAgICAgICAgICAgICAgICAgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgK1xuIyAgICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZFxuIyAgICAgICAgICBXb2hsYmVmaW5kZW4gPX4gR0hRX1BzeSArIEdIUV9FbW90ICsgR0hRX1NVTSBcbiMgICAgICAgICAgQmVsYXN0dW5nID1+IEJTQ0xfR1NJICsgQlNDTF9QU1QgKyBCU0NMX1BTRElcbiMgICAgICAgICAgU3RyZXNzIH4gV29obGJlZmluZGVuICsgQmVsYXN0dW5nICsgQ29waW5nJ1xuYGBgIn0= -->
+<pre class="r"><code># model = 'Stress =~ PTSS_Skala +
+#                       TraumaArbeit +
+#                       TraumaVorBeruf +
+#                       SWE_Skala +
+#                       dauer +
+#                       geschlecht
+#          Coping =~ cope_problfoc_active +
+#                    cope_dysfunct_subst +
+#                    cope_dysfunct_avoid
+#          Wohlbefinden =~ GHQ_Psy + GHQ_Emot + GHQ_SUM 
+#          Belastung =~ BSCL_GSI + BSCL_PST + BSCL_PSDI
+#          Stress ~ Wohlbefinden + Belastung + Coping'</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="alle-1" class="section level3">
+<h3>Alle</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQpXG5gYGAifQ== -->
+<pre class="r"><code>fit = sem(model=model, data=d)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuIFdBUk5JTkc6IHNvbWUgZXN0aW1hdGVkIG92IHZhcmlhbmNlcyBhcmUgbmVnYXRpdmVcbiJ9 -->
+<pre><code>lavaan WARNING: some estimated ov variances are negative</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>summary(fit, fit.measures=TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyIDEwMiBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgODY3ICAgICAgICAxMDAyXG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICA1NzUuNzMzXG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNzJcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgNzIwOC40NjlcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA5MlxuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC45MjlcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjkxMFxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgICAgICAgIE5BXG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAgICAgICAgTkFcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDI4XG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTkFcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuXG5Sb290IE1lYW4gU3F1YXJlIEVycm9yIG9mIEFwcHJveGltYXRpb246XG5cbiAgUk1TRUEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjA5MFxuICA5MCBQZXJjZW50IENvbmZpZGVuY2UgSW50ZXJ2YWwgICAgICAgICAgMC4wODMgIDAuMDk3XG4gIFAtdmFsdWUgUk1TRUEgPD0gMC4wNSAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDBcblxuU3RhbmRhcmRpemVkIFJvb3QgTWVhbiBTcXVhcmUgUmVzaWR1YWw6XG5cbiAgU1JNUiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjA0M1xuXG5QYXJhbWV0ZXIgRXN0aW1hdGVzOlxuXG4gIEluZm9ybWF0aW9uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRXhwZWN0ZWRcbiAgU3RhbmRhcmQgRXJyb3JzICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTdGFuZGFyZFxuXG5MYXRlbnQgVmFyaWFibGVzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIEdIUSA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBHSFFfUHN5ICAgICAgICAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEdIUV9FbW90ICAgICAgICAgIDEuMzc3ICAgIDAuMDM5ICAgMzUuMzMzICAgIDAuMDAwXG4gICAgR0hRX1NVTSAgICAgICAgICAgMy45NzAgICAgMC4wOTEgICA0My44MjEgICAgMC4wMDBcbiAgQlNDTCA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfR1NJICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU1QgICAgICAgICAyMy4zNTEgICAgMC4zNjYgICA2My44NTYgICAgMC4wMDBcbiAgICBCU0NMX1BTREkgICAgICAgICAwLjY1NSAgICAwLjAzOSAgIDE2LjgxMCAgICAwLjAwMFxuXG5SZWdyZXNzaW9uczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuICBQVFNTX1NrYWxhIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgY29wX3ByYmxmY19jdHYgICAtMC40NDQgICAgMC4yMDEgICAtMi4yMTAgICAgMC4wMjdcbiAgICBjcF9keXNmbmN0X3NicyAgICAyLjkyOSAgICAwLjMzMSAgICA4Ljg1OSAgICAwLjAwMFxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDEuMzQzICAgIDAuMjI2ICAgIDUuOTQxICAgIDAuMDAwXG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMi4wMzQgICAgMC41MDEgICAgNC4wNjQgICAgMC4wMDBcbiAgICBUcmF1bWFWb3JCZXJ1ZiAgICAwLjYyNyAgICAwLjMyOCAgICAxLjkxMSAgICAwLjA1NlxuICAgIFNXRV9Ta2FsYSAgICAgICAgIDAuMTUxICAgIDAuMDQ2ICAgIDMuMzA2ICAgIDAuMDAxXG4gICAgZGF1ZXIgICAgICAgICAgICAgMC4wMzkgICAgMC4wMTcgICAgMi4zMzkgICAgMC4wMTlcbiAgICBnZXNjaGxlY2h0ICAgICAgIC0xLjYyOCAgICAwLjM1NiAgIC00LjU3MCAgICAwLjAwMFxuICBCU0NMIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgUFRTU19Ta2FsYSAgICAgICAgMC4wNDggICAgMC4wMDIgICAzMS44MTEgICAgMC4wMDBcbiAgR0hRIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIFBUU1NfU2thbGEgICAgICAgIDAuMTQ1ICAgIDAuMDA3ICAgMTkuNjA1ICAgIDAuMDAwXG4gIHN1aXppZGdlZGFua2VuIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAwLjAxMiAgICAwLjAwMSAgICA4LjE4MiAgICAwLjAwMFxuXG5Db3ZhcmlhbmNlczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuIC5HSFEgfn4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAuQlNDTCAgICAgICAgICAgICAgMC4wNjQgICAgMC4wMDcgICAgOC42NDAgICAgMC4wMDBcbiAgIC5zdWl6aWRnZWRhbmtlbiAgICAwLjAzMCAgICAwLjAwNyAgICA0LjQ2MSAgICAwLjAwMFxuIC5CU0NMIH5+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAuc3VpemlkZ2VkYW5rZW4gICAgMC4wMTEgICAgMC4wMDIgICAgNi4zOTcgICAgMC4wMDBcblxuVmFyaWFuY2VzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gICAuR0hRX1BzeSAgICAgICAgICAgMC43ODYgICAgMC4wMzYgICAyMS41NTEgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAwLjgzMSAgICAwLjA0MSAgIDIwLjA4MCAgICAwLjAwMFxuICAgLkdIUV9TVU0gICAgICAgICAgLTIuMTY2ICAgIDAuMTc5ICAtMTIuMTAzICAgIDAuMDAwXG4gICAuQlNDTF9HU0kgICAgICAgICAtMC4wMDIgICAgMC4wMDEgICAtMS43MTUgICAgMC4wODZcbiAgIC5CU0NMX1BTVCAgICAgICAgICA5LjcxOSAgICAwLjczOCAgIDEzLjE2NyAgICAwLjAwMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMTUxICAgIDAuMDA3ICAgMjAuODc1ICAgIDAuMDAwXG4gICAuUFRTU19Ta2FsYSAgICAgICAyMC40NjEgICAgMC45ODMgICAyMC44MjEgICAgMC4wMDBcbiAgIC5zdWl6aWRnZWRhbmtlbiAgICAwLjA0OSAgICAwLjAwMiAgIDIwLjgyMSAgICAwLjAwMFxuICAgLkdIUSAgICAgICAgICAgICAgIDEuMDM2ICAgIDAuMDY1ICAgMTUuODk0ICAgIDAuMDAwXG4gICAuQlNDTCAgICAgICAgICAgICAgMC4wNTQgICAgMC4wMDMgICAxOS41MjUgICAgMC4wMDBcbiJ9 -->
+<pre><code>lavaan (0.5-23.1097) converged normally after 102 iterations
+
+                                                  Used       Total
+  Number of observations                           867        1002
+
+  Estimator                                         ML
+  Minimum Function Test Statistic              575.733
+  Degrees of freedom                                72
+  P-value (Chi-square)                           0.000
+
+Model test baseline model:
+
+  Minimum Function Test Statistic             7208.469
+  Degrees of freedom                                92
+  P-value                                        0.000
+
+User model versus baseline model:
+
+  Comparative Fit Index (CFI)                    0.929
+  Tucker-Lewis Index (TLI)                       0.910
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)                     NA
+  Loglikelihood unrestricted model (H1)             NA
+
+  Number of free parameters                         28
+  Akaike (AIC)                                      NA
+  Bayesian (BIC)                                    NA
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.090
+  90 Percent Confidence Interval          0.083  0.097
+  P-value RMSEA &lt;= 0.05                          0.000
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.043
+
+Parameter Estimates:
+
+  Information                                 Expected
+  Standard Errors                             Standard
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  GHQ =~                                              
+    GHQ_Psy           1.000                           
+    GHQ_Emot          1.377    0.039   35.333    0.000
+    GHQ_SUM           3.970    0.091   43.821    0.000
+  BSCL =~                                             
+    BSCL_GSI          1.000                           
+    BSCL_PST         23.351    0.366   63.856    0.000
+    BSCL_PSDI         0.655    0.039   16.810    0.000
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  PTSS_Skala ~                                        
+    cop_prblfc_ctv   -0.444    0.201   -2.210    0.027
+    cp_dysfnct_sbs    2.929    0.331    8.859    0.000
+    cop_dysfnct_vd    1.343    0.226    5.941    0.000
+    TraumaArbeit      2.034    0.501    4.064    0.000
+    TraumaVorBeruf    0.627    0.328    1.911    0.056
+    SWE_Skala         0.151    0.046    3.306    0.001
+    dauer             0.039    0.017    2.339    0.019
+    geschlecht       -1.628    0.356   -4.570    0.000
+  BSCL ~                                              
+    PTSS_Skala        0.048    0.002   31.811    0.000
+  GHQ ~                                               
+    PTSS_Skala        0.145    0.007   19.605    0.000
+  suizidgedanken ~                                    
+    PTSS_Skala        0.012    0.001    8.182    0.000
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+ .GHQ ~~                                              
+   .BSCL              0.064    0.007    8.640    0.000
+   .suizidgedanken    0.030    0.007    4.461    0.000
+ .BSCL ~~                                             
+   .suizidgedanken    0.011    0.002    6.397    0.000
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+   .GHQ_Psy           0.786    0.036   21.551    0.000
+   .GHQ_Emot          0.831    0.041   20.080    0.000
+   .GHQ_SUM          -2.166    0.179  -12.103    0.000
+   .BSCL_GSI         -0.002    0.001   -1.715    0.086
+   .BSCL_PST          9.719    0.738   13.167    0.000
+   .BSCL_PSDI         0.151    0.007   20.875    0.000
+   .PTSS_Skala       20.461    0.983   20.821    0.000
+   .suizidgedanken    0.049    0.002   20.821    0.000
+   .GHQ               1.036    0.065   15.894    0.000
+   .BSCL              0.054    0.003   19.525    0.000</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1cIlNFTTAtYWxsXCIpXG4jaW5zcGVjdChmaXQsIFwicnNxdWFyZVwiKVxuI3BhcmFtZXRlckVzdGltYXRlcyhmaXQsIGNpID0gVFJVRSwgYm9vdC5jaS50eXBlID0gXCJub3JtXCIpXG5gYGAifQ== -->
+<pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
+         filetype=&quot;png&quot;, filename=&quot;SEM0-all&quot;)
+#inspect(fit, &quot;rsquare&quot;)
+#parameterEstimates(fit, ci = TRUE, boot.ci.type = &quot;norm&quot;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="sanitat-1" class="section level3">
+<h3>Sanität</h3>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQuZzFfc2FuKVxuYGBgIn0= -->
+<pre class="r"><code>fit = sem(model=model, data=d.g1_san)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuIFdBUk5JTkc6IHNvbWUgZXN0aW1hdGVkIG92IHZhcmlhbmNlcyBhcmUgbmVnYXRpdmVcbiJ9 -->
+<pre><code>lavaan WARNING: some estimated ov variances are negative</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>summary(fit, fit.measures=TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyIDEwOCBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgIDgxICAgICAgICAgIDk3XG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAxMzMuMjEwXG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNzJcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgIDkwNS4xMTNcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA5MlxuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC45MjVcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjkwNFxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgICAgICAgIE5BXG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAgICAgICAgTkFcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDI4XG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTkFcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuXG5Sb290IE1lYW4gU3F1YXJlIEVycm9yIG9mIEFwcHJveGltYXRpb246XG5cbiAgUk1TRUEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjEwMlxuICA5MCBQZXJjZW50IENvbmZpZGVuY2UgSW50ZXJ2YWwgICAgICAgICAgMC4wNzUgIDAuMTI5XG4gIFAtdmFsdWUgUk1TRUEgPD0gMC4wNSAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDJcblxuU3RhbmRhcmRpemVkIFJvb3QgTWVhbiBTcXVhcmUgUmVzaWR1YWw6XG5cbiAgU1JNUiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjA3NVxuXG5QYXJhbWV0ZXIgRXN0aW1hdGVzOlxuXG4gIEluZm9ybWF0aW9uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRXhwZWN0ZWRcbiAgU3RhbmRhcmQgRXJyb3JzICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTdGFuZGFyZFxuXG5MYXRlbnQgVmFyaWFibGVzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIEdIUSA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBHSFFfUHN5ICAgICAgICAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEdIUV9FbW90ICAgICAgICAgIDEuMTQwICAgIDAuMDg1ICAgMTMuMzkwICAgIDAuMDAwXG4gICAgR0hRX1NVTSAgICAgICAgICAgMy40NTMgICAgMC4xNzAgICAyMC4zNTIgICAgMC4wMDBcbiAgQlNDTCA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfR1NJICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU1QgICAgICAgICAxOC45MTMgICAgMS4wNDAgICAxOC4xODAgICAgMC4wMDBcbiAgICBCU0NMX1BTREkgICAgICAgICAwLjc0MCAgICAwLjA3NCAgIDEwLjA0NyAgICAwLjAwMFxuXG5SZWdyZXNzaW9uczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuICBQVFNTX1NrYWxhIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgY29wX3ByYmxmY19jdHYgICAgMC40OTIgICAgMC43NDcgICAgMC42NjAgICAgMC41MTBcbiAgICBjcF9keXNmbmN0X3NicyAgICAyLjg0NSAgICAxLjI2OCAgICAyLjI0MyAgICAwLjAyNVxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDIuMDI4ICAgIDAuOTI3ICAgIDIuMTg5ICAgIDAuMDI5XG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMy40OTEgICAgMy4xMTUgICAgMS4xMjEgICAgMC4yNjJcbiAgICBUcmF1bWFWb3JCZXJ1ZiAgICAxLjE2NyAgICAxLjE0MyAgICAxLjAyMSAgICAwLjMwN1xuICAgIFNXRV9Ta2FsYSAgICAgICAgIDAuNDY1ICAgIDAuMTYyICAgIDIuODcwICAgIDAuMDA0XG4gICAgZGF1ZXIgICAgICAgICAgICAgMC4xNDQgICAgMC4wNzUgICAgMS45MjUgICAgMC4wNTRcbiAgICBnZXNjaGxlY2h0ICAgICAgICAwLjQ1OCAgICAxLjE4NCAgICAwLjM4NyAgICAwLjY5OVxuICBCU0NMIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgUFRTU19Ta2FsYSAgICAgICAgMC4wNDggICAgMC4wMDYgICAgOC40NDkgICAgMC4wMDBcbiAgR0hRIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIFBUU1NfU2thbGEgICAgICAgIDAuMjAzICAgIDAuMDI3ICAgIDcuNTA1ICAgIDAuMDAwXG4gIHN1aXppZGdlZGFua2VuIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAwLjAyMSAgICAwLjAwNSAgICA0LjU2NCAgICAwLjAwMFxuXG5Db3ZhcmlhbmNlczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuIC5HSFEgfn4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAuQlNDTCAgICAgICAgICAgICAgMC4xMTkgICAgMC4wMzkgICAgMy4wODQgICAgMC4wMDJcbiAgIC5zdWl6aWRnZWRhbmtlbiAgICAwLjA5MSAgICAwLjAzMiAgICAyLjg2OSAgICAwLjAwNFxuIC5CU0NMIH5+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAuc3VpemlkZ2VkYW5rZW4gICAgMC4wMzUgICAgMC4wMDggICAgNC4xOTcgICAgMC4wMDBcblxuVmFyaWFuY2VzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gICAuR0hRX1BzeSAgICAgICAgICAgMC43NTYgICAgMC4xMTQgICAgNi42NDYgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAwLjk2NyAgICAwLjE0NiAgICA2LjYzNiAgICAwLjAwMFxuICAgLkdIUV9TVU0gICAgICAgICAgLTIuNDUwICAgIDAuNTQ0ICAgLTQuNTA2ICAgIDAuMDAwXG4gICAuQlNDTF9HU0kgICAgICAgICAtMC4wMTcgICAgMC4wMDQgICAtMy43MTQgICAgMC4wMDBcbiAgIC5CU0NMX1BTVCAgICAgICAgIDE4LjcyMCAgICAzLjAzMiAgICA2LjE3NSAgICAwLjAwMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMDg3ICAgIDAuMDEzICAgIDYuODA2ICAgIDAuMDAwXG4gICAuUFRTU19Ta2FsYSAgICAgICAyMy45MjUgICAgMy43NTkgICAgNi4zNjQgICAgMC4wMDBcbiAgIC5zdWl6aWRnZWRhbmtlbiAgICAwLjA1NSAgICAwLjAwOSAgICA2LjM2NCAgICAwLjAwMFxuICAgLkdIUSAgICAgICAgICAgICAgIDEuNzE5ICAgIDAuMzAyICAgIDUuNjkzICAgIDAuMDAwXG4gICAuQlNDTCAgICAgICAgICAgICAgMC4xMDYgICAgMC4wMTUgICAgNy4xOTYgICAgMC4wMDBcbiJ9 -->
+<pre><code>lavaan (0.5-23.1097) converged normally after 108 iterations
+
+                                                  Used       Total
+  Number of observations                            81          97
+
+  Estimator                                         ML
+  Minimum Function Test Statistic              133.210
+  Degrees of freedom                                72
+  P-value (Chi-square)                           0.000
+
+Model test baseline model:
+
+  Minimum Function Test Statistic              905.113
+  Degrees of freedom                                92
+  P-value                                        0.000
+
+User model versus baseline model:
+
+  Comparative Fit Index (CFI)                    0.925
+  Tucker-Lewis Index (TLI)                       0.904
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)                     NA
+  Loglikelihood unrestricted model (H1)             NA
+
+  Number of free parameters                         28
+  Akaike (AIC)                                      NA
+  Bayesian (BIC)                                    NA
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.102
+  90 Percent Confidence Interval          0.075  0.129
+  P-value RMSEA &lt;= 0.05                          0.002
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.075
+
+Parameter Estimates:
+
+  Information                                 Expected
+  Standard Errors                             Standard
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  GHQ =~                                              
+    GHQ_Psy           1.000                           
+    GHQ_Emot          1.140    0.085   13.390    0.000
+    GHQ_SUM           3.453    0.170   20.352    0.000
+  BSCL =~                                             
+    BSCL_GSI          1.000                           
+    BSCL_PST         18.913    1.040   18.180    0.000
+    BSCL_PSDI         0.740    0.074   10.047    0.000
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  PTSS_Skala ~                                        
+    cop_prblfc_ctv    0.492    0.747    0.660    0.510
+    cp_dysfnct_sbs    2.845    1.268    2.243    0.025
+    cop_dysfnct_vd    2.028    0.927    2.189    0.029
+    TraumaArbeit      3.491    3.115    1.121    0.262
+    TraumaVorBeruf    1.167    1.143    1.021    0.307
+    SWE_Skala         0.465    0.162    2.870    0.004
+    dauer             0.144    0.075    1.925    0.054
+    geschlecht        0.458    1.184    0.387    0.699
+  BSCL ~                                              
+    PTSS_Skala        0.048    0.006    8.449    0.000
+  GHQ ~                                               
+    PTSS_Skala        0.203    0.027    7.505    0.000
+  suizidgedanken ~                                    
+    PTSS_Skala        0.021    0.005    4.564    0.000
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+ .GHQ ~~                                              
+   .BSCL              0.119    0.039    3.084    0.002
+   .suizidgedanken    0.091    0.032    2.869    0.004
+ .BSCL ~~                                             
+   .suizidgedanken    0.035    0.008    4.197    0.000
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+   .GHQ_Psy           0.756    0.114    6.646    0.000
+   .GHQ_Emot          0.967    0.146    6.636    0.000
+   .GHQ_SUM          -2.450    0.544   -4.506    0.000
+   .BSCL_GSI         -0.017    0.004   -3.714    0.000
+   .BSCL_PST         18.720    3.032    6.175    0.000
+   .BSCL_PSDI         0.087    0.013    6.806    0.000
+   .PTSS_Skala       23.925    3.759    6.364    0.000
+   .suizidgedanken    0.055    0.009    6.364    0.000
+   .GHQ               1.719    0.302    5.693    0.000
+   .BSCL              0.106    0.015    7.196    0.000</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1cIlNFTTEtU2FuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
+         filetype=&quot;png&quot;, filename=&quot;SEM1-San&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="feuerwehr-1" class="section level3">
+<h3>Feuerwehr</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQuZzJfZmV1KVxuYGBgIn0= -->
+<pre class="r"><code>fit = sem(model=model, data=d.g2_feu)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuIFdBUk5JTkc6IHNvbWUgZXN0aW1hdGVkIG92IHZhcmlhbmNlcyBhcmUgbmVnYXRpdmVcbiJ9 -->
+<pre><code>lavaan WARNING: some estimated ov variances are negative</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1cIlNFTTItRmV1XCIpXG5gYGAifQ== -->
+<pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
+         filetype=&quot;png&quot;, filename=&quot;SEM2-Feu&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="polizei-1" class="section level3">
+<h3>Polizei</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQuZzNfcG9sKVxuYGBgIn0= -->
+<pre class="r"><code>fit = sem(model=model, data=d.g3_pol)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuIFdBUk5JTkc6IHNvbWUgZXN0aW1hdGVkIG92IHZhcmlhbmNlcyBhcmUgbmVnYXRpdmVcbiJ9 -->
+<pre><code>lavaan WARNING: some estimated ov variances are negative</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>summary(fit, fit.measures=TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyIDEwMyBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgNDQ0ICAgICAgICAgNDk5XG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAzMTYuMTI2XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNzJcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgMzg1My45MTdcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA5MlxuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC45MzVcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjkxN1xuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgICAgICAgIE5BXG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAgICAgICAgTkFcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDI4XG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTkFcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuXG5Sb290IE1lYW4gU3F1YXJlIEVycm9yIG9mIEFwcHJveGltYXRpb246XG5cbiAgUk1TRUEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjA4N1xuICA5MCBQZXJjZW50IENvbmZpZGVuY2UgSW50ZXJ2YWwgICAgICAgICAgMC4wNzggIDAuMDk3XG4gIFAtdmFsdWUgUk1TRUEgPD0gMC4wNSAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDBcblxuU3RhbmRhcmRpemVkIFJvb3QgTWVhbiBTcXVhcmUgUmVzaWR1YWw6XG5cbiAgU1JNUiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjA0MlxuXG5QYXJhbWV0ZXIgRXN0aW1hdGVzOlxuXG4gIEluZm9ybWF0aW9uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRXhwZWN0ZWRcbiAgU3RhbmRhcmQgRXJyb3JzICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTdGFuZGFyZFxuXG5MYXRlbnQgVmFyaWFibGVzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIEdIUSA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBHSFFfUHN5ICAgICAgICAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEdIUV9FbW90ICAgICAgICAgIDEuNDUxICAgIDAuMDU4ICAgMjUuMDEwICAgIDAuMDAwXG4gICAgR0hRX1NVTSAgICAgICAgICAgNC4wODMgICAgMC4xMzQgICAzMC40ODkgICAgMC4wMDBcbiAgQlNDTCA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfR1NJICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU1QgICAgICAgICAyMy45ODcgICAgMC40NjYgICA1MS40ODIgICAgMC4wMDBcbiAgICBCU0NMX1BTREkgICAgICAgICAwLjU3OSAgICAwLjA1OSAgICA5LjgxNCAgICAwLjAwMFxuXG5SZWdyZXNzaW9uczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuICBQVFNTX1NrYWxhIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgY29wX3ByYmxmY19jdHYgICAtMC4yNjYgICAgMC4yODYgICAtMC45MjggICAgMC4zNTNcbiAgICBjcF9keXNmbmN0X3NicyAgICAzLjU0NSAgICAwLjQ3OCAgICA3LjQxOCAgICAwLjAwMFxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDEuNDUzICAgIDAuMzEwICAgIDQuNjkzICAgIDAuMDAwXG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMS42MDMgICAgMC43MDEgICAgMi4yODYgICAgMC4wMjJcbiAgICBUcmF1bWFWb3JCZXJ1ZiAgICAxLjE4MiAgICAwLjQ1NCAgICAyLjYwMiAgICAwLjAwOVxuICAgIFNXRV9Ta2FsYSAgICAgICAgIDAuMTY1ICAgIDAuMDY3ICAgIDIuNDcxICAgIDAuMDEzXG4gICAgZGF1ZXIgICAgICAgICAgICAgMC4wNDIgICAgMC4wMjQgICAgMS42OTggICAgMC4wOTBcbiAgICBnZXNjaGxlY2h0ICAgICAgIC0xLjc4NyAgICAwLjU1OSAgIC0zLjE5NyAgICAwLjAwMVxuICBCU0NMIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgUFRTU19Ta2FsYSAgICAgICAgMC4wNTQgICAgMC4wMDIgICAyNi4wNzAgICAgMC4wMDBcbiAgR0hRIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIFBUU1NfU2thbGEgICAgICAgIDAuMTUyICAgIDAuMDEwICAgMTQuOTEyICAgIDAuMDAwXG4gIHN1aXppZGdlZGFua2VuIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAwLjAxMiAgICAwLjAwMiAgICA2LjQwMCAgICAwLjAwMFxuXG5Db3ZhcmlhbmNlczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuIC5HSFEgfn4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAuQlNDTCAgICAgICAgICAgICAgMC4wNTUgICAgMC4wMTAgICAgNS41ODMgICAgMC4wMDBcbiAgIC5zdWl6aWRnZWRhbmtlbiAgICAwLjAxMCAgICAwLjAwOSAgICAxLjEzNiAgICAwLjI1NlxuIC5CU0NMIH5+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAuc3VpemlkZ2VkYW5rZW4gICAgMC4wMDkgICAgMC4wMDIgICAgMy44NTEgICAgMC4wMDBcblxuVmFyaWFuY2VzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gICAuR0hRX1BzeSAgICAgICAgICAgMC44NTEgICAgMC4wNTUgICAxNS41NTAgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAwLjkwMiAgICAwLjA2MyAgIDE0LjM1OCAgICAwLjAwMFxuICAgLkdIUV9TVU0gICAgICAgICAgLTIuMjk2ICAgIDAuMjYzICAgLTguNzE5ICAgIDAuMDAwXG4gICAuQlNDTF9HU0kgICAgICAgICAgMC4wMDQgICAgMC4wMDEgICAgMi44ODEgICAgMC4wMDRcbiAgIC5CU0NMX1BTVCAgICAgICAgICA2LjI0NSAgICAwLjkyOCAgICA2LjcyOSAgICAwLjAwMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMTk0ICAgIDAuMDEzICAgMTQuODI0ICAgIDAuMDAwXG4gICAuUFRTU19Ta2FsYSAgICAgICAyMC4wMzYgICAgMS4zNDUgICAxNC45MDAgICAgMC4wMDBcbiAgIC5zdWl6aWRnZWRhbmtlbiAgICAwLjA0NSAgICAwLjAwMyAgIDE0LjkwMCAgICAwLjAwMFxuICAgLkdIUSAgICAgICAgICAgICAgIDAuOTgyICAgIDAuMDg3ICAgMTEuMzE2ICAgIDAuMDAwXG4gICAuQlNDTCAgICAgICAgICAgICAgMC4wNDkgICAgMC4wMDQgICAxMy40NDYgICAgMC4wMDBcbiJ9 -->
+<pre><code>lavaan (0.5-23.1097) converged normally after 103 iterations
+
+                                                  Used       Total
+  Number of observations                           444         499
+
+  Estimator                                         ML
+  Minimum Function Test Statistic              316.126
+  Degrees of freedom                                72
+  P-value (Chi-square)                           0.000
+
+Model test baseline model:
+
+  Minimum Function Test Statistic             3853.917
+  Degrees of freedom                                92
+  P-value                                        0.000
+
+User model versus baseline model:
+
+  Comparative Fit Index (CFI)                    0.935
+  Tucker-Lewis Index (TLI)                       0.917
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)                     NA
+  Loglikelihood unrestricted model (H1)             NA
+
+  Number of free parameters                         28
+  Akaike (AIC)                                      NA
+  Bayesian (BIC)                                    NA
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.087
+  90 Percent Confidence Interval          0.078  0.097
+  P-value RMSEA &lt;= 0.05                          0.000
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.042
+
+Parameter Estimates:
+
+  Information                                 Expected
+  Standard Errors                             Standard
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  GHQ =~                                              
+    GHQ_Psy           1.000                           
+    GHQ_Emot          1.451    0.058   25.010    0.000
+    GHQ_SUM           4.083    0.134   30.489    0.000
+  BSCL =~                                             
+    BSCL_GSI          1.000                           
+    BSCL_PST         23.987    0.466   51.482    0.000
+    BSCL_PSDI         0.579    0.059    9.814    0.000
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  PTSS_Skala ~                                        
+    cop_prblfc_ctv   -0.266    0.286   -0.928    0.353
+    cp_dysfnct_sbs    3.545    0.478    7.418    0.000
+    cop_dysfnct_vd    1.453    0.310    4.693    0.000
+    TraumaArbeit      1.603    0.701    2.286    0.022
+    TraumaVorBeruf    1.182    0.454    2.602    0.009
+    SWE_Skala         0.165    0.067    2.471    0.013
+    dauer             0.042    0.024    1.698    0.090
+    geschlecht       -1.787    0.559   -3.197    0.001
+  BSCL ~                                              
+    PTSS_Skala        0.054    0.002   26.070    0.000
+  GHQ ~                                               
+    PTSS_Skala        0.152    0.010   14.912    0.000
+  suizidgedanken ~                                    
+    PTSS_Skala        0.012    0.002    6.400    0.000
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+ .GHQ ~~                                              
+   .BSCL              0.055    0.010    5.583    0.000
+   .suizidgedanken    0.010    0.009    1.136    0.256
+ .BSCL ~~                                             
+   .suizidgedanken    0.009    0.002    3.851    0.000
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+   .GHQ_Psy           0.851    0.055   15.550    0.000
+   .GHQ_Emot          0.902    0.063   14.358    0.000
+   .GHQ_SUM          -2.296    0.263   -8.719    0.000
+   .BSCL_GSI          0.004    0.001    2.881    0.004
+   .BSCL_PST          6.245    0.928    6.729    0.000
+   .BSCL_PSDI         0.194    0.013   14.824    0.000
+   .PTSS_Skala       20.036    1.345   14.900    0.000
+   .suizidgedanken    0.045    0.003   14.900    0.000
+   .GHQ               0.982    0.087   11.316    0.000
+   .BSCL              0.049    0.004   13.446    0.000</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1cIlNFTTMtUG9sXCIpXG5gYGAifQ== -->
+<pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
+         filetype=&quot;png&quot;, filename=&quot;SEM3-Pol&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="spital" class="section level3">
+<h3>Spital</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQuZzRfc3BpKVxuYGBgIn0= -->
+<pre class="r"><code>fit = sem(model=model, data=d.g4_spi)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuIFdBUk5JTkc6IHNvbWUgZXN0aW1hdGVkIG92IHZhcmlhbmNlcyBhcmUgbmVnYXRpdmVcbiJ9 -->
+<pre><code>lavaan WARNING: some estimated ov variances are negative</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>summary(fit, fit.measures=TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyIDE0NiBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgIDc4ICAgICAgICAgIDg1XG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAxNjMuMDY3XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNzJcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgIDY4Ni45NTBcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA5MlxuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC44NDdcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjgwNFxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgICAgICAgIE5BXG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAgICAgICAgTkFcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDI4XG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTkFcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuXG5Sb290IE1lYW4gU3F1YXJlIEVycm9yIG9mIEFwcHJveGltYXRpb246XG5cbiAgUk1TRUEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjEyN1xuICA5MCBQZXJjZW50IENvbmZpZGVuY2UgSW50ZXJ2YWwgICAgICAgICAgMC4xMDEgIDAuMTUzXG4gIFAtdmFsdWUgUk1TRUEgPD0gMC4wNSAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDBcblxuU3RhbmRhcmRpemVkIFJvb3QgTWVhbiBTcXVhcmUgUmVzaWR1YWw6XG5cbiAgU1JNUiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjEwOVxuXG5QYXJhbWV0ZXIgRXN0aW1hdGVzOlxuXG4gIEluZm9ybWF0aW9uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRXhwZWN0ZWRcbiAgU3RhbmRhcmQgRXJyb3JzICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTdGFuZGFyZFxuXG5MYXRlbnQgVmFyaWFibGVzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIEdIUSA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBHSFFfUHN5ICAgICAgICAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEdIUV9FbW90ICAgICAgICAgIDEuNDkwICAgIDAuMTc1ICAgIDguNTE1ICAgIDAuMDAwXG4gICAgR0hRX1NVTSAgICAgICAgICAgNC4zOTggICAgMC40NjAgICAgOS41NTMgICAgMC4wMDBcbiAgQlNDTCA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfR1NJICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU1QgICAgICAgICAyNC42ODcgICAgMS40MTcgICAxNy40MjQgICAgMC4wMDBcbiAgICBCU0NMX1BTREkgICAgICAgICAwLjc3OSAgICAwLjE0MiAgICA1LjQ3MSAgICAwLjAwMFxuXG5SZWdyZXNzaW9uczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuICBQVFNTX1NrYWxhIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgY29wX3ByYmxmY19jdHYgICAgMC4xNTYgICAgMC42NTkgICAgMC4yMzcgICAgMC44MTNcbiAgICBjcF9keXNmbmN0X3NicyAgICAxLjkyMiAgICAxLjQ3NCAgICAxLjMwNCAgICAwLjE5MlxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDEuMjIwICAgIDAuODA0ICAgIDEuNTE4ICAgIDAuMTI5XG4gICAgVHJhdW1hQXJiZWl0ICAgICAxMC4wNjEgICAgNC4wNzUgICAgMi40NjkgICAgMC4wMTRcbiAgICBUcmF1bWFWb3JCZXJ1ZiAgIC0xLjUzNCAgICAwLjkyNCAgIC0xLjY1OSAgICAwLjA5N1xuICAgIFNXRV9Ta2FsYSAgICAgICAgLTAuMzg3ICAgIDAuMTYzICAgLTIuMzcxICAgIDAuMDE4XG4gICAgZGF1ZXIgICAgICAgICAgICAgMC4xMjEgICAgMC4wNTAgICAgMi40MDggICAgMC4wMTZcbiAgICBnZXNjaGxlY2h0ICAgICAgIC0zLjE4NiAgICAxLjQ3NSAgIC0yLjE2MCAgICAwLjAzMVxuICBCU0NMIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgUFRTU19Ta2FsYSAgICAgICAgMC4wMjEgICAgMC4wMDQgICAgNS4xNzcgICAgMC4wMDBcbiAgR0hRIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIFBUU1NfU2thbGEgICAgICAgIDAuMDYwICAgIDAuMDE5ICAgIDMuMTE2ICAgIDAuMDAyXG4gIHN1aXppZGdlZGFua2VuIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAwLjAwOCAgICAwLjAwNCAgICAxLjgxNyAgICAwLjA2OVxuXG5Db3ZhcmlhbmNlczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuIC5HSFEgfn4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAuQlNDTCAgICAgICAgICAgICAgMC4wNTAgICAgMC4wMTYgICAgMy4wNTcgICAgMC4wMDJcbiAgIC5zdWl6aWRnZWRhbmtlbiAgICAwLjA0NiAgICAwLjAxOCAgICAyLjU4OSAgICAwLjAxMFxuIC5CU0NMIH5+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAuc3VpemlkZ2VkYW5rZW4gICAgMC4wMDkgICAgMC4wMDQgICAgMi41NTEgICAgMC4wMTFcblxuVmFyaWFuY2VzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gICAuR0hRX1BzeSAgICAgICAgICAgMC41NzUgICAgMC4wOTQgICAgNi4xMDkgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAwLjY0NyAgICAwLjEyMCAgICA1LjM4NiAgICAwLjAwMFxuICAgLkdIUV9TVU0gICAgICAgICAgLTEuMTM5ICAgIDAuNjAwICAgLTEuOTAwICAgIDAuMDU3XG4gICAuQlNDTF9HU0kgICAgICAgICAtMC4wMDggICAgMC4wMDIgICAtMy40MzQgICAgMC4wMDFcbiAgIC5CU0NMX1BTVCAgICAgICAgICA4Ljc4MiAgICAxLjc1NyAgICA0Ljk5OSAgICAwLjAwMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMDk0ICAgIDAuMDE0ICAgIDYuNjA0ICAgIDAuMDAwXG4gICAuUFRTU19Ta2FsYSAgICAgICAxNS41MjkgICAgMi40ODcgICAgNi4yNDUgICAgMC4wMDBcbiAgIC5zdWl6aWRnZWRhbmtlbiAgICAwLjAzNSAgICAwLjAwNiAgICA2LjI0NSAgICAwLjAwMFxuICAgLkdIUSAgICAgICAgICAgICAgIDAuNjU0ICAgIDAuMTY2ICAgIDMuOTQ0ICAgIDAuMDAwXG4gICAuQlNDTCAgICAgICAgICAgICAgMC4wNDMgICAgMC4wMDYgICAgNy4wOTEgICAgMC4wMDBcbiJ9 -->
+<pre><code>lavaan (0.5-23.1097) converged normally after 146 iterations
+
+                                                  Used       Total
+  Number of observations                            78          85
+
+  Estimator                                         ML
+  Minimum Function Test Statistic              163.067
+  Degrees of freedom                                72
+  P-value (Chi-square)                           0.000
+
+Model test baseline model:
+
+  Minimum Function Test Statistic              686.950
+  Degrees of freedom                                92
+  P-value                                        0.000
+
+User model versus baseline model:
+
+  Comparative Fit Index (CFI)                    0.847
+  Tucker-Lewis Index (TLI)                       0.804
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)                     NA
+  Loglikelihood unrestricted model (H1)             NA
+
+  Number of free parameters                         28
+  Akaike (AIC)                                      NA
+  Bayesian (BIC)                                    NA
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.127
+  90 Percent Confidence Interval          0.101  0.153
+  P-value RMSEA &lt;= 0.05                          0.000
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.109
+
+Parameter Estimates:
+
+  Information                                 Expected
+  Standard Errors                             Standard
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  GHQ =~                                              
+    GHQ_Psy           1.000                           
+    GHQ_Emot          1.490    0.175    8.515    0.000
+    GHQ_SUM           4.398    0.460    9.553    0.000
+  BSCL =~                                             
+    BSCL_GSI          1.000                           
+    BSCL_PST         24.687    1.417   17.424    0.000
+    BSCL_PSDI         0.779    0.142    5.471    0.000
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  PTSS_Skala ~                                        
+    cop_prblfc_ctv    0.156    0.659    0.237    0.813
+    cp_dysfnct_sbs    1.922    1.474    1.304    0.192
+    cop_dysfnct_vd    1.220    0.804    1.518    0.129
+    TraumaArbeit     10.061    4.075    2.469    0.014
+    TraumaVorBeruf   -1.534    0.924   -1.659    0.097
+    SWE_Skala        -0.387    0.163   -2.371    0.018
+    dauer             0.121    0.050    2.408    0.016
+    geschlecht       -3.186    1.475   -2.160    0.031
+  BSCL ~                                              
+    PTSS_Skala        0.021    0.004    5.177    0.000
+  GHQ ~                                               
+    PTSS_Skala        0.060    0.019    3.116    0.002
+  suizidgedanken ~                                    
+    PTSS_Skala        0.008    0.004    1.817    0.069
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+ .GHQ ~~                                              
+   .BSCL              0.050    0.016    3.057    0.002
+   .suizidgedanken    0.046    0.018    2.589    0.010
+ .BSCL ~~                                             
+   .suizidgedanken    0.009    0.004    2.551    0.011
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+   .GHQ_Psy           0.575    0.094    6.109    0.000
+   .GHQ_Emot          0.647    0.120    5.386    0.000
+   .GHQ_SUM          -1.139    0.600   -1.900    0.057
+   .BSCL_GSI         -0.008    0.002   -3.434    0.001
+   .BSCL_PST          8.782    1.757    4.999    0.000
+   .BSCL_PSDI         0.094    0.014    6.604    0.000
+   .PTSS_Skala       15.529    2.487    6.245    0.000
+   .suizidgedanken    0.035    0.006    6.245    0.000
+   .GHQ               0.654    0.166    3.944    0.000
+   .BSCL              0.043    0.006    7.091    0.000</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1cIlNFTTQtU3BpXCIpXG5gYGAifQ== -->
+<pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
+         filetype=&quot;png&quot;, filename=&quot;SEM4-Spi&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="psychiatrie-1" class="section level3">
+<h3>Psychiatrie</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQuZzVfcHN5KVxuYGBgIn0= -->
+<pre class="r"><code>fit = sem(model=model, data=d.g5_psy)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuIFdBUk5JTkc6IHNvbWUgZXN0aW1hdGVkIG92IHZhcmlhbmNlcyBhcmUgbmVnYXRpdmVcbiJ9 -->
+<pre><code>lavaan WARNING: some estimated ov variances are negative</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>summary(fit, fit.measures=TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyIDExNSBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgIDYzICAgICAgICAgIDgyXG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAxMzMuNzczXG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNzJcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgIDY3Ny4xMDlcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA5MlxuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC44OTRcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjg2NVxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgICAgICAgIE5BXG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAgICAgICAgTkFcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDI4XG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTkFcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuXG5Sb290IE1lYW4gU3F1YXJlIEVycm9yIG9mIEFwcHJveGltYXRpb246XG5cbiAgUk1TRUEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjExN1xuICA5MCBQZXJjZW50IENvbmZpZGVuY2UgSW50ZXJ2YWwgICAgICAgICAgMC4wODUgIDAuMTQ3XG4gIFAtdmFsdWUgUk1TRUEgPD0gMC4wNSAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDFcblxuU3RhbmRhcmRpemVkIFJvb3QgTWVhbiBTcXVhcmUgUmVzaWR1YWw6XG5cbiAgU1JNUiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjEwMlxuXG5QYXJhbWV0ZXIgRXN0aW1hdGVzOlxuXG4gIEluZm9ybWF0aW9uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRXhwZWN0ZWRcbiAgU3RhbmRhcmQgRXJyb3JzICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTdGFuZGFyZFxuXG5MYXRlbnQgVmFyaWFibGVzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIEdIUSA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBHSFFfUHN5ICAgICAgICAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEdIUV9FbW90ICAgICAgICAgIDEuMzI2ICAgIDAuMTEzICAgMTEuNzAwICAgIDAuMDAwXG4gICAgR0hRX1NVTSAgICAgICAgICAgMy42NDQgICAgMC4yNDQgICAxNC45NTcgICAgMC4wMDBcbiAgQlNDTCA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfR1NJICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU1QgICAgICAgICAyNC45MjIgICAgMS4zNjMgICAxOC4yODcgICAgMC4wMDBcbiAgICBCU0NMX1BTREkgICAgICAgICAwLjY2NiAgICAwLjEzMSAgICA1LjA2NSAgICAwLjAwMFxuXG5SZWdyZXNzaW9uczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuICBQVFNTX1NrYWxhIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgY29wX3ByYmxmY19jdHYgICAgMC43MjMgICAgMC43MjYgICAgMC45OTUgICAgMC4zMjBcbiAgICBjcF9keXNmbmN0X3NicyAgICAxLjMzMyAgICAwLjc2OCAgICAxLjczNiAgICAwLjA4M1xuICAgIGNvcF9keXNmbmN0X3ZkICAgIDAuOTgzICAgIDAuNjQ1ICAgIDEuNTIzICAgIDAuMTI4XG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMC41NzAgICAgMS44MjMgICAgMC4zMTMgICAgMC43NTRcbiAgICBUcmF1bWFWb3JCZXJ1ZiAgICAxLjY1MiAgICAwLjk4OCAgICAxLjY3MiAgICAwLjA5NVxuICAgIFNXRV9Ta2FsYSAgICAgICAgLTAuNDYyICAgIDAuMTQ3ICAgLTMuMTQyICAgIDAuMDAyXG4gICAgZGF1ZXIgICAgICAgICAgICAgMC4wODQgICAgMC4wNDIgICAgMi4wMTcgICAgMC4wNDRcbiAgICBnZXNjaGxlY2h0ICAgICAgIC0wLjExNCAgICAxLjA0NSAgIC0wLjEwOSAgICAwLjkxM1xuICBCU0NMIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgUFRTU19Ta2FsYSAgICAgICAgMC4wNDEgICAgMC4wMDUgICAgNy40OTkgICAgMC4wMDBcbiAgR0hRIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIFBUU1NfU2thbGEgICAgICAgIDAuMTk2ICAgIDAuMDM5ICAgIDUuMDgzICAgIDAuMDAwXG4gIHN1aXppZGdlZGFua2VuIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAwLjAxNiAgICAwLjAxMSAgICAxLjU0MyAgICAwLjEyM1xuXG5Db3ZhcmlhbmNlczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuIC5HSFEgfn4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAuQlNDTCAgICAgICAgICAgICAgMC4wNTcgICAgMC4wMjcgICAgMi4wOTQgICAgMC4wMzZcbiAgIC5zdWl6aWRnZWRhbmtlbiAgICAwLjEwOSAgICAwLjA1NSAgICAyLjAwMiAgICAwLjA0NVxuIC5CU0NMIH5+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAuc3VpemlkZ2VkYW5rZW4gICAgMC4wMzIgICAgMC4wMDkgICAgMy40ODkgICAgMC4wMDBcblxuVmFyaWFuY2VzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gICAuR0hRX1BzeSAgICAgICAgICAgMC43MTUgICAgMC4xMjcgICAgNS42NDEgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAwLjcxMSAgICAwLjEzNyAgICA1LjE5MSAgICAwLjAwMFxuICAgLkdIUV9TVU0gICAgICAgICAgLTEuNzQ5ICAgIDAuNTczICAgLTMuMDUxICAgIDAuMDAyXG4gICAuQlNDTF9HU0kgICAgICAgICAtMC4wMDQgICAgMC4wMDIgICAtMS45OTQgICAgMC4wNDZcbiAgIC5CU0NMX1BTVCAgICAgICAgICA3Ljk1NiAgICAxLjg1OCAgICA0LjI4MSAgICAwLjAwMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMDc5ICAgIDAuMDE0ICAgIDUuNzY0ICAgIDAuMDAwXG4gICAuUFRTU19Ta2FsYSAgICAgICAxMi44MjMgICAgMi4yODUgICAgNS42MTIgICAgMC4wMDBcbiAgIC5zdWl6aWRnZWRhbmtlbiAgICAwLjEyOSAgICAwLjAyMyAgICA1LjYxMiAgICAwLjAwMFxuICAgLkdIUSAgICAgICAgICAgICAgIDEuNTgzICAgIDAuMzQ0ICAgIDQuNjAzICAgIDAuMDAwXG4gICAuQlNDTCAgICAgICAgICAgICAgMC4wMzkgICAgMC4wMDcgICAgNS43OTMgICAgMC4wMDBcbiJ9 -->
+<pre><code>lavaan (0.5-23.1097) converged normally after 115 iterations
+
+                                                  Used       Total
+  Number of observations                            63          82
+
+  Estimator                                         ML
+  Minimum Function Test Statistic              133.773
+  Degrees of freedom                                72
+  P-value (Chi-square)                           0.000
+
+Model test baseline model:
+
+  Minimum Function Test Statistic              677.109
+  Degrees of freedom                                92
+  P-value                                        0.000
+
+User model versus baseline model:
+
+  Comparative Fit Index (CFI)                    0.894
+  Tucker-Lewis Index (TLI)                       0.865
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)                     NA
+  Loglikelihood unrestricted model (H1)             NA
+
+  Number of free parameters                         28
+  Akaike (AIC)                                      NA
+  Bayesian (BIC)                                    NA
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.117
+  90 Percent Confidence Interval          0.085  0.147
+  P-value RMSEA &lt;= 0.05                          0.001
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.102
+
+Parameter Estimates:
+
+  Information                                 Expected
+  Standard Errors                             Standard
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  GHQ =~                                              
+    GHQ_Psy           1.000                           
+    GHQ_Emot          1.326    0.113   11.700    0.000
+    GHQ_SUM           3.644    0.244   14.957    0.000
+  BSCL =~                                             
+    BSCL_GSI          1.000                           
+    BSCL_PST         24.922    1.363   18.287    0.000
+    BSCL_PSDI         0.666    0.131    5.065    0.000
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  PTSS_Skala ~                                        
+    cop_prblfc_ctv    0.723    0.726    0.995    0.320
+    cp_dysfnct_sbs    1.333    0.768    1.736    0.083
+    cop_dysfnct_vd    0.983    0.645    1.523    0.128
+    TraumaArbeit      0.570    1.823    0.313    0.754
+    TraumaVorBeruf    1.652    0.988    1.672    0.095
+    SWE_Skala        -0.462    0.147   -3.142    0.002
+    dauer             0.084    0.042    2.017    0.044
+    geschlecht       -0.114    1.045   -0.109    0.913
+  BSCL ~                                              
+    PTSS_Skala        0.041    0.005    7.499    0.000
+  GHQ ~                                               
+    PTSS_Skala        0.196    0.039    5.083    0.000
+  suizidgedanken ~                                    
+    PTSS_Skala        0.016    0.011    1.543    0.123
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+ .GHQ ~~                                              
+   .BSCL              0.057    0.027    2.094    0.036
+   .suizidgedanken    0.109    0.055    2.002    0.045
+ .BSCL ~~                                             
+   .suizidgedanken    0.032    0.009    3.489    0.000
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+   .GHQ_Psy           0.715    0.127    5.641    0.000
+   .GHQ_Emot          0.711    0.137    5.191    0.000
+   .GHQ_SUM          -1.749    0.573   -3.051    0.002
+   .BSCL_GSI         -0.004    0.002   -1.994    0.046
+   .BSCL_PST          7.956    1.858    4.281    0.000
+   .BSCL_PSDI         0.079    0.014    5.764    0.000
+   .PTSS_Skala       12.823    2.285    5.612    0.000
+   .suizidgedanken    0.129    0.023    5.612    0.000
+   .GHQ               1.583    0.344    4.603    0.000
+   .BSCL              0.039    0.007    5.793    0.000</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1cIlNFTTUtUHN5XCIpXG5gYGAifQ== -->
+<pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
+         filetype=&quot;png&quot;, filename=&quot;SEM5-Psy&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUFRTRCIKYXV0aG9yOiAiU2ltb24gU2Nod2FiIgpkYXRlOiAiMTkgT2N0IDIwMTciCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIExpYnJhcmllcwpgYGB7cn0KIyBpbnN0YWxsLnBhY2thZ2VzKCJnZ3Bsb3QyIikKIyBpbnN0YWxsLnBhY2thZ2VzKCJjb3dwbG90IikKIyBpbnN0YWxsLnBhY2thZ2VzKCJmb3JlaWduIikKIyBpbnN0YWxsLnBhY2thZ2VzKCJ0ZXN0aXQiKQojIGluc3RhbGwucGFja2FnZXMoImNhciIpCiMgaW5zdGFsbC5wYWNrYWdlcygicmVzaGFwZTIiKQoKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGNvd3Bsb3QpCmxpYnJhcnkoZm9yZWlnbikKbGlicmFyeSh0ZXN0aXQpCmxpYnJhcnkoY2FyKQpsaWJyYXJ5KHJlc2hhcGUyKQpgYGAKCiMjIFZhcmlhYmxlcyBhbmQgcGF0aHMKYGBge3J9Ck4gPSAxMDAyCgpQQVRIX0hPTUUgPSAnL2hvbWUvc2ltb24nClBBVEggPSBmaWxlLnBhdGgoUEFUSF9IT01FLCAnRHJvcGJveCcsICdEYXRhJywgJ1BUU0QnKQpQQVRIX0RBVEEgPSBmaWxlLnBhdGgoUEFUSCwgJ2RhdGEnKQpQQVRIX0ZJR1VSRVMgPSBmaWxlLnBhdGgoUEFUSCwgJ2ZpZ3VyZXMnKQpgYGAKCiMjIExvYWQgZGF0YQpgYGB7cn0gCmQgPSByZWFkLnNwc3MoZmlsZS5wYXRoKFBBVEhfREFUQSwgJ1BUU0RfU2thbGVuXzEgMDYgMjAxN19HRVNBTVQuc2F2JyksIAogICAgICAgICAgICAgIHRvLmRhdGEuZnJhbWUgPSBUKQphc3NlcnQobnJvdyhkKSA9PSBOKQoKIyBTb21lIGlkcyBhcmUgZHVibGljYXRlcyBidXQgaW4gZmFjdCBkaWZmZXJlbnQgc3ViamVjdHMsIHRodXMgd2UgcmVjcmVhdGUgdGhlIElEcwojZCRpZCA9IGFzLmZhY3RvcigxOk4pCgpnMV9zYW4gPSBkJGFyYmVpdHNvcnQ9PSdTYW5pdMOkdCwgQW1idWxhbnonCmcyX2ZldSA9IGQkYXJiZWl0c29ydD09J0ZldWVyd2VocicKZzNfcG9sID0gZCRhcmJlaXRzb3J0PT0nUG9saXplaScKZzRfc3BpID0gZCRhcmJlaXRzb3J0PT0nU3BpdGFsbm90ZmFsbCcKZzVfcHN5ID0gZCRhcmJlaXRzb3J0PT0nUHN5Y2hpYXRyaWUnCgojIyBDcmVhdGUgc3ViZ3JvdXBzCmQuZzFfc2FuID0gc3Vic2V0KGQsIGcxX3NhbikKZC5nMl9mZXUgPSBzdWJzZXQoZCwgZzJfZmV1KQpkLmczX3BvbCA9IHN1YnNldChkLCBnM19wb2wpCmQuZzRfc3BpID0gc3Vic2V0KGQsIGc0X3NwaSkKZC5nNV9wc3kgPSBzdWJzZXQoZCwgZzVfcHN5KQoKbGFiZWxzID0gYygnU2FuaXTDpHQsIEFtYnVsYW56JywgJ0ZldWVyd2VocicsICdQb2xpemVpJywgJ1NwaXRhbG5vdGZhbGwnLCAnUHN5Y2hpYXRyaWUnKQpOX3Blckdyb3VwID0gc3VtbWFyeShkJGFyYmVpdHNvcnQpCmBgYAojIyBDaGVjayB2YXJpYWJsZXMKYGBge3J9CgpzdW1tYXJ5KGQkd29obnNpdHVhdGlvbikKZCRpZFt3aGljaChkJHdvaG5zaXR1YXRpb249PSI3IildICMgNCBjYXNlcyBoYXZlIGZhY3RvciAiNyIKCnN1bW1hcnkoZCRzY2h3aWVyaWdlc0VyZWlnbmlzKQpkJGlkW3doaWNoKGQkc2Nod2llcmlnZXNFcmVpZ25pcz09IjQiKV0KYGBgCgoKIyMgRGVzY3JpcHRpdmVzCiMjIyBHbG9iYWwgR2VuZGVyLCBBcmJlaXRzb3J0IGFuZCBHcm91cApgYGB7cn0Kc3VtbWFyeShkJGdlc2NobGVjaHQpCnN1bW1hcnkoZCRhcmJlaXRzb3J0KQpzdW1tYXJ5KGQkZ3JvdXApCmBgYAoKIyMjIE1lYW4gYWdlIGFuZCBTRCBwZXIgZ3JvdXAKYGBge3J9CnRhcHBseShkJGFsdGVyLCBkJGFyYmVpdHNvcnQsIG1lYW4pCnRhcHBseShkJGFsdGVyLCBkJGFyYmVpdHNvcnQsIHNkKQpgYGAKCiMjIyBHZW5kZXIgcGVyIEdyb3VwCmBgYHtyfQp0YXBwbHkoZCRnZXNjaGxlY2h0LCBkJGFyYmVpdHNvcnQsIHN1bW1hcnkpCmBgYAoKIyMjIENvcGUKYGBge3J9CnggPSBjYmluZCggIHN1bW1hcnkoZCRTV0VfU2thbGEpLAogICAgICAgICAgYyhzdW1tYXJ5KGQkUFRTU19Ta2FsYSksMCksCiAgICAgICAgICBjKHN1bW1hcnkoZCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSksMCksCiAgICAgICAgICBjKHN1bW1hcnkoZCRjb3BlX2R5c2Z1bmN0X3N1YnN0KSwwKSwKICAgICAgICAgIGMoc3VtbWFyeShkJGNvcGVfZHlzZnVuY3RfYXZvaWQpLDApLAogICAgICAgICAgYyhzdW1tYXJ5KGQkYWx0ZXIpLDApLAogICAgICAgICAgYyhzdW1tYXJ5KGQkZGF1ZXIpLDApCiAgICAgICAgICApCmNvbG5hbWVzKHgpPWMoIlNXRSIsIlBUU1MiLCJjb3BlX2FjIiwiY29wZV9zdWIiLCJjb3BlX2F2b2lkIiwiYWx0ZXIiLCJkYXVlciIpCnByaW50KHgpCgpzdW1tYXJ5KGQkVHJhdW1hQXJiZWl0KQpzdW1tYXJ5KGQkVHJhdW1hVm9yQmVydWYpCnN1bW1hcnkoZCRnZXNjaGxlY2h0KQpgYGAKCgojIyBQVFNTIGRpZmZlcmVuY2UgaW4gbWVhbiBiZXR3ZWVuIEdyb3VwcwpgYGB7ciAyLCBmaWcuaGVpZ2h0PTIsIGZpZy53aWR0aD0xMH0Kc2V0LnNlZWQoMTk4MCkKcDE9Z2dwbG90KGRhdGE9ZCwgYWVzKHg9YXJiZWl0c29ydCwgeT1QVFNTX1NrYWxhLCBmaWxsPWFyYmVpdHNvcnQpKSArCiAgZ2VvbV9iYXIoc3RhdD0ic3VtbWFyeSIsIGZ1bi55PSJtZWFuIikgKwogIHRoZW1lKGF4aXMudGV4dC54PWVsZW1lbnRfYmxhbmsoKSkKCnAyPWdncGxvdChkYXRhPWQsIGFlcyh4PWFyYmVpdHNvcnQsIHk9UFRTU19Ta2FsYSwgZmlsbD1hcmJlaXRzb3J0KSkgKwogIGdlb21fYm94cGxvdCgpICsKICBnZW9tX3BvaW50KHNoYXBlPTEsIGNvbG9yPSJncmF5NzAiLCBzaXplPTAuMywgcG9zaXRpb24gPSBwb3NpdGlvbl9qaXR0ZXIod2lkdGggPSAwLjMsIGhlaWdodCA9IDEpKSArCiAgdGhlbWUoYXhpcy50ZXh0Lng9ZWxlbWVudF9ibGFuaygpKQoKcGxvdF9ncmlkKHAxLCBwMiwgbmNvbCA9IDIsIG5yb3cgPSAxLCByZWxfd2lkdGhzID0gYygxLCAxKSkKZ2dzYXZlKHBhdGggPSBQQVRIX0ZJR1VSRVMsICJhcmJlaXRzcGxhdHoucG5nIikKYGBgCgojIyMgQU5PVkEKYGBge3J9CmZpdD1hb3YoUFRTU19Ta2FsYSB+IGFyYmVpdHNvcnQsIGRhdGE9ZCkKc3VtbWFyeShmaXQpCmBgYAoKIyMgVmVyZGFjaHQKYGBge3J9Ck09YXJyYXkoTkEsIGRpbT1jKDUsMikpCk1bMSxdID0gc3VtbWFyeShkJFBTU19HcltnMV9zYW5dKS9OX3Blckdyb3VwWzFdCk1bMixdID0gc3VtbWFyeShkJFBTU19HcltnMl9mZXVdKS9OX3Blckdyb3VwWzJdCk1bMyxdID0gc3VtbWFyeShkJFBTU19HcltnM19wb2xdKS9OX3Blckdyb3VwWzNdCk1bNCxdID0gc3VtbWFyeShkJFBTU19HcltnNF9zcGldKS9OX3Blckdyb3VwWzRdCk1bNSxdID0gc3VtbWFyeShkJFBTU19HcltnNV9wc3ldKS9OX3Blckdyb3VwWzVdCgpyb3duYW1lcyhNKT1sYWJlbHMKY29sbmFtZXMoTSk9Yygna2VpbiBWZXJkYWNodCcsICdWZXJkYWNodCcpCnByaW50KE0sIGRpZ2l0cyA9IDIpCmBgYAoKIyMgTXVsdGlwbGUgcmVncmVzc2lvbnMKV2UgcGVyZm9ybSBzdWJncm91cCBhbmFseXNlcwoKCiMjIyBQVFNTCmBgYHtyfQpmaXQgPSBsbShQVFNTX1NrYWxhIH4gY29wZV9wcm9ibGZvY19hY3RpdmUgKyBjb3BlX2R5c2Z1bmN0X3N1YnN0ICsKICAgICAgICAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkICsgVHJhdW1hQXJiZWl0ICsgVHJhdW1hVm9yQmVydWYgKwogICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgZ2VzY2hsZWNodCwgZGF0YT1kKQp2aWYoZml0KSA+IDQKc3VtbWFyeShmaXQpCmBgYAoKIyMjIFNhbml0w6R0CmBgYHtyfQpmaXQgPSBsbShQVFNTX1NrYWxhIH4gY29wZV9wcm9ibGZvY19hY3RpdmUgKyBjb3BlX2R5c2Z1bmN0X3N1YnN0ICsKICAgICAgICAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkICsgVHJhdW1hQXJiZWl0ICsgVHJhdW1hVm9yQmVydWYgKwogICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzFfc2FuKQp2aWYoZml0KSA+IDQKc3VtbWFyeShmaXQpCmBgYAojIyMgRmV1ZXJ3ZWhyCmBgYHtyfQpmaXQgPSBsbShQVFNTX1NrYWxhIH4gY29wZV9wcm9ibGZvY19hY3RpdmUgKyBjb3BlX2R5c2Z1bmN0X3N1YnN0ICsKICAgICAgICAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkICsgVHJhdW1hQXJiZWl0ICsgVHJhdW1hVm9yQmVydWYgKwogICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzJfZmV1KQp2aWYoZml0KSA+IDQKc3VtbWFyeShmaXQpCmBgYAoKIyMjIFBvbGl6ZWkKYGBge3J9CmZpdCA9IGxtKFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArCiAgICAgICAgICAgU1dFX1NrYWxhICsgZGF1ZXIgKyBhbHRlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nM19wb2wpCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCiMjIyBTcGl0YWxub3RmYWxsCmBgYHtyfQpmaXQgPSBsbShQVFNTX1NrYWxhIH4gY29wZV9wcm9ibGZvY19hY3RpdmUgKyBjb3BlX2R5c2Z1bmN0X3N1YnN0ICsKICAgICAgICAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkICsgVHJhdW1hQXJiZWl0ICsgVHJhdW1hVm9yQmVydWYgKwogICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzRfc3BpKQp2aWYoZml0KSA+IDQKc3VtbWFyeShmaXQpCmBgYAoKIyMjIFBzeWNoaWF0cmllCmBgYHtyfQpmaXQgPSBsbShQVFNTX1NrYWxhIH4gY29wZV9wcm9ibGZvY19hY3RpdmUgKyBjb3BlX2R5c2Z1bmN0X3N1YnN0ICsKICAgICAgICAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkICsgVHJhdW1hQXJiZWl0ICsgVHJhdW1hVm9yQmVydWYgKwogICAgICAgICAgIFNXRV9Ta2FsYSArIGRhdWVyICsgYWx0ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzVfcHN5KQp2aWYoZml0KSA+IDQKc3VtbWFyeShmaXQpCmBgYAoKIyMjIApgYGB7ciwgZmlnLmhlaWdodD02LCBmaWcud2lkdGg9Nn0KdG1wPWQuZzFfc2FuCnggPSBjYmluZCh0bXAkY29wZV9wcm9ibGZvY19hY3RpdmUsIHRtcCRjb3BlX2R5c2Z1bmN0X3N1YnN0LAogICAgdG1wJGNvcGVfZHlzZnVuY3RfYXZvaWQsIHRtcCRUcmF1bWFBcmJlaXQsIHRtcCRUcmF1bWFWb3JCZXJ1ZiwgdG1wJFNXRV9Ta2FsYSwKICAgIHRtcCRkYXVlciwgdG1wJGFsdGVyLCB0bXAkZ2VzY2hsZWNodCkKCnAxID0gZ2dwbG90KG1lbHQoY29yKHgpKSwgYWVzX3N0cmluZyh4ID0gIlZhcjEiLCB5ID0gIlZhcjIiLCBmaWxsID0gInZhbHVlIikpICsKICBnZW9tX3RpbGUoY29sb3IgPSAiZ3JheTYwIikgICsgCiAgc2NhbGVfZmlsbF9ncmFkaWVudDIobG93PSdibHVlJywgbWlkPSd3aGl0ZScsIGhpZ2g9J3JlZCcsIGxpbWl0ID0gYygtMSwxKSkgKwogIHNjYWxlX3hfY29udGludW91cyhicmVha3M9MTo5LGxhYmVscz0xOjkpICsKICBzY2FsZV95X3JldmVyc2UoYnJlYWtzPTE6OSxsYWJlbHM9MTo5KQoKdG1wPWQuZzJfZmV1CnggPSBjYmluZCh0bXAkY29wZV9wcm9ibGZvY19hY3RpdmUsIHRtcCRjb3BlX2R5c2Z1bmN0X3N1YnN0LAogICAgdG1wJGNvcGVfZHlzZnVuY3RfYXZvaWQsIHRtcCRUcmF1bWFBcmJlaXQsIHRtcCRUcmF1bWFWb3JCZXJ1ZiwgdG1wJFNXRV9Ta2FsYSwKICAgIHRtcCRkYXVlciwgdG1wJGFsdGVyLCB0bXAkZ2VzY2hsZWNodCkKCnAyID0gZ2dwbG90KG1lbHQoY29yKHgpKSwgYWVzX3N0cmluZyh4ID0gIlZhcjEiLCB5ID0gIlZhcjIiLCBmaWxsID0gInZhbHVlIikpICsKICBnZW9tX3RpbGUoY29sb3IgPSAiZ3JheTYwIikgICsgCiAgc2NhbGVfZmlsbF9ncmFkaWVudDIobG93PSdibHVlJywgbWlkPSd3aGl0ZScsIGhpZ2g9J3JlZCcsIGxpbWl0ID0gYygtMSwxKSkgKwogIHNjYWxlX3hfY29udGludW91cyhicmVha3M9MTo5LGxhYmVscz0xOjkpICsKICBzY2FsZV95X3JldmVyc2UoYnJlYWtzPTE6OSxsYWJlbHM9MTo5KQoKdG1wPWQuZzNfcG9sCnggPSBjYmluZCh0bXAkY29wZV9wcm9ibGZvY19hY3RpdmUsIHRtcCRjb3BlX2R5c2Z1bmN0X3N1YnN0LAogICAgdG1wJGNvcGVfZHlzZnVuY3RfYXZvaWQsIHRtcCRUcmF1bWFBcmJlaXQsIHRtcCRUcmF1bWFWb3JCZXJ1ZiwgdG1wJFNXRV9Ta2FsYSwKICAgIHRtcCRkYXVlciwgdG1wJGFsdGVyLCB0bXAkZ2VzY2hsZWNodCkKCnAzID0gZ2dwbG90KG1lbHQoY29yKHgpKSwgYWVzX3N0cmluZyh4ID0gIlZhcjEiLCB5ID0gIlZhcjIiLCBmaWxsID0gInZhbHVlIikpICsKICBnZW9tX3RpbGUoY29sb3IgPSAiZ3JheTYwIikgICsgCiAgc2NhbGVfZmlsbF9ncmFkaWVudDIobG93PSdibHVlJywgbWlkPSd3aGl0ZScsIGhpZ2g9J3JlZCcsIGxpbWl0ID0gYygtMSwxKSkgKwogIHNjYWxlX3hfY29udGludW91cyhicmVha3M9MTo5LGxhYmVscz0xOjkpICsKICBzY2FsZV95X3JldmVyc2UoYnJlYWtzPTE6OSxsYWJlbHM9MTo5KQoKdG1wPWQuZzRfc3BpCnggPSBjYmluZCh0bXAkY29wZV9wcm9ibGZvY19hY3RpdmUsIHRtcCRjb3BlX2R5c2Z1bmN0X3N1YnN0LAogICAgdG1wJGNvcGVfZHlzZnVuY3RfYXZvaWQsIHRtcCRUcmF1bWFBcmJlaXQsIHRtcCRUcmF1bWFWb3JCZXJ1ZiwgdG1wJFNXRV9Ta2FsYSwKICAgIHRtcCRkYXVlciwgdG1wJGFsdGVyLCB0bXAkZ2VzY2hsZWNodCkKCnA0ID0gZ2dwbG90KG1lbHQoY29yKHgpKSwgYWVzX3N0cmluZyh4ID0gIlZhcjEiLCB5ID0gIlZhcjIiLCBmaWxsID0gInZhbHVlIikpICsKICBnZW9tX3RpbGUoY29sb3IgPSAiZ3JheTYwIikgICsgCiAgc2NhbGVfZmlsbF9ncmFkaWVudDIobG93PSdibHVlJywgbWlkPSd3aGl0ZScsIGhpZ2g9J3JlZCcsIGxpbWl0ID0gYygtMSwxKSkgKwogIHNjYWxlX3hfY29udGludW91cyhicmVha3M9MTo5LGxhYmVscz0xOjkpICsKICBzY2FsZV95X3JldmVyc2UoYnJlYWtzPTE6OSxsYWJlbHM9MTo5KQoKdG1wPWQuZzVfcHN5CnggPSBjYmluZCh0bXAkY29wZV9wcm9ibGZvY19hY3RpdmUsIHRtcCRjb3BlX2R5c2Z1bmN0X3N1YnN0LAogICAgdG1wJGNvcGVfZHlzZnVuY3RfYXZvaWQsIHRtcCRUcmF1bWFBcmJlaXQsIHRtcCRUcmF1bWFWb3JCZXJ1ZiwgdG1wJFNXRV9Ta2FsYSwKICAgIHRtcCRkYXVlciwgdG1wJGFsdGVyLCB0bXAkZ2VzY2hsZWNodCkKCnA1ID0gZ2dwbG90KG1lbHQoY29yKHgpKSwgYWVzX3N0cmluZyh4ID0gIlZhcjEiLCB5ID0gIlZhcjIiLCBmaWxsID0gInZhbHVlIikpICsKICBnZW9tX3RpbGUoY29sb3IgPSAiZ3JheTYwIikgICsgCiAgc2NhbGVfZmlsbF9ncmFkaWVudDIobG93PSdibHVlJywgbWlkPSd3aGl0ZScsIGhpZ2g9J3JlZCcsIGxpbWl0ID0gYygtMSwxKSkgKwogIHNjYWxlX3hfY29udGludW91cyhicmVha3M9MTo5LGxhYmVscz0xOjkpICsKICBzY2FsZV95X3JldmVyc2UoYnJlYWtzPTE6OSxsYWJlbHM9MTo5KQoKcGxvdF9ncmlkKHAxLCBwMiwgcDMsIHA0ICwgcDUsIG5jb2wgPSAyLCBucm93ID0gMykKYGBgCgojIyBTRU0KTW9kZWwgZml0OiAKQ0ZJIGlkZWFsbHkgbGFyZ2VyIHRoYW4gMC45MCwgIENGSSBvZiAuOTU1IGlzIGdvb2QhClJNU0VBIGJlbG93IDAuMTAKCkxlZ2VuZGUKCj1+IGxhdGVudGUgVmFyaWFibGVuCn4gIGthdXNhbGUgUGZlaWxlCgpgYGB7cn0KIyBpbnN0YWxsLnBhY2thZ2VzKCJsYXZhYW4iKQojIGluc3RhbGwucGFja2FnZXMoInNlbVBsb3QiKQpsaWJyYXJ5KGxhdmFhbikKbGlicmFyeShzZW1QbG90KQpgYGAKCiMjIyBNb2RlbApgYGB7cn0KbW9kZWwgPSAnUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgCiAgICAgICAgICAgICAgICAgICAgICBjb3BlX2R5c2Z1bmN0X3N1YnN0ICsKICAgICAgICAgICAgICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKwogICAgICAgICAgICAgICAgICAgICAgVHJhdW1hQXJiZWl0ICsKICAgICAgICAgICAgICAgICAgICAgIFRyYXVtYVZvckJlcnVmICsKICAgICAgICAgICAgICAgICAgICAgIFNXRV9Ta2FsYSArCiAgICAgICAgICAgICAgICAgICAgICBkYXVlciArCiAgICAgICAgICAgICAgICAgICAgICBnZXNjaGxlY2h0CiAgICAgICAgIEdIUSA9fiBHSFFfUHN5ICsgR0hRX0Vtb3QgKyBHSFFfU1VNIAogICAgICAgICBCU0NMID1+IEJTQ0xfR1NJICsgQlNDTF9QU1QgKyBCU0NMX1BTREkKICAgICAgICAgQlNDTCB+IFBUU1NfU2thbGEKICAgICAgICAgR0hRID1+IFBUU1NfU2thbGEKICAgICAgICAgc3VpemlkZ2VkYW5rZW4gfiBQVFNTX1NrYWxhJwpgYGAKCmBgYHtyfQptb2RlbCA9ICdTdHJlc3MgPX4gUFRTU19Ta2FsYSArCiAgICAgICAgICAgICAgICAgICAgICBUcmF1bWFBcmJlaXQgKwogICAgICAgICAgICAgICAgICAgICAgVHJhdW1hVm9yQmVydWYgKwogICAgICAgICAgICAgICAgICAgICAgU1dFX1NrYWxhICsKICAgICAgICAgICAgICAgICAgICAgIGRhdWVyICsKICAgICAgICAgICAgICAgICAgICAgIGdlc2NobGVjaHQKICAgICAgICAgQ29waW5nID1+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsKICAgICAgICAgICAgICAgICAgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZAogICAgICAgICBXb2hsYmVmaW5kZW4gPX4gR0hRX1BzeSArIEdIUV9FbW90ICsgR0hRX1NVTSAKICAgICAgICAgQmVsYXN0dW5nID1+IEJTQ0xfR1NJICsgQlNDTF9QU1QgKyBCU0NMX1BTREkKICAgICAgICAgU3RyZXNzIH4gV29obGJlZmluZGVuICsgQmVsYXN0dW5nICsgQ29waW5nJwpgYGAKCmBgYHtyfQpmaXQgPSBzZW0obW9kZWw9bW9kZWwsIGRhdGE9ZCkKc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKQppbnNwZWN0KGZpdCwgInJzcXVhcmUiKQoKc2VtUGF0aHMoZml0LCB3aGF0ID0gInN0ZCIsIGxheW91dCA9ICJ0cmVlIiwgdGl0bGUgPSBGQUxTRSwgIHN0eWxlID0gIkxJU1JFTCIsCiAgICAgICAgIGZpbGV0eXBlPSJwZGYiLCBmaWxlbmFtZT0iU0VNIikKCiNwYXJhbWV0ZXJFc3RpbWF0ZXMoZml0LCBjaSA9IFRSVUUsIGJvb3QuY2kudHlwZSA9ICJub3JtIikKYGBgCgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUFRTRCIKYXV0aG9yOiAiU2ltb24gU2Nod2FiIgpkYXRlOiAiMTkgT2N0IDIwMTciCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIExpYnJhcmllcwpgYGB7cn0KIyBpbnN0YWxsLnBhY2thZ2VzKCJnZ3Bsb3QyIikKIyBpbnN0YWxsLnBhY2thZ2VzKCJjb3dwbG90IikKIyBpbnN0YWxsLnBhY2thZ2VzKCJmb3JlaWduIikKIyBpbnN0YWxsLnBhY2thZ2VzKCJ0ZXN0aXQiKQojIGluc3RhbGwucGFja2FnZXMoImNhciIpCiMgaW5zdGFsbC5wYWNrYWdlcygicmVzaGFwZTIiKQoKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGNvd3Bsb3QpCmxpYnJhcnkoZm9yZWlnbikKbGlicmFyeSh0ZXN0aXQpCmxpYnJhcnkoY2FyKQpsaWJyYXJ5KHJlc2hhcGUyKQpgYGAKCiMjIFZhcmlhYmxlcyBhbmQgcGF0aHMKYGBge3J9Ck4gPSAxMDAyCgpQQVRIX0hPTUUgPSAnL2hvbWUvc2ltb24nClBBVEggPSBmaWxlLnBhdGgoUEFUSF9IT01FLCAnRHJvcGJveCcsICdEYXRhJywgJ1BUU0QnKQpQQVRIX0RBVEEgPSBmaWxlLnBhdGgoUEFUSCwgJ2RhdGEnKQpQQVRIX0ZJR1VSRVMgPSBmaWxlLnBhdGgoUEFUSCwgJ2ZpZ3VyZXMnKQpgYGAKCiMjIExvYWQgZGF0YQpgYGB7cn0gCmQgPSByZWFkLnNwc3MoZmlsZS5wYXRoKFBBVEhfREFUQSwgJ1BUU0RfU2thbGVuXzEgMDYgMjAxN19HRVNBTVQuc2F2JyksIAogICAgICAgICAgICAgIHRvLmRhdGEuZnJhbWUgPSBUKQphc3NlcnQobnJvdyhkKSA9PSBOKQoKIyBTb21lIGlkcyBhcmUgZHVibGljYXRlcyBidXQgaW4gZmFjdCBkaWZmZXJlbnQgc3ViamVjdHMsIHRodXMgd2UgcmVjcmVhdGUgdGhlIElEcwpkJGlkX25ldyA9IGFzLmZhY3RvcigxOk4pCgpnMV9zYW4gPSBkJGFyYmVpdHNvcnQ9PSdTYW5pdMOkdCwgQW1idWxhbnonCmcyX2ZldSA9IGQkYXJiZWl0c29ydD09J0ZldWVyd2VocicKZzNfcG9sID0gZCRhcmJlaXRzb3J0PT0nUG9saXplaScKZzRfc3BpID0gZCRhcmJlaXRzb3J0PT0nU3BpdGFsbm90ZmFsbCcKZzVfcHN5ID0gZCRhcmJlaXRzb3J0PT0nUHN5Y2hpYXRyaWUnCgojIyBDcmVhdGUgc3ViZ3JvdXBzCmQuZzFfc2FuID0gc3Vic2V0KGQsIGcxX3NhbikKZC5nMl9mZXUgPSBzdWJzZXQoZCwgZzJfZmV1KQpkLmczX3BvbCA9IHN1YnNldChkLCBnM19wb2wpCmQuZzRfc3BpID0gc3Vic2V0KGQsIGc0X3NwaSkKZC5nNV9wc3kgPSBzdWJzZXQoZCwgZzVfcHN5KQoKbGFiZWxzID0gYygnU2FuaXTDpHQsIEFtYnVsYW56JywgJ0ZldWVyd2VocicsICdQb2xpemVpJywgJ1NwaXRhbG5vdGZhbGwnLCAnUHN5Y2hpYXRyaWUnKQpOX3Blckdyb3VwID0gc3VtbWFyeShkJGFyYmVpdHNvcnQpCmBgYAojIyBDaGVjayB2YXJpYWJsZXMKYGBge3J9CgpzdW1tYXJ5KGQkd29obnNpdHVhdGlvbikKZCRpZFt3aGljaChkJHdvaG5zaXR1YXRpb249PSI3IildICMgNCBjYXNlcyBoYXZlIGZhY3RvciAiNyIKCnN1bW1hcnkoZCRzY2h3aWVyaWdlc0VyZWlnbmlzKQpkJGlkW3doaWNoKGQkc2Nod2llcmlnZXNFcmVpZ25pcz09IjQiKV0KYGBgCgoKIyMgRGVzY3JpcHRpdmVzCmBgYHtyfQojbmFtZXMoZCkKc3VtbWFyeShkWyxjKDEwLAogICAgICAgICAgICAgMTY0OjE2NiwxNzE6MTcyLDE1LDYsNCw1LAogICAgICAgICAgICAgMTY6MTgsMjA6MjIsMjUpXSkKYGBgCgojIyMgR2xvYmFsIEdlbmRlciwgQXJiZWl0c29ydCBhbmQgR3JvdXAKYGBge3J9CnN1bW1hcnkoZCRnZXNjaGxlY2h0KQpzdW1tYXJ5KGQkYXJiZWl0c29ydCkKc3VtbWFyeShkJGdyb3VwKQp3aGljaChpcy5uYShkJGdyb3VwKSkKYGBgCgojIyMgTWVhbiBhZ2UgYW5kIFNEIHBlciBncm91cApgYGB7cn0KdGFwcGx5KGQkYWx0ZXIsIGQkYXJiZWl0c29ydCwgbWVhbikKdGFwcGx5KGQkYWx0ZXIsIGQkYXJiZWl0c29ydCwgc2QpCmBgYAoKIyMjIEdlbmRlciBwZXIgR3JvdXAKYGBge3J9CnRhcHBseShkJGdlc2NobGVjaHQsIGQkYXJiZWl0c29ydCwgc3VtbWFyeSkKYGBgCgojIyBQVFNTIGRpZmZlcmVuY2UgaW4gbWVhbiBiZXR3ZWVuIEdyb3VwcwpgYGB7ciAyLCBmaWcuaGVpZ2h0PTIsIGZpZy53aWR0aD0xMH0Kc2V0LnNlZWQoMTk4MCkKcDE9Z2dwbG90KGRhdGE9ZCwgYWVzKHg9YXJiZWl0c29ydCwgeT1QVFNTX1NrYWxhLCBmaWxsPWFyYmVpdHNvcnQpKSArCiAgZ2VvbV9iYXIoc3RhdD0ic3VtbWFyeSIsIGZ1bi55PSJtZWFuIikgKwogIHRoZW1lKGF4aXMudGV4dC54PWVsZW1lbnRfYmxhbmsoKSkKCnAyPWdncGxvdChkYXRhPWQsIGFlcyh4PWFyYmVpdHNvcnQsIHk9UFRTU19Ta2FsYSwgZmlsbD1hcmJlaXRzb3J0KSkgKwogIGdlb21fYm94cGxvdCgpICsKICBnZW9tX3BvaW50KHNoYXBlPTEsIGNvbG9yPSJncmF5NzAiLCBzaXplPTAuMywgcG9zaXRpb24gPSBwb3NpdGlvbl9qaXR0ZXIod2lkdGggPSAwLjMsIGhlaWdodCA9IDEpKSArCiAgdGhlbWUoYXhpcy50ZXh0Lng9ZWxlbWVudF9ibGFuaygpKQoKcGxvdF9ncmlkKHAxLCBwMiwgbmNvbCA9IDIsIG5yb3cgPSAxLCByZWxfd2lkdGhzID0gYygxLCAxKSkKZ2dzYXZlKHBhdGggPSBQQVRIX0ZJR1VSRVMsICJhcmJlaXRzcGxhdHoucG5nIikKYGBgCgojIyMgQU5PVkEKYGBge3J9CmZpdD1hb3YoUFRTU19Ta2FsYSB+IGFyYmVpdHNvcnQsIGRhdGE9ZCkKc3VtbWFyeShmaXQpCmBgYAoKIyMgVmVyZGFjaHQKYGBge3J9Ck09YXJyYXkoTkEsIGRpbT1jKDUsMikpCk1bMSxdID0gc3VtbWFyeShkJFBTU19HcltnMV9zYW5dKS9OX3Blckdyb3VwWzFdCk1bMixdID0gc3VtbWFyeShkJFBTU19HcltnMl9mZXVdKS9OX3Blckdyb3VwWzJdCk1bMyxdID0gc3VtbWFyeShkJFBTU19HcltnM19wb2xdKS9OX3Blckdyb3VwWzNdCk1bNCxdID0gc3VtbWFyeShkJFBTU19HcltnNF9zcGldKS9OX3Blckdyb3VwWzRdCk1bNSxdID0gc3VtbWFyeShkJFBTU19HcltnNV9wc3ldKS9OX3Blckdyb3VwWzVdCgpyb3duYW1lcyhNKT1sYWJlbHMKY29sbmFtZXMoTSk9Yygna2VpbiBWZXJkYWNodCcsICdWZXJkYWNodCcpCnByaW50KE0sIGRpZ2l0cyA9IDIpCmBgYAoKIyMgTXVsdGlwbGUgcmVncmVzc2lvbnMKV2UgcGVyZm9ybSBzdWJncm91cCBhbmFseXNlcwoKIyMjIEFsbGUKYGBge3J9CmZpdCA9IGxtKFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArCiAgICAgICAgICAgU1dFX1NrYWxhICsgZGF1ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQpCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCgojIyMgU2FuaXTDpHQKYGBge3J9CmZpdCA9IGxtKFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArCiAgICAgICAgICAgU1dFX1NrYWxhICsgZGF1ZXIgKyBhbHRlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nMV9zYW4pCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCiMjIyBGZXVlcndlaHIKYGBge3J9CmZpdCA9IGxtKFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArCiAgICAgICAgICAgU1dFX1NrYWxhICsgZGF1ZXIgKyBhbHRlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nMl9mZXUpCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCgojIyMgUG9saXplaQpgYGB7cn0KZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArCiAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArIFRyYXVtYUFyYmVpdCArIFRyYXVtYVZvckJlcnVmICsKICAgICAgICAgICBTV0VfU2thbGEgKyBkYXVlciArIGFsdGVyICsgZ2VzY2hsZWNodCwgZGF0YT1kLmczX3BvbCkKdmlmKGZpdCkgPiA0CnN1bW1hcnkoZml0KQpgYGAKIyMjIFNwaXRhbG5vdGZhbGwKYGBge3J9CmZpdCA9IGxtKFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArCiAgICAgICAgICAgU1dFX1NrYWxhICsgZGF1ZXIgKyBhbHRlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nNF9zcGkpCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCgojIyMgUHN5Y2hpYXRyaWUKYGBge3J9CmZpdCA9IGxtKFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArCiAgICAgICAgICAgU1dFX1NrYWxhICsgZGF1ZXIgKyBhbHRlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nNV9wc3kpCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCgojIyMgCmBgYHtyLCBmaWcuaGVpZ2h0PTYsIGZpZy53aWR0aD02fQp0bXA9ZC5nMV9zYW4KeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDEgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nMl9mZXUKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDIgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nM19wb2wKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDMgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nNF9zcGkKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDQgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nNV9wc3kKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDUgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgpwbG90X2dyaWQocDEsIHAyLCBwMywgcDQgLCBwNSwgbmNvbCA9IDIsIG5yb3cgPSAzKQpgYGAKCiMjIFNFTQpNb2RlbCBmaXQ6IApDRkkgaWRlYWxseSBsYXJnZXIgdGhhbiAwLjkwLCAgQ0ZJIG9mIC45NTUgaXMgZ29vZCEKUk1TRUEgYmVsb3cgMC4xMAoKTGVnZW5kZQoKPX4gbGF0ZW50ZSBWYXJpYWJsZW4KfiAga2F1c2FsZSBQZmVpbGUKCmBgYHtyfQojIGluc3RhbGwucGFja2FnZXMoImxhdmFhbiIpCiMgaW5zdGFsbC5wYWNrYWdlcygic2VtUGxvdCIpCmxpYnJhcnkobGF2YWFuKQpsaWJyYXJ5KHNlbVBsb3QpCmBgYAoKIyMjIE1vZGVsCmBgYHtyfQptb2RlbCA9ICdQVFNTX1NrYWxhIH4gY29wZV9wcm9ibGZvY19hY3RpdmUgKyAKICAgICAgICAgICAgICAgICAgICAgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArCiAgICAgICAgICAgICAgICAgICAgICBUcmF1bWFBcmJlaXQgKwogICAgICAgICAgICAgICAgICAgICAgVHJhdW1hVm9yQmVydWYgKwogICAgICAgICAgICAgICAgICAgICAgU1dFX1NrYWxhICsKICAgICAgICAgICAgICAgICAgICAgIGRhdWVyICsKICAgICAgICAgICAgICAgICAgICAgIGdlc2NobGVjaHQKICAgICAgICAgR0hRID1+IEdIUV9Qc3kgKyBHSFFfRW1vdCArIEdIUV9TVU0gCiAgICAgICAgIEJTQ0wgPX4gQlNDTF9HU0kgKyBCU0NMX1BTVCArIEJTQ0xfUFNESQogICAgICAgICBCU0NMIH4gUFRTU19Ta2FsYQogICAgICAgICBHSFEgfiBQVFNTX1NrYWxhCiAgICAgICAgIHN1aXppZGdlZGFua2VuIH4gUFRTU19Ta2FsYScKYGBgCgpgYGB7cn0KIyBtb2RlbCA9ICdTdHJlc3MgPX4gUFRTU19Ta2FsYSArCiMgICAgICAgICAgICAgICAgICAgICAgIFRyYXVtYUFyYmVpdCArCiMgICAgICAgICAgICAgICAgICAgICAgIFRyYXVtYVZvckJlcnVmICsKIyAgICAgICAgICAgICAgICAgICAgICAgU1dFX1NrYWxhICsKIyAgICAgICAgICAgICAgICAgICAgICAgZGF1ZXIgKwojICAgICAgICAgICAgICAgICAgICAgICBnZXNjaGxlY2h0CiMgICAgICAgICAgQ29waW5nID1+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsKIyAgICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9zdWJzdCArCiMgICAgICAgICAgICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQKIyAgICAgICAgICBXb2hsYmVmaW5kZW4gPX4gR0hRX1BzeSArIEdIUV9FbW90ICsgR0hRX1NVTSAKIyAgICAgICAgICBCZWxhc3R1bmcgPX4gQlNDTF9HU0kgKyBCU0NMX1BTVCArIEJTQ0xfUFNESQojICAgICAgICAgIFN0cmVzcyB+IFdvaGxiZWZpbmRlbiArIEJlbGFzdHVuZyArIENvcGluZycKYGBgCgojIyMgQWxsZQpgYGB7cn0KZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQpCnN1bW1hcnkoZml0LCBmaXQubWVhc3VyZXM9VFJVRSkKCnNlbVBhdGhzKGZpdCwgd2hhdCA9ICJzdGQiLCBsYXlvdXQgPSAidHJlZSIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9ICJMSVNSRUwiLAogICAgICAgICBmaWxldHlwZT0icG5nIiwgZmlsZW5hbWU9IlNFTTAtYWxsIikKCiNpbnNwZWN0KGZpdCwgInJzcXVhcmUiKQojcGFyYW1ldGVyRXN0aW1hdGVzKGZpdCwgY2kgPSBUUlVFLCBib290LmNpLnR5cGUgPSAibm9ybSIpCmBgYAoKIyMjIFNhbml0w6R0CmBgYHtyfQpmaXQgPSBzZW0obW9kZWw9bW9kZWwsIGRhdGE9ZC5nMV9zYW4pCnN1bW1hcnkoZml0LCBmaXQubWVhc3VyZXM9VFJVRSkKCnNlbVBhdGhzKGZpdCwgd2hhdCA9ICJzdGQiLCBsYXlvdXQgPSAidHJlZSIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9ICJMSVNSRUwiLAogICAgICAgICBmaWxldHlwZT0icG5nIiwgZmlsZW5hbWU9IlNFTTEtU2FuIikKYGBgCgojIyMgRmV1ZXJ3ZWhyCmBgYHtyfQpmaXQgPSBzZW0obW9kZWw9bW9kZWwsIGRhdGE9ZC5nMl9mZXUpCgpzZW1QYXRocyhmaXQsIHdoYXQgPSAic3RkIiwgbGF5b3V0ID0gInRyZWUiLCB0aXRsZSA9IEZBTFNFLCAgc3R5bGUgPSAiTElTUkVMIiwKICAgICAgICAgZmlsZXR5cGU9InBuZyIsIGZpbGVuYW1lPSJTRU0yLUZldSIpCmBgYAoKIyMjIFBvbGl6ZWkKYGBge3J9CmZpdCA9IHNlbShtb2RlbD1tb2RlbCwgZGF0YT1kLmczX3BvbCkKc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKQoKc2VtUGF0aHMoZml0LCB3aGF0ID0gInN0ZCIsIGxheW91dCA9ICJ0cmVlIiwgdGl0bGUgPSBGQUxTRSwgIHN0eWxlID0gIkxJU1JFTCIsCiAgICAgICAgIGZpbGV0eXBlPSJwbmciLCBmaWxlbmFtZT0iU0VNMy1Qb2wiKQpgYGAKCiMjIyBTcGl0YWwKYGBge3J9CmZpdCA9IHNlbShtb2RlbD1tb2RlbCwgZGF0YT1kLmc0X3NwaSkKc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKQoKc2VtUGF0aHMoZml0LCB3aGF0ID0gInN0ZCIsIGxheW91dCA9ICJ0cmVlIiwgdGl0bGUgPSBGQUxTRSwgIHN0eWxlID0gIkxJU1JFTCIsCiAgICAgICAgIGZpbGV0eXBlPSJwbmciLCBmaWxlbmFtZT0iU0VNNC1TcGkiKQpgYGAKCiMjIyBQc3ljaGlhdHJpZQpgYGB7cn0KZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQuZzVfcHN5KQpzdW1tYXJ5KGZpdCwgZml0Lm1lYXN1cmVzPVRSVUUpCgpzZW1QYXRocyhmaXQsIHdoYXQgPSAic3RkIiwgbGF5b3V0ID0gInRyZWUiLCB0aXRsZSA9IEZBTFNFLCAgc3R5bGUgPSAiTElTUkVMIiwKICAgICAgICAgZmlsZXR5cGU9InBuZyIsIGZpbGVuYW1lPSJTRU01LVBzeSIpCmBgYA==</div>
 
 
 
