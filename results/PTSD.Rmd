@@ -145,6 +145,25 @@ print(M, digits = 2)
 ## Multiple regressions
 We perform subgroup analyses
 
+
+### PTSS
+```{r}
+fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
+           cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
+           SWE_Skala + dauer + geschlecht, data=d)
+vif(fit) > 4
+summary(fit)
+```
+
+### PTSS
+```{r}
+fit = lm(PTSS_Skala ~ GHQ_Psy + GHQ_Emot + GHQ_SUM + 
+          BSCL_GSI + BSCL_PST + BSCL_PSDI + suizidgedanken, data=d)
+vif(fit) > 4
+summary(fit)
+```
+
+
 ### Sanität
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
@@ -248,8 +267,62 @@ p5 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
 plot_grid(p1, p2, p3, p4 , p5, ncol = 2, nrow = 3)
 ```
 
+## SEM
+Model fit: 
+CFI ideally larger than 0.90,  CFI of .955 is good!
+RMSEA below 0.10
 
+Legende
 
+=~ latente Variablen
+~  kausale Pfeile
 
+```{r}
+# install.packages("lavaan")
+# install.packages("semPlot")
+library(lavaan)
+library(semPlot)
+```
+
+### Model
+```{r}
+model = 'PTSS_Skala ~ cope_problfoc_active + 
+                      cope_dysfunct_subst +
+                      cope_dysfunct_avoid +
+                      TraumaArbeit +
+                      TraumaVorBeruf +
+                      SWE_Skala +
+                      dauer +
+                      geschlecht
+         GHQ =~ GHQ_Psy + GHQ_Emot + GHQ_SUM 
+         BSCL =~ BSCL_GSI + BSCL_PST + BSCL_PSDI
+         BSCL ~ PTSS_Skala
+         GHQ =~ PTSS_Skala
+         suizidgedanken ~ PTSS_Skala'
+```
+
+```{r}
+model = 'Stress =~ PTSS_Skala +
+                      TraumaArbeit +
+                      TraumaVorBeruf +
+                      SWE_Skala +
+                      dauer +
+                      geschlecht
+         Coping =~ cope_problfoc_active +
+                   cope_dysfunct_subst +
+                   cope_dysfunct_avoid
+         Wohlbefinden =~ GHQ_Psy + GHQ_Emot + GHQ_SUM 
+         Belastung =~ BSCL_GSI + BSCL_PST + BSCL_PSDI
+         Stress ~ Wohlbefinden + Belastung + Coping'
+```
+
+```{r}
+fit = sem(model=model, data=d)
+summary(fit, fit.measures=TRUE)
+
+inspect(fit, "rsquare")
+semPaths(fit, what = "std", layout = "tree", title = TRUE, style = "LISREL")
+#parameterEstimates(fit, ci = TRUE, boot.ci.type = "norm")
+```
 
 
