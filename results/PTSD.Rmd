@@ -301,7 +301,7 @@ fit = sem(model=model, data=d)
 summary(fit, fit.measures=TRUE)
 
 semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename="SEM0-all")
+         filetype="png", filename=file.path(PATH_FIGURES,"SEM0-all"))
 
 #inspect(fit, "rsquare")
 #parameterEstimates(fit, ci = TRUE, boot.ci.type = "norm")
@@ -313,7 +313,7 @@ fit = sem(model=model, data=d.g1_san)
 summary(fit, fit.measures=TRUE)
 
 semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename="SEM1-San")
+         filetype="png", filename=file.path(PATH_FIGURES,"SEM1-San"))
 ```
 
 ### Feuerwehr
@@ -321,7 +321,7 @@ semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
 fit = sem(model=model, data=d.g2_feu)
 
 semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename="SEM2-Feu")
+         filetype="png", filename=file.path(PATH_FIGURES,"SEM2-Feu"))
 ```
 
 ### Polizei
@@ -330,7 +330,7 @@ fit = sem(model=model, data=d.g3_pol)
 summary(fit, fit.measures=TRUE)
 
 semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename="SEM3-Pol")
+         filetype="png", filename=file.path(PATH_FIGURES,"SEM3-Pol"))
 ```
 
 ### Spital
@@ -339,7 +339,7 @@ fit = sem(model=model, data=d.g4_spi)
 summary(fit, fit.measures=TRUE)
 
 semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename="SEM4-Spi")
+         filetype="png", filename=file.path(PATH_FIGURES,"SEM4-Spi"))
 ```
 
 ### Psychiatrie
@@ -348,5 +348,5 @@ fit = sem(model=model, data=d.g5_psy)
 summary(fit, fit.measures=TRUE)
 
 semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename="SEM5-Psy")
+         filetype="png", filename=file.path(PATH_FIGURES,"SEM5-Psy"))
 ```
