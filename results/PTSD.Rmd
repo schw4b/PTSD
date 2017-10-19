@@ -1,10 +1,8 @@
 ---
 title: "PTSD"
 author: "Simon Schwab"
-date: "24 Sep 2017"
-output:
-  html_notebook: default
-  html_document: default
+date: "19 Oct 2017"
+output: html_notebook
 ---
 
 ## Libraries
@@ -31,33 +29,45 @@ N = 1002
 PATH_HOME = '/home/simon'
 PATH = file.path(PATH_HOME, 'Dropbox', 'Data', 'PTSD')
 PATH_DATA = file.path(PATH, 'data')
+PATH_FIGURES = file.path(PATH, 'figures')
 ```
 
 ## Load data
-```{r}
+```{r} 
 d = read.spss(file.path(PATH_DATA, 'PTSD_Skalen_1 06 2017_GESAMT.sav'), 
               to.data.frame = T)
 assert(nrow(d) == N)
 
 # Some ids are dublicates but in fact different subjects, thus we recreate the IDs
-d$id = as.factor(1:N)
+#d$id = as.factor(1:N)
 
-g1 = d$arbeitsort=='Sanität, Ambulanz'
-g2 = d$arbeitsort=='Feuerwehr'
-g3 = d$arbeitsort=='Polizei'
-g4 = d$arbeitsort=='Spitalnotfall'
-g5 = d$arbeitsort=='Psychiatrie'
+g1_san = d$arbeitsort=='Sanität, Ambulanz'
+g2_feu = d$arbeitsort=='Feuerwehr'
+g3_pol = d$arbeitsort=='Polizei'
+g4_spi = d$arbeitsort=='Spitalnotfall'
+g5_psy = d$arbeitsort=='Psychiatrie'
 
 ## Create subgroups
-d.g1 = subset(d, g1)
-d.g2 = subset(d, g2)
-d.g3 = subset(d, g3)
-d.g4 = subset(d, g4)
-d.g5 = subset(d, g5)
+d.g1_san = subset(d, g1_san)
+d.g2_feu = subset(d, g2_feu)
+d.g3_pol = subset(d, g3_pol)
+d.g4_spi = subset(d, g4_spi)
+d.g5_psy = subset(d, g5_psy)
 
 labels = c('Sanität, Ambulanz', 'Feuerwehr', 'Polizei', 'Spitalnotfall', 'Psychiatrie')
-n = summary(d$arbeitsort)
+N_perGroup = summary(d$arbeitsort)
 ```
+# check variables
+```{r}
+
+summary(d$wohnsituation)
+d$id[which(d$wohnsituation=="7")] # 4 cases have factor "7"
+
+summary(d$schwierigesEreignis)
+d$id[which(d$schwierigesEreignis=="4")]
+```
+
+
 ## Descriptives
 ### Global Gender, Arbeitsort and Group
 ```{r}
@@ -66,9 +76,10 @@ summary(d$arbeitsort)
 summary(d$group)
 ```
 
-### Mean age per group
+### Mean age and SD per group
 ```{r}
 tapply(d$alter, d$arbeitsort, mean)
+tapply(d$alter, d$arbeitsort, sd)
 ```
 
 ### Gender per Group
@@ -89,6 +100,7 @@ p2=ggplot(data=d, aes(x=arbeitsort, y=PTSS_Skala, fill=arbeitsort)) +
   theme(axis.text.x=element_blank())
 
 plot_grid(p1, p2, ncol = 2, nrow = 1, rel_widths = c(1, 1))
+ggsave(path = PATH_FIGURES, "arbeitsplatz.png")
 ```
 
 ### ANOVA
@@ -99,11 +111,11 @@ summary(fit)
 
 ```{r}
 M=array(NA, dim=c(5,2))
-M[1,] = summary(d$PSS_Gr[g1])/n[1]
-M[2,] = summary(d$PSS_Gr[g2])/n[2]
-M[3,] = summary(d$PSS_Gr[g3])/n[3]
-M[4,] = summary(d$PSS_Gr[g4])/n[4]
-M[5,] = summary(d$PSS_Gr[g5])/n[5]
+M[1,] = summary(d$PSS_Gr[g1_san])/N_perGroup[1]
+M[2,] = summary(d$PSS_Gr[g2_feu])/N_perGroup[2]
+M[3,] = summary(d$PSS_Gr[g3_pol])/N_perGroup[3]
+M[4,] = summary(d$PSS_Gr[g4_spi])/N_perGroup[4]
+M[5,] = summary(d$PSS_Gr[g5_psy])/N_perGroup[5]
 
 rownames(M)=labels
 colnames(M)=c('kein Verdacht', 'Verdacht')
@@ -117,7 +129,7 @@ We perform **subgroup analyses**.
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + alter + geschlecht, data=d.g1)
+           SWE_Skala + dauer + alter + geschlecht, data=d.g1_san)
 vif(fit) > 4
 summary(fit)
 ```
@@ -125,7 +137,7 @@ summary(fit)
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + alter + geschlecht, data=d.g2)
+           SWE_Skala + dauer + alter + geschlecht, data=d.g2_feu)
 vif(fit) > 4
 summary(fit)
 ```
@@ -134,7 +146,7 @@ summary(fit)
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + alter + geschlecht, data=d.g3)
+           SWE_Skala + dauer + alter + geschlecht, data=d.g3_pol)
 vif(fit) > 4
 summary(fit)
 ```
@@ -142,7 +154,7 @@ summary(fit)
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + alter + geschlecht, data=d.g4)
+           SWE_Skala + dauer + alter + geschlecht, data=d.g4_spi)
 vif(fit) > 4
 summary(fit)
 ```
@@ -151,14 +163,14 @@ summary(fit)
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + alter + geschlecht, data=d.g5)
+           SWE_Skala + dauer + alter + geschlecht, data=d.g5_psy)
 vif(fit) > 4
 summary(fit)
 ```
 
 ### Multicolinearity
 ```{r, fig.height=6, fig.width=6}
-tmp=d.g1
+tmp=d.g1_san
 x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
     tmp$cope_dysfunct_avoid, tmp$TraumaArbeit, tmp$TraumaVorBeruf, tmp$SWE_Skala,
     tmp$dauer, tmp$alter, tmp$geschlecht)
@@ -169,7 +181,7 @@ p1 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
   scale_x_continuous(breaks=1:9,labels=1:9) +
   scale_y_reverse(breaks=1:9,labels=1:9)
 
-tmp=d.g2
+tmp=d.g2_feu
 x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
     tmp$cope_dysfunct_avoid, tmp$TraumaArbeit, tmp$TraumaVorBeruf, tmp$SWE_Skala,
     tmp$dauer, tmp$alter, tmp$geschlecht)
@@ -180,7 +192,7 @@ p2 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
   scale_x_continuous(breaks=1:9,labels=1:9) +
   scale_y_reverse(breaks=1:9,labels=1:9)
 
-tmp=d.g3
+tmp=d.g3_pol
 x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
     tmp$cope_dysfunct_avoid, tmp$TraumaArbeit, tmp$TraumaVorBeruf, tmp$SWE_Skala,
     tmp$dauer, tmp$alter, tmp$geschlecht)
@@ -191,7 +203,7 @@ p3 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
   scale_x_continuous(breaks=1:9,labels=1:9) +
   scale_y_reverse(breaks=1:9,labels=1:9)
 
-tmp=d.g4
+tmp=d.g4_spi
 x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
     tmp$cope_dysfunct_avoid, tmp$TraumaArbeit, tmp$TraumaVorBeruf, tmp$SWE_Skala,
     tmp$dauer, tmp$alter, tmp$geschlecht)
@@ -202,7 +214,7 @@ p4 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
   scale_x_continuous(breaks=1:9,labels=1:9) +
   scale_y_reverse(breaks=1:9,labels=1:9)
 
-tmp=d.g5
+tmp=d.g5_psy
 x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
     tmp$cope_dysfunct_avoid, tmp$TraumaArbeit, tmp$TraumaVorBeruf, tmp$SWE_Skala,
     tmp$dauer, tmp$alter, tmp$geschlecht)
