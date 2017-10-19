@@ -57,7 +57,7 @@ d.g5_psy = subset(d, g5_psy)
 labels = c('Sanität, Ambulanz', 'Feuerwehr', 'Polizei', 'Spitalnotfall', 'Psychiatrie')
 N_perGroup = summary(d$arbeitsort)
 ```
-# check variables
+## Check variables
 ```{r}
 
 summary(d$wohnsituation)
@@ -87,9 +87,28 @@ tapply(d$alter, d$arbeitsort, sd)
 tapply(d$geschlecht, d$arbeitsort, summary)
 ```
 
+### Cope
+```{r}
+x = cbind(  summary(d$SWE_Skala),
+          c(summary(d$PTSS_Skala),0),
+          c(summary(d$cope_problfoc_active),0),
+          c(summary(d$cope_dysfunct_subst),0),
+          c(summary(d$cope_dysfunct_avoid),0),
+          c(summary(d$alter),0),
+          c(summary(d$dauer),0)
+          )
+colnames(x)=c("SWE","PTSS","cope_ac","cope_sub","cope_avoid","alter","dauer")
+print(x)
+
+summary(d$TraumaArbeit)
+summary(d$TraumaVorBeruf)
+summary(d$geschlecht)
+```
+
 
 ## PTSS difference in mean between Groups
 ```{r 2, fig.height=2, fig.width=10}
+set.seed(1980)
 p1=ggplot(data=d, aes(x=arbeitsort, y=PTSS_Skala, fill=arbeitsort)) +
   geom_bar(stat="summary", fun.y="mean") +
   theme(axis.text.x=element_blank())
@@ -109,6 +128,7 @@ fit=aov(PTSS_Skala ~ arbeitsort, data=d)
 summary(fit)
 ```
 
+## Verdacht
 ```{r}
 M=array(NA, dim=c(5,2))
 M[1,] = summary(d$PSS_Gr[g1_san])/N_perGroup[1]
@@ -123,7 +143,7 @@ print(M, digits = 2)
 ```
 
 ## Multiple regressions
-We perform **subgroup analyses**.
+We perform subgroup analyses
 
 ### Sanität
 ```{r}
@@ -168,7 +188,7 @@ vif(fit) > 4
 summary(fit)
 ```
 
-### Multicolinearity
+### 
 ```{r, fig.height=6, fig.width=6}
 tmp=d.g1_san
 x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
