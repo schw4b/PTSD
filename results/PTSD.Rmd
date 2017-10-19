@@ -155,15 +155,6 @@ vif(fit) > 4
 summary(fit)
 ```
 
-### PTSS
-```{r}
-fit = lm(PTSS_Skala ~ GHQ_Psy + GHQ_Emot + GHQ_SUM + 
-          BSCL_GSI + BSCL_PST + BSCL_PSDI + suizidgedanken, data=d)
-vif(fit) > 4
-summary(fit)
-```
-
-
 ### Sanität
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
@@ -319,9 +310,11 @@ model = 'Stress =~ PTSS_Skala +
 ```{r}
 fit = sem(model=model, data=d)
 summary(fit, fit.measures=TRUE)
-
 inspect(fit, "rsquare")
-semPaths(fit, what = "std", layout = "tree", title = TRUE, style = "LISREL")
+
+semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
+         filetype="pdf", filename="SEM")
+
 #parameterEstimates(fit, ci = TRUE, boot.ci.type = "norm")
 ```
 
