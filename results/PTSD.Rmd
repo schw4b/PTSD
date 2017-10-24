@@ -257,6 +257,7 @@ Model specification
 `~~` correlation
 
 Data screening/ SEM assumptions
+
 * Missing values
 * normality
 * Outliers 
@@ -271,10 +272,9 @@ library(semPlot)
 ### Model
 
 ```{r}
-model = 'Belastung =~ BSCL_PST + BSCL_PSDI + GHQ_Psy + GHQ_Emot
-         dysfunctional =~
-                   cope_dysfunct_subst +
-                   cope_dysfunct_avoid
+model = 'Belastung =~ BSCL_PST + BSCL_GSI + GHQ_Psy + GHQ_Emot
+         dysfunctional =~ cope_dysfunct_subst +
+                          cope_dysfunct_avoid
          dysfunctional ~ SWE_Skala + TraumaVorBeruf
          PTSS_Skala ~ cope_problfoc_active + 
                       dysfunctional +
@@ -292,13 +292,16 @@ summary(fit, fit.measures=TRUE)
 semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
          filetype="png", filename=file.path(PATH_FIGURES,"SEM0-all"))
 
-#inspect(fit, "rsquare")
+inspect(fit, "rsquare")
 # parameterEstimates(fit, ci = TRUE, boot.ci.type = "norm")
 ```
 
 ### Sanität
 ```{r}
-fit = sem(model=model, data=d.g1_san)
+# outlier
+d.g1_san_rm = d.g1_san[-which.max(d.g1_san$PTSS_Skala),]
+
+fit = sem(model=model, data=d.g1_san_rm)
 summary(fit, fit.measures=TRUE)
 
 semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",

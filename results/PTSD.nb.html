@@ -876,7 +876,12 @@ plot_grid(p1, p2, p3, p4 , p5, ncol = 2, nrow = 3)</code></pre>
 <p>A good model fit is considered as follows: * CFI ideally larger than 0.9 * RMSEA below 0.10</p>
 <p>Model specification</p>
 <p><code>=~</code> for latent variables <code>~</code> causal relationshop <code>~~</code> correlation</p>
-<p>Data screening/ SEM assumptions * Missing values * normality * Outliers</p>
+<p>Data screening/ SEM assumptions</p>
+<ul>
+<li>Missing values</li>
+<li>normality</li>
+<li>Outliers</li>
+</ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBpbnN0YWxsLnBhY2thZ2VzKFwibGF2YWFuXCIpXG4jIGluc3RhbGwucGFja2FnZXMoXCJzZW1QbG90XCIpXG5saWJyYXJ5KGxhdmFhbilcbmxpYnJhcnkoc2VtUGxvdClcbmBgYCJ9 -->
@@ -891,8 +896,8 @@ library(semPlot)</code></pre>
 <h3>Model</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kZWwgPSAnQmVsYXN0dW5nID1+IEJTQ0xfUFNUICsgQlNDTF9QU0RJICsgR0hRX1BzeSArIEdIUV9FbW90XG4gICAgICAgICBkeXNmdW5jdGlvbmFsID1+XG4gICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9zdWJzdCArXG4gICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZFxuICAgICAgICAgZHlzZnVuY3Rpb25hbCB+IFNXRV9Ta2FsYSArIFRyYXVtYVZvckJlcnVmXG4gICAgICAgICBQVFNTX1NrYWxhIH4gY29wZV9wcm9ibGZvY19hY3RpdmUgKyBcbiAgICAgICAgICAgICAgICAgICAgICBkeXNmdW5jdGlvbmFsICtcbiAgICAgICAgICAgICAgICAgICAgICBUcmF1bWFBcmJlaXQgK1xuICAgICAgICAgICAgICAgICAgICAgIGRhdWVyICtcbiAgICAgICAgICAgICAgICAgICAgICBnZXNjaGxlY2h0XG4gICAgICAgICBCZWxhc3R1bmcgfiBQVFNTX1NrYWxhJ1xuYGBgIn0= -->
-<pre class="r"><code>model = 'Belastung =~ BSCL_PST + BSCL_PSDI + GHQ_Psy + GHQ_Emot
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kZWwgPSAnQmVsYXN0dW5nID1+IEJTQ0xfUFNUICsgQlNDTF9HU0kgKyBHSFFfUHN5ICsgR0hRX0Vtb3RcbiAgICAgICAgIGR5c2Z1bmN0aW9uYWwgPX5cbiAgICAgICAgICAgICAgICAgICBjb3BlX2R5c2Z1bmN0X3N1YnN0ICtcbiAgICAgICAgICAgICAgICAgICBjb3BlX2R5c2Z1bmN0X2F2b2lkXG4gICAgICAgICBkeXNmdW5jdGlvbmFsIH4gU1dFX1NrYWxhICsgVHJhdW1hVm9yQmVydWZcbiAgICAgICAgIFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIFxuICAgICAgICAgICAgICAgICAgICAgIGR5c2Z1bmN0aW9uYWwgK1xuICAgICAgICAgICAgICAgICAgICAgIFRyYXVtYUFyYmVpdCArXG4gICAgICAgICAgICAgICAgICAgICAgZGF1ZXIgK1xuICAgICAgICAgICAgICAgICAgICAgIGdlc2NobGVjaHRcbiAgICAgICAgIEJlbGFzdHVuZyB+IFBUU1NfU2thbGEnXG5gYGAifQ== -->
+<pre class="r"><code>model = 'Belastung =~ BSCL_PST + BSCL_GSI + GHQ_Psy + GHQ_Emot
          dysfunctional =~
                    cope_dysfunct_subst +
                    cope_dysfunct_avoid
@@ -915,47 +920,47 @@ library(semPlot)</code></pre>
 <pre class="r"><code>fit = sem(model=model, data=d)
 summary(fit, fit.measures=TRUE)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyICA5MiBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgODcyICAgICAgICAxMDAyXG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAzNDkuNzc0XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDlcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgMjM3MS44MjFcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA2M1xuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC44NzBcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjgzM1xuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAtMTgxNjEuOTYxXG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgIC0xNzk4Ny4wNzVcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDIxXG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAzNjM2NS45MjNcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDM2NDY2LjExMFxuICBTYW1wbGUtc2l6ZSBhZGp1c3RlZCBCYXllc2lhbiAoQklDKSAgICAgICAgMzYzOTkuNDE4XG5cblJvb3QgTWVhbiBTcXVhcmUgRXJyb3Igb2YgQXBwcm94aW1hdGlvbjpcblxuICBSTVNFQSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDg0XG4gIDkwIFBlcmNlbnQgQ29uZmlkZW5jZSBJbnRlcnZhbCAgICAgICAgICAwLjA3NiAgMC4wOTJcbiAgUC12YWx1ZSBSTVNFQSA8PSAwLjA1ICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5TdGFuZGFyZGl6ZWQgUm9vdCBNZWFuIFNxdWFyZSBSZXNpZHVhbDpcblxuICBTUk1SICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDUzXG5cblBhcmFtZXRlciBFc3RpbWF0ZXM6XG5cbiAgSW5mb3JtYXRpb24gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBFeHBlY3RlZFxuICBTdGFuZGFyZCBFcnJvcnMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFN0YW5kYXJkXG5cbkxhdGVudCBWYXJpYWJsZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgQmVsYXN0dW5nID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfUFNUICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU0RJICAgICAgICAgMC4wMjUgICAgMC4wMDIgICAxMS40NDQgICAgMC4wMDBcbiAgICBHSFFfUHN5ICAgICAgICAgICAwLjEzOSAgICAwLjAwNyAgIDE5LjMyMSAgICAwLjAwMFxuICAgIEdIUV9FbW90ICAgICAgICAgIDAuMjE3ICAgIDAuMDA5ICAgMjQuNjg0ICAgIDAuMDAwXG4gIGR5c2Z1bmN0aW9uYWwgPX4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjcF9keXNmbmN0X3NicyAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDEuMTY0ICAgIDAuMTUwICAgIDcuNzM1ICAgIDAuMDAwXG5cblJlZ3Jlc3Npb25zOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIGR5c2Z1bmN0aW9uYWwgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBTV0VfU2thbGEgICAgICAgICAwLjAxMiAgICAwLjAwNCAgICAzLjI2NCAgICAwLjAwMVxuICAgIFRyYXVtYVZvckJlcnVmICAgIDAuMDQyICAgIDAuMDI3ICAgIDEuNTYyICAgIDAuMTE4XG4gIFBUU1NfU2thbGEgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfcHJibGZjX2N0diAgIC0wLjQyMyAgICAwLjE5OCAgIC0yLjEzMSAgICAwLjAzM1xuICAgIGR5c2Z1bmN0aW9uYWwgICAgMTAuNzg3ICAgIDEuNDUyICAgIDcuNDI5ICAgIDAuMDAwXG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMi4wNjcgICAgMC40OTIgICAgNC4yMDMgICAgMC4wMDBcbiAgICBkYXVlciAgICAgICAgICAgICAwLjAzOCAgICAwLjAxNiAgICAyLjMxMCAgICAwLjAyMVxuICAgIGdlc2NobGVjaHQgICAgICAgLTEuNzI0ICAgIDAuMzQ5ICAgLTQuOTQ2ICAgIDAuMDAwXG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAxLjE3MCAgICAwLjAzOSAgIDI5LjczOSAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgIDIyLjczMiAgICAxLjYxMyAgIDE0LjA5NiAgICAwLjAwMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMTY4ICAgIDAuMDA4ICAgMjAuMzMwICAgIDAuMDAwXG4gICAuR0hRX1BzeSAgICAgICAgICAgMS40MDkgICAgMC4wNzUgICAxOC44NzIgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAxLjUxOCAgICAwLjA5NCAgIDE2LjIyMSAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMTU3ICAgIDAuMDEzICAgMTEuOTE0ICAgIDAuMDAwXG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC40MjQgICAgMC4wMjUgICAxNi43OTggICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgIDE1LjI3MCAgICAxLjQ1MSAgIDEwLjUyNiAgICAwLjAwMFxuICAgLkJlbGFzdHVuZyAgICAgICAgMTMuNDU3ICAgIDEuMzU4ICAgIDkuOTExICAgIDAuMDAwXG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wNzkgICAgMC4wMTMgICAgNS44ODMgICAgMC4wMDBcbiJ9 -->
-<pre><code>lavaan (0.5-23.1097) converged normally after  92 iterations
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyICA4NiBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgOTg4ICAgICAgICAxMDAyXG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICA1NDAuOTg1XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDlcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgNDg2My40NDhcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA2M1xuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC44OThcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjg2OFxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAtMTkyMzQuNTY0XG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgIC0xODk2NC4wNzJcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDIxXG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAzODUxMS4xMjhcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDM4NjEzLjkzN1xuICBTYW1wbGUtc2l6ZSBhZGp1c3RlZCBCYXllc2lhbiAoQklDKSAgICAgICAgMzg1NDcuMjQxXG5cblJvb3QgTWVhbiBTcXVhcmUgRXJyb3Igb2YgQXBwcm94aW1hdGlvbjpcblxuICBSTVNFQSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMTAxXG4gIDkwIFBlcmNlbnQgQ29uZmlkZW5jZSBJbnRlcnZhbCAgICAgICAgICAwLjA5MyAgMC4xMDlcbiAgUC12YWx1ZSBSTVNFQSA8PSAwLjA1ICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5TdGFuZGFyZGl6ZWQgUm9vdCBNZWFuIFNxdWFyZSBSZXNpZHVhbDpcblxuICBTUk1SICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDU4XG5cblBhcmFtZXRlciBFc3RpbWF0ZXM6XG5cbiAgSW5mb3JtYXRpb24gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBFeHBlY3RlZFxuICBTdGFuZGFyZCBFcnJvcnMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFN0YW5kYXJkXG5cbkxhdGVudCBWYXJpYWJsZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgQmVsYXN0dW5nID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfUFNUICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9HU0kgICAgICAgICAgMC4wMzggICAgMC4wMDEgICA3NS4yNDkgICAgMC4wMDBcbiAgICBHSFFfUHN5ICAgICAgICAgICAwLjA5NSAgICAwLjAwNSAgIDE5LjI5NCAgICAwLjAwMFxuICAgIEdIUV9FbW90ICAgICAgICAgIDAuMTU0ICAgIDAuMDA2ICAgMjcuMTU1ICAgIDAuMDAwXG4gIGR5c2Z1bmN0aW9uYWwgPX4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjcF9keXNmbmN0X3NicyAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDEuMTkxICAgIDAuMTM4ICAgIDguNjU0ICAgIDAuMDAwXG5cblJlZ3Jlc3Npb25zOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIGR5c2Z1bmN0aW9uYWwgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBTV0VfU2thbGEgICAgICAgICAwLjAxMyAgICAwLjAwMyAgICA0LjI0NyAgICAwLjAwMFxuICAgIFRyYXVtYVZvckJlcnVmICAgIDAuMDQ0ICAgIDAuMDIyICAgIDEuOTk3ICAgIDAuMDQ2XG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMC4xODUgICAgMC4wMzQgICAgNS40NzAgICAgMC4wMDBcbiAgUFRTU19Ta2FsYSB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGNvcF9wcmJsZmNfY3R2ICAgLTAuNTQ4ICAgIDAuMTg0ICAgLTIuOTczICAgIDAuMDAzXG4gICAgZHlzZnVuY3Rpb25hbCAgICAxMy43MjUgICAgMS41OTcgICAgOC41OTIgICAgMC4wMDBcbiAgICBkYXVlciAgICAgICAgICAgICAwLjAzMyAgICAwLjAxNSAgICAyLjIyNSAgICAwLjAyNlxuICAgIGdlc2NobGVjaHQgICAgICAgLTEuODU0ICAgIDAuMzI5ICAgLTUuNjMxICAgIDAuMDAwXG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAxLjMwNCAgICAwLjAzNCAgIDM4Ljc0MiAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgICA0Ljg4MiAgICAwLjUzOCAgICA5LjA3NSAgICAwLjAwMFxuICAgLkJTQ0xfR1NJICAgICAgICAgIDAuMDA2ICAgIDAuMDAxICAgIDguMjU3ICAgIDAuMDAwXG4gICAuR0hRX1BzeSAgICAgICAgICAgMS41ODIgICAgMC4wNzIgICAyMS45NjAgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAyLjA0MCAgICAwLjA5NCAgIDIxLjY3OSAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMTU0ICAgIDAuMDEwICAgMTUuMTM1ICAgIDAuMDAwXG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC40MjcgICAgMC4wMjIgICAxOS4wNDMgICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgIDEyLjk3MyAgICAxLjQ4NyAgICA4LjcyNSAgICAwLjAwMFxuICAgLkJlbGFzdHVuZyAgICAgICAgMjUuMzI1ICAgIDEuMjkxICAgMTkuNjE3ICAgIDAuMDAwXG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wNTkgICAgMC4wMDkgICAgNi40MDMgICAgMC4wMDBcbiJ9 -->
+<pre><code>lavaan (0.5-23.1097) converged normally after  86 iterations
 
                                                   Used       Total
-  Number of observations                           872        1002
+  Number of observations                           988        1002
 
   Estimator                                         ML
-  Minimum Function Test Statistic              349.774
+  Minimum Function Test Statistic              540.985
   Degrees of freedom                                49
   P-value (Chi-square)                           0.000
 
 Model test baseline model:
 
-  Minimum Function Test Statistic             2371.821
+  Minimum Function Test Statistic             4863.448
   Degrees of freedom                                63
   P-value                                        0.000
 
 User model versus baseline model:
 
-  Comparative Fit Index (CFI)                    0.870
-  Tucker-Lewis Index (TLI)                       0.833
+  Comparative Fit Index (CFI)                    0.898
+  Tucker-Lewis Index (TLI)                       0.868
 
 Loglikelihood and Information Criteria:
 
-  Loglikelihood user model (H0)             -18161.961
-  Loglikelihood unrestricted model (H1)     -17987.075
+  Loglikelihood user model (H0)             -19234.564
+  Loglikelihood unrestricted model (H1)     -18964.072
 
   Number of free parameters                         21
-  Akaike (AIC)                               36365.923
-  Bayesian (BIC)                             36466.110
-  Sample-size adjusted Bayesian (BIC)        36399.418
+  Akaike (AIC)                               38511.128
+  Bayesian (BIC)                             38613.937
+  Sample-size adjusted Bayesian (BIC)        38547.241
 
 Root Mean Square Error of Approximation:
 
-  RMSEA                                          0.084
-  90 Percent Confidence Interval          0.076  0.092
+  RMSEA                                          0.101
+  90 Percent Confidence Interval          0.093  0.109
   P-value RMSEA &lt;= 0.05                          0.000
 
 Standardized Root Mean Square Residual:
 
-  SRMR                                           0.053
+  SRMR                                           0.058
 
 Parameter Estimates:
 
@@ -966,44 +971,54 @@ Latent Variables:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   Belastung =~                                        
     BSCL_PST          1.000                           
-    BSCL_PSDI         0.025    0.002   11.444    0.000
-    GHQ_Psy           0.139    0.007   19.321    0.000
-    GHQ_Emot          0.217    0.009   24.684    0.000
+    BSCL_GSI          0.038    0.001   75.249    0.000
+    GHQ_Psy           0.095    0.005   19.294    0.000
+    GHQ_Emot          0.154    0.006   27.155    0.000
   dysfunctional =~                                    
     cp_dysfnct_sbs    1.000                           
-    cop_dysfnct_vd    1.164    0.150    7.735    0.000
+    cop_dysfnct_vd    1.191    0.138    8.654    0.000
 
 Regressions:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   dysfunctional ~                                     
-    SWE_Skala         0.012    0.004    3.264    0.001
-    TraumaVorBeruf    0.042    0.027    1.562    0.118
+    SWE_Skala         0.013    0.003    4.247    0.000
+    TraumaVorBeruf    0.044    0.022    1.997    0.046
+    TraumaArbeit      0.185    0.034    5.470    0.000
   PTSS_Skala ~                                        
-    cop_prblfc_ctv   -0.423    0.198   -2.131    0.033
-    dysfunctional    10.787    1.452    7.429    0.000
-    TraumaArbeit      2.067    0.492    4.203    0.000
-    dauer             0.038    0.016    2.310    0.021
-    geschlecht       -1.724    0.349   -4.946    0.000
+    cop_prblfc_ctv   -0.548    0.184   -2.973    0.003
+    dysfunctional    13.725    1.597    8.592    0.000
+    dauer             0.033    0.015    2.225    0.026
+    geschlecht       -1.854    0.329   -5.631    0.000
   Belastung ~                                         
-    PTSS_Skala        1.170    0.039   29.739    0.000
+    PTSS_Skala        1.304    0.034   38.742    0.000
 
 Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
-   .BSCL_PST         22.732    1.613   14.096    0.000
-   .BSCL_PSDI         0.168    0.008   20.330    0.000
-   .GHQ_Psy           1.409    0.075   18.872    0.000
-   .GHQ_Emot          1.518    0.094   16.221    0.000
-   .cp_dysfnct_sbs    0.157    0.013   11.914    0.000
-   .cop_dysfnct_vd    0.424    0.025   16.798    0.000
-   .PTSS_Skala       15.270    1.451   10.526    0.000
-   .Belastung        13.457    1.358    9.911    0.000
-   .dysfunctional     0.079    0.013    5.883    0.000</code></pre>
+   .BSCL_PST          4.882    0.538    9.075    0.000
+   .BSCL_GSI          0.006    0.001    8.257    0.000
+   .GHQ_Psy           1.582    0.072   21.960    0.000
+   .GHQ_Emot          2.040    0.094   21.679    0.000
+   .cp_dysfnct_sbs    0.154    0.010   15.135    0.000
+   .cop_dysfnct_vd    0.427    0.022   19.043    0.000
+   .PTSS_Skala       12.973    1.487    8.725    0.000
+   .Belastung        25.325    1.291   19.617    0.000
+   .dysfunctional     0.059    0.009    6.403    0.000</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1maWxlLnBhdGgoUEFUSF9GSUdVUkVTLFwiU0VNMC1hbGxcIikpXG4jaW5zcGVjdChmaXQsIFwicnNxdWFyZVwiKVxuIyBwYXJhbWV0ZXJFc3RpbWF0ZXMoZml0LCBjaSA9IFRSVUUsIGJvb3QuY2kudHlwZSA9IFwibm9ybVwiKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1maWxlLnBhdGgoUEFUSF9GSUdVUkVTLFwiU0VNMC1hbGxcIikpXG5pbnNwZWN0KGZpdCwgXCJyc3F1YXJlXCIpXG5gYGAifQ== -->
 <pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
          filetype=&quot;png&quot;, filename=file.path(PATH_FIGURES,&quot;SEM0-all&quot;))
-#inspect(fit, &quot;rsquare&quot;)
-# parameterEstimates(fit, ci = TRUE, boot.ci.type = &quot;norm&quot;)</code></pre>
+inspect(fit, &quot;rsquare&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBCU0NMX1BTVCAgICAgICAgICAgIEJTQ0xfR1NJICAgICAgICAgICAgIEdIUV9Qc3kgICAgICAgICAgICBHSFFfRW1vdCBcbiAgICAgICAgICAgICAgMC45MzUgICAgICAgICAgICAgICAwLjk0MiAgICAgICAgICAgICAgIDAuMjg2ICAgICAgICAgICAgICAgMC40NTAgXG5jb3BlX2R5c2Z1bmN0X3N1YnN0IGNvcGVfZHlzZnVuY3RfYXZvaWQgICAgICAgICAgUFRTU19Ta2FsYSAgICAgICAgICAgQmVsYXN0dW5nIFxuICAgICAgICAgICAgICAwLjMwMCAgICAgICAgICAgICAgIDAuMTgwICAgICAgICAgICAgICAgMC41MTMgICAgICAgICAgICAgICAwLjY0MSBcbiAgICAgIGR5c2Z1bmN0aW9uYWwgXG4gICAgICAgICAgICAgIDAuMTAyIFxuIn0= -->
+<pre><code>           BSCL_PST            BSCL_GSI             GHQ_Psy            GHQ_Emot 
+              0.935               0.942               0.286               0.450 
+cope_dysfunct_subst cope_dysfunct_avoid          PTSS_Skala           Belastung 
+              0.300               0.180               0.513               0.641 
+      dysfunctional 
+              0.102 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwYXJhbWV0ZXJFc3RpbWF0ZXMoZml0LCBjaSA9IFRSVUUsIGJvb3QuY2kudHlwZSA9IFwibm9ybVwiKVxuYGBgIn0= -->
+<pre class="r"><code># parameterEstimates(fit, ci = TRUE, boot.ci.type = &quot;norm&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1012,56 +1027,52 @@ Variances:
 <h3>Sanität</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQuZzFfc2FuKVxuYGBgIn0= -->
-<pre class="r"><code>fit = sem(model=model, data=d.g1_san)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBvdXRsaWVyXG5kLmcxX3Nhbl9ybSA9IGQuZzFfc2FuWy13aGljaC5tYXgoZC5nMV9zYW4kUFRTU19Ta2FsYSksXVxuZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQuZzFfc2FuX3JtKVxuc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKVxuYGBgIn0= -->
+<pre class="r"><code># outlier
+d.g1_san_rm = d.g1_san[-which.max(d.g1_san$PTSS_Skala),]
+fit = sem(model=model, data=d.g1_san_rm)
+summary(fit, fit.measures=TRUE)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuIFdBUk5JTkc6IHNvbWUgZXN0aW1hdGVkIG92IHZhcmlhbmNlcyBhcmUgbmVnYXRpdmVcbiJ9 -->
-<pre><code>lavaan WARNING: some estimated ov variances are negative</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKVxuYGBgIn0= -->
-<pre class="r"><code>summary(fit, fit.measures=TRUE)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyIDExMCBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgIDg2ICAgICAgICAgIDk3XG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAgNzQuNDc2XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDlcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAxMVxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgIDMxOC40MjVcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA2M1xuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC45MDBcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjg3MlxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgLTE3MzcuMjQxXG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAtMTcwMC4wMDNcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDIxXG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMzUxNi40ODJcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAzNTY4LjAyM1xuICBTYW1wbGUtc2l6ZSBhZGp1c3RlZCBCYXllc2lhbiAoQklDKSAgICAgICAgIDM1MDEuNzY3XG5cblJvb3QgTWVhbiBTcXVhcmUgRXJyb3Igb2YgQXBwcm94aW1hdGlvbjpcblxuICBSTVNFQSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDc4XG4gIDkwIFBlcmNlbnQgQ29uZmlkZW5jZSBJbnRlcnZhbCAgICAgICAgICAwLjAzOCAgMC4xMTJcbiAgUC12YWx1ZSBSTVNFQSA8PSAwLjA1ICAgICAgICAgICAgICAgICAgICAgICAgICAwLjEwOFxuXG5TdGFuZGFyZGl6ZWQgUm9vdCBNZWFuIFNxdWFyZSBSZXNpZHVhbDpcblxuICBTUk1SICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDczXG5cblBhcmFtZXRlciBFc3RpbWF0ZXM6XG5cbiAgSW5mb3JtYXRpb24gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBFeHBlY3RlZFxuICBTdGFuZGFyZCBFcnJvcnMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFN0YW5kYXJkXG5cbkxhdGVudCBWYXJpYWJsZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgQmVsYXN0dW5nID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfUFNUICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU0RJICAgICAgICAgMC4wMzcgICAgMC4wMDcgICAgNS42MjQgICAgMC4wMDBcbiAgICBHSFFfUHN5ICAgICAgICAgICAwLjIxMyAgICAwLjAyOCAgICA3LjU2MiAgICAwLjAwMFxuICAgIEdIUV9FbW90ICAgICAgICAgIDAuMjcwICAgIDAuMDMyICAgIDguNDIzICAgIDAuMDAwXG4gIGR5c2Z1bmN0aW9uYWwgPX4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjcF9keXNmbmN0X3NicyAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDEuMTg5ICAgIDAuNjU0ICAgIDEuODE5ICAgIDAuMDY5XG5cblJlZ3Jlc3Npb25zOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIGR5c2Z1bmN0aW9uYWwgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBTV0VfU2thbGEgICAgICAgICAwLjAwOCAgICAwLjAwOCAgICAwLjk5NiAgICAwLjMxOVxuICAgIFRyYXVtYVZvckJlcnVmICAgIDAuMDM3ICAgIDAuMDQzICAgIDAuODU3ICAgIDAuMzkyXG4gIFBUU1NfU2thbGEgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfcHJibGZjX2N0diAgICAwLjUyMSAgICAwLjcyMiAgICAwLjcyMSAgICAwLjQ3MVxuICAgIGR5c2Z1bmN0aW9uYWwgICAgNDQuMTk3ICAgMzkuNjAyICAgIDEuMTE2ICAgIDAuMjY0XG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMy4zNjYgICAgMi43MzEgICAgMS4yMzIgICAgMC4yMThcbiAgICBkYXVlciAgICAgICAgICAgICAwLjA5MCAgICAwLjA2OSAgICAxLjMwMyAgICAwLjE5MlxuICAgIGdlc2NobGVjaHQgICAgICAgIDAuMTI0ICAgIDEuMTY2ICAgIDAuMTA2ICAgIDAuOTE2XG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAxLjAwMyAgICAwLjEyNiAgICA3LjkzNyAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgIDMwLjkzNCAgICA1Ljg0OCAgICA1LjI5MCAgICAwLjAwMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMTE1ICAgIDAuMDE5ICAgIDYuMTA1ICAgIDAuMDAwXG4gICAuR0hRX1BzeSAgICAgICAgICAgMS40MDUgICAgMC4yNjYgICAgNS4yODggICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAxLjIxNCAgICAwLjI4OSAgICA0LjE5NyAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMTgwICAgIDAuMDMwICAgIDUuOTIyICAgIDAuMDAwXG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC4zNTQgICAgMC4wNTcgICAgNi4yMDYgICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgIC0xLjAxNSAgIDI1LjU5NCAgIC0wLjA0MCAgICAwLjk2OFxuICAgLkJlbGFzdHVuZyAgICAgICAgMTcuMjkwICAgIDQuNzQzICAgIDMuNjQ1ICAgIDAuMDAwXG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wMTUgICAgMC4wMTYgICAgMC45NDggICAgMC4zNDNcbiJ9 -->
-<pre><code>lavaan (0.5-23.1097) converged normally after 110 iterations
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyIDEwNCBpdGVyYXRpb25zXG5cbiAgTnVtYmVyIG9mIG9ic2VydmF0aW9ucyAgICAgICAgICAgICAgICAgICAgICAgICAgICA5NlxuXG4gIEVzdGltYXRvciAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTUxcbiAgTWluaW11bSBGdW5jdGlvbiBUZXN0IFN0YXRpc3RpYyAgICAgICAgICAgICAgMTAxLjM2OVxuICBEZWdyZWVzIG9mIGZyZWVkb20gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDQ5XG4gIFAtdmFsdWUgKENoaS1zcXVhcmUpICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDBcblxuTW9kZWwgdGVzdCBiYXNlbGluZSBtb2RlbDpcblxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICA0OTQuNjc2XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNjNcbiAgUC12YWx1ZSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Vc2VyIG1vZGVsIHZlcnN1cyBiYXNlbGluZSBtb2RlbDpcblxuICBDb21wYXJhdGl2ZSBGaXQgSW5kZXggKENGSSkgICAgICAgICAgICAgICAgICAgIDAuODc5XG4gIFR1Y2tlci1MZXdpcyBJbmRleCAoVExJKSAgICAgICAgICAgICAgICAgICAgICAgMC44NDRcblxuTG9nbGlrZWxpaG9vZCBhbmQgSW5mb3JtYXRpb24gQ3JpdGVyaWE6XG5cbiAgTG9nbGlrZWxpaG9vZCB1c2VyIG1vZGVsIChIMCkgICAgICAgICAgICAgIC0xODcwLjQ4NVxuICBMb2dsaWtlbGlob29kIHVucmVzdHJpY3RlZCBtb2RlbCAoSDEpICAgICAgLTE4MTkuODAxXG5cbiAgTnVtYmVyIG9mIGZyZWUgcGFyYW1ldGVycyAgICAgICAgICAgICAgICAgICAgICAgICAyMVxuICBBa2Fpa2UgKEFJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDM3ODIuOTcxXG4gIEJheWVzaWFuIChCSUMpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMzgzNi44MjJcbiAgU2FtcGxlLXNpemUgYWRqdXN0ZWQgQmF5ZXNpYW4gKEJJQykgICAgICAgICAzNzcwLjUxNlxuXG5Sb290IE1lYW4gU3F1YXJlIEVycm9yIG9mIEFwcHJveGltYXRpb246XG5cbiAgUk1TRUEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjEwNlxuICA5MCBQZXJjZW50IENvbmZpZGVuY2UgSW50ZXJ2YWwgICAgICAgICAgMC4wNzYgIDAuMTM1XG4gIFAtdmFsdWUgUk1TRUEgPD0gMC4wNSAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDJcblxuU3RhbmRhcmRpemVkIFJvb3QgTWVhbiBTcXVhcmUgUmVzaWR1YWw6XG5cbiAgU1JNUiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjA2N1xuXG5QYXJhbWV0ZXIgRXN0aW1hdGVzOlxuXG4gIEluZm9ybWF0aW9uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRXhwZWN0ZWRcbiAgU3RhbmRhcmQgRXJyb3JzICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTdGFuZGFyZFxuXG5MYXRlbnQgVmFyaWFibGVzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIEJlbGFzdHVuZyA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBCU0NMX1BTVCAgICAgICAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfR1NJICAgICAgICAgIDAuMDQyICAgIDAuMDAyICAgMTkuMDc4ICAgIDAuMDAwXG4gICAgR0hRX1BzeSAgICAgICAgICAgMC4xMzEgICAgMC4wMTkgICAgNi45NTggICAgMC4wMDBcbiAgICBHSFFfRW1vdCAgICAgICAgICAwLjE3MSAgICAwLjAxOSAgICA4Ljk3MiAgICAwLjAwMFxuICBkeXNmdW5jdGlvbmFsID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgY3BfZHlzZm5jdF9zYnMgICAgMS4wMDAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfZHlzZm5jdF92ZCAgICAxLjE1MCAgICAwLjUwOCAgICAyLjI2NSAgICAwLjAyNFxuXG5SZWdyZXNzaW9uczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuICBkeXNmdW5jdGlvbmFsIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgU1dFX1NrYWxhICAgICAgICAgMC4wMTAgICAgMC4wMDcgICAgMS4zOTMgICAgMC4xNjRcbiAgICBUcmF1bWFWb3JCZXJ1ZiAgICAwLjA0OCAgICAwLjA0NSAgICAxLjA2NSAgICAwLjI4N1xuICAgIFRyYXVtYUFyYmVpdCAgICAgIDAuMTc2ICAgIDAuMTA5ICAgIDEuNjE0ICAgIDAuMTA3XG4gIFBUU1NfU2thbGEgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfcHJibGZjX2N0diAgICAwLjIwNyAgICAwLjY1MyAgICAwLjMxNyAgICAwLjc1MVxuICAgIGR5c2Z1bmN0aW9uYWwgICAgMjguNjA3ICAgMTQuMTIxICAgIDIuMDI2ICAgIDAuMDQzXG4gICAgZGF1ZXIgICAgICAgICAgICAgMC4wMzcgICAgMC4wNTcgICAgMC42NTkgICAgMC41MTBcbiAgICBnZXNjaGxlY2h0ICAgICAgICAwLjE2OSAgICAxLjAzMSAgICAwLjE2NCAgICAwLjg3MFxuICBCZWxhc3R1bmcgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgUFRTU19Ta2FsYSAgICAgICAgMS4yMTggICAgMC4xMDYgICAxMS40NjEgICAgMC4wMDBcblxuVmFyaWFuY2VzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gICAuQlNDTF9QU1QgICAgICAgICAgOC4yNjcgICAgMi4yMDcgICAgMy43NDYgICAgMC4wMDBcbiAgIC5CU0NMX0dTSSAgICAgICAgICAwLjAxMCAgICAwLjAwNCAgICAyLjc5MiAgICAwLjAwNVxuICAgLkdIUV9Qc3kgICAgICAgICAgIDIuMDgwICAgIDAuMzA4ICAgIDYuNzYxICAgIDAuMDAwXG4gICAuR0hRX0Vtb3QgICAgICAgICAgMi4wMTAgICAgMC4zMDMgICAgNi42MzIgICAgMC4wMDBcbiAgIC5jcF9keXNmbmN0X3NicyAgICAwLjE1MiAgICAwLjAyNiAgICA1Ljk2OCAgICAwLjAwMFxuICAgLmNvcF9keXNmbmN0X3ZkICAgIDAuMzczICAgIDAuMDU3ICAgIDYuNTU4ICAgIDAuMDAwXG4gICAuUFRTU19Ta2FsYSAgICAgICAgNS43MTIgICAxMC4zMjMgICAgMC41NTMgICAgMC41ODBcbiAgIC5CZWxhc3R1bmcgICAgICAgIDI0LjYyMCAgICA0LjI4MSAgICA1Ljc1MSAgICAwLjAwMFxuICAgLmR5c2Z1bmN0aW9uYWwgICAgIDAuMDI1ICAgIDAuMDE2ICAgIDEuNTY1ICAgIDAuMTE4XG4ifQ== -->
+<pre><code>lavaan (0.5-23.1097) converged normally after 104 iterations
 
-                                                  Used       Total
-  Number of observations                            86          97
+  Number of observations                            96
 
   Estimator                                         ML
-  Minimum Function Test Statistic               74.476
+  Minimum Function Test Statistic              101.369
   Degrees of freedom                                49
-  P-value (Chi-square)                           0.011
+  P-value (Chi-square)                           0.000
 
 Model test baseline model:
 
-  Minimum Function Test Statistic              318.425
+  Minimum Function Test Statistic              494.676
   Degrees of freedom                                63
   P-value                                        0.000
 
 User model versus baseline model:
 
-  Comparative Fit Index (CFI)                    0.900
-  Tucker-Lewis Index (TLI)                       0.872
+  Comparative Fit Index (CFI)                    0.879
+  Tucker-Lewis Index (TLI)                       0.844
 
 Loglikelihood and Information Criteria:
 
-  Loglikelihood user model (H0)              -1737.241
-  Loglikelihood unrestricted model (H1)      -1700.003
+  Loglikelihood user model (H0)              -1870.485
+  Loglikelihood unrestricted model (H1)      -1819.801
 
   Number of free parameters                         21
-  Akaike (AIC)                                3516.482
-  Bayesian (BIC)                              3568.023
-  Sample-size adjusted Bayesian (BIC)         3501.767
+  Akaike (AIC)                                3782.971
+  Bayesian (BIC)                              3836.822
+  Sample-size adjusted Bayesian (BIC)         3770.516
 
 Root Mean Square Error of Approximation:
 
-  RMSEA                                          0.078
-  90 Percent Confidence Interval          0.038  0.112
-  P-value RMSEA &lt;= 0.05                          0.108
+  RMSEA                                          0.106
+  90 Percent Confidence Interval          0.076  0.135
+  P-value RMSEA &lt;= 0.05                          0.002
 
 Standardized Root Mean Square Residual:
 
-  SRMR                                           0.073
+  SRMR                                           0.067
 
 Parameter Estimates:
 
@@ -1072,38 +1083,38 @@ Latent Variables:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   Belastung =~                                        
     BSCL_PST          1.000                           
-    BSCL_PSDI         0.037    0.007    5.624    0.000
-    GHQ_Psy           0.213    0.028    7.562    0.000
-    GHQ_Emot          0.270    0.032    8.423    0.000
+    BSCL_GSI          0.042    0.002   19.078    0.000
+    GHQ_Psy           0.131    0.019    6.958    0.000
+    GHQ_Emot          0.171    0.019    8.972    0.000
   dysfunctional =~                                    
     cp_dysfnct_sbs    1.000                           
-    cop_dysfnct_vd    1.189    0.654    1.819    0.069
+    cop_dysfnct_vd    1.150    0.508    2.265    0.024
 
 Regressions:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   dysfunctional ~                                     
-    SWE_Skala         0.008    0.008    0.996    0.319
-    TraumaVorBeruf    0.037    0.043    0.857    0.392
+    SWE_Skala         0.010    0.007    1.393    0.164
+    TraumaVorBeruf    0.048    0.045    1.065    0.287
+    TraumaArbeit      0.176    0.109    1.614    0.107
   PTSS_Skala ~                                        
-    cop_prblfc_ctv    0.521    0.722    0.721    0.471
-    dysfunctional    44.197   39.602    1.116    0.264
-    TraumaArbeit      3.366    2.731    1.232    0.218
-    dauer             0.090    0.069    1.303    0.192
-    geschlecht        0.124    1.166    0.106    0.916
+    cop_prblfc_ctv    0.207    0.653    0.317    0.751
+    dysfunctional    28.607   14.121    2.026    0.043
+    dauer             0.037    0.057    0.659    0.510
+    geschlecht        0.169    1.031    0.164    0.870
   Belastung ~                                         
-    PTSS_Skala        1.003    0.126    7.937    0.000
+    PTSS_Skala        1.218    0.106   11.461    0.000
 
 Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
-   .BSCL_PST         30.934    5.848    5.290    0.000
-   .BSCL_PSDI         0.115    0.019    6.105    0.000
-   .GHQ_Psy           1.405    0.266    5.288    0.000
-   .GHQ_Emot          1.214    0.289    4.197    0.000
-   .cp_dysfnct_sbs    0.180    0.030    5.922    0.000
-   .cop_dysfnct_vd    0.354    0.057    6.206    0.000
-   .PTSS_Skala       -1.015   25.594   -0.040    0.968
-   .Belastung        17.290    4.743    3.645    0.000
-   .dysfunctional     0.015    0.016    0.948    0.343</code></pre>
+   .BSCL_PST          8.267    2.207    3.746    0.000
+   .BSCL_GSI          0.010    0.004    2.792    0.005
+   .GHQ_Psy           2.080    0.308    6.761    0.000
+   .GHQ_Emot          2.010    0.303    6.632    0.000
+   .cp_dysfnct_sbs    0.152    0.026    5.968    0.000
+   .cop_dysfnct_vd    0.373    0.057    6.558    0.000
+   .PTSS_Skala        5.712   10.323    0.553    0.580
+   .Belastung        24.620    4.281    5.751    0.000
+   .dysfunctional     0.025    0.016    1.565    0.118</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1maWxlLnBhdGgoUEFUSF9GSUdVUkVTLFwiU0VNMS1TYW5cIikpXG5gYGAifQ== -->
 <pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
@@ -1120,47 +1131,46 @@ Variances:
 <pre class="r"><code>fit = sem(model=model, data=d.g2_feu)
 summary(fit, fit.measures=TRUE)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyICA5NCBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgMjAxICAgICAgICAgMjM5XG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAxMjkuNTUxXG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDlcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgIDUwNC4yNDhcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA2M1xuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC44MTdcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjc2NVxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgLTM4OTEuMjU0XG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAtMzgyNi40NzlcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDIxXG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNzgyNC41MDlcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA3ODkzLjg3OFxuICBTYW1wbGUtc2l6ZSBhZGp1c3RlZCBCYXllc2lhbiAoQklDKSAgICAgICAgIDc4MjcuMzQ3XG5cblJvb3QgTWVhbiBTcXVhcmUgRXJyb3Igb2YgQXBwcm94aW1hdGlvbjpcblxuICBSTVNFQSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDkwXG4gIDkwIFBlcmNlbnQgQ29uZmlkZW5jZSBJbnRlcnZhbCAgICAgICAgICAwLjA3MiAgMC4xMTBcbiAgUC12YWx1ZSBSTVNFQSA8PSAwLjA1ICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5TdGFuZGFyZGl6ZWQgUm9vdCBNZWFuIFNxdWFyZSBSZXNpZHVhbDpcblxuICBTUk1SICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDcwXG5cblBhcmFtZXRlciBFc3RpbWF0ZXM6XG5cbiAgSW5mb3JtYXRpb24gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBFeHBlY3RlZFxuICBTdGFuZGFyZCBFcnJvcnMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFN0YW5kYXJkXG5cbkxhdGVudCBWYXJpYWJsZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgQmVsYXN0dW5nID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfUFNUICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU0RJICAgICAgICAgMC4wMjcgICAgMC4wMDUgICAgNS4xMzMgICAgMC4wMDBcbiAgICBHSFFfUHN5ICAgICAgICAgICAwLjA5NyAgICAwLjAxNiAgICA2LjA3NCAgICAwLjAwMFxuICAgIEdIUV9FbW90ICAgICAgICAgIDAuMTg3ICAgIDAuMDE5ICAgIDkuNjk0ICAgIDAuMDAwXG4gIGR5c2Z1bmN0aW9uYWwgPX4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjcF9keXNmbmN0X3NicyAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDEuMjQ3ICAgIDAuMzU4ICAgIDMuNDgxICAgIDAuMDAwXG5cblJlZ3Jlc3Npb25zOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIGR5c2Z1bmN0aW9uYWwgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBTV0VfU2thbGEgICAgICAgICAwLjAxNyAgICAwLjAwNyAgICAyLjQ1NyAgICAwLjAxNFxuICAgIFRyYXVtYVZvckJlcnVmICAgIDAuMDMyICAgIDAuMDQyICAgIDAuNzYwICAgIDAuNDQ4XG4gIFBUU1NfU2thbGEgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfcHJibGZjX2N0diAgICAwLjAwNSAgICAwLjQ1MiAgICAwLjAxMiAgICAwLjk5MVxuICAgIGR5c2Z1bmN0aW9uYWwgICAgMTcuMTYzICAgIDUuNjQ3ICAgIDMuMDM5ICAgIDAuMDAyXG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMS4xNTEgICAgMC43NTAgICAgMS41MzQgICAgMC4xMjVcbiAgICBkYXVlciAgICAgICAgICAgICAwLjA0NyAgICAwLjAzNSAgICAxLjM0OSAgICAwLjE3N1xuICAgIGdlc2NobGVjaHQgICAgICAgIDAuNDEyICAgIDEuMzczICAgIDAuMzAwICAgIDAuNzY0XG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAxLjE4NyAgICAwLjA5MSAgIDEzLjA1NCAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgIDI4LjI3NCAgICAzLjYyOCAgICA3Ljc5MyAgICAwLjAwMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMTUwICAgIDAuMDE1ICAgIDkuNzg0ICAgIDAuMDAwXG4gICAuR0hRX1BzeSAgICAgICAgICAgMS4yOTYgICAgMC4xMzQgICAgOS42NTggICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAxLjIwMiAgICAwLjE0NSAgICA4LjI4MyAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMTY5ICAgIDAuMDIyICAgIDcuNzI2ICAgIDAuMDAwXG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC40ODkgICAgMC4wNTQgICAgOS4wNTEgICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgICA3LjE0NiAgICA0LjA2MSAgICAxLjc2MCAgICAwLjA3OFxuICAgLkJlbGFzdHVuZyAgICAgICAgIDYuMDY4ICAgIDIuMjcwICAgIDIuNjc0ICAgIDAuMDA4XG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wNDEgICAgMC4wMTcgICAgMi4zNjYgICAgMC4wMThcbiJ9 -->
-<pre><code>lavaan (0.5-23.1097) converged normally after  94 iterations
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyICA4MSBpdGVyYXRpb25zXG5cbiAgTnVtYmVyIG9mIG9ic2VydmF0aW9ucyAgICAgICAgICAgICAgICAgICAgICAgICAgIDIzOVxuXG4gIEVzdGltYXRvciAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTUxcbiAgTWluaW11bSBGdW5jdGlvbiBUZXN0IFN0YXRpc3RpYyAgICAgICAgICAgICAgMTU2LjQ5MVxuICBEZWdyZWVzIG9mIGZyZWVkb20gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDE5XG4gIFAtdmFsdWUgKENoaS1zcXVhcmUpICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDBcblxuTW9kZWwgdGVzdCBiYXNlbGluZSBtb2RlbDpcblxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgIDEwNDYuODA5XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMjhcbiAgUC12YWx1ZSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Vc2VyIG1vZGVsIHZlcnN1cyBiYXNlbGluZSBtb2RlbDpcblxuICBDb21wYXJhdGl2ZSBGaXQgSW5kZXggKENGSSkgICAgICAgICAgICAgICAgICAgIDAuODY1XG4gIFR1Y2tlci1MZXdpcyBJbmRleCAoVExJKSAgICAgICAgICAgICAgICAgICAgICAgMC44MDFcblxuTG9nbGlrZWxpaG9vZCBhbmQgSW5mb3JtYXRpb24gQ3JpdGVyaWE6XG5cbiAgTG9nbGlrZWxpaG9vZCB1c2VyIG1vZGVsIChIMCkgICAgICAgICAgICAgIC0yOTk4LjkzMFxuICBMb2dsaWtlbGlob29kIHVucmVzdHJpY3RlZCBtb2RlbCAoSDEpICAgICAgLTI5MjAuNjg1XG5cbiAgTnVtYmVyIG9mIGZyZWUgcGFyYW1ldGVycyAgICAgICAgICAgICAgICAgICAgICAgICAxNlxuICBBa2Fpa2UgKEFJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDYwMjkuODYwXG4gIEJheWVzaWFuIChCSUMpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNjA4NS40ODRcbiAgU2FtcGxlLXNpemUgYWRqdXN0ZWQgQmF5ZXNpYW4gKEJJQykgICAgICAgICA2MDM0Ljc2OFxuXG5Sb290IE1lYW4gU3F1YXJlIEVycm9yIG9mIEFwcHJveGltYXRpb246XG5cbiAgUk1TRUEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjE3NFxuICA5MCBQZXJjZW50IENvbmZpZGVuY2UgSW50ZXJ2YWwgICAgICAgICAgMC4xNDkgIDAuMjAwXG4gIFAtdmFsdWUgUk1TRUEgPD0gMC4wNSAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDBcblxuU3RhbmRhcmRpemVkIFJvb3QgTWVhbiBTcXVhcmUgUmVzaWR1YWw6XG5cbiAgU1JNUiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjEwNFxuXG5QYXJhbWV0ZXIgRXN0aW1hdGVzOlxuXG4gIEluZm9ybWF0aW9uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRXhwZWN0ZWRcbiAgU3RhbmRhcmQgRXJyb3JzICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTdGFuZGFyZFxuXG5MYXRlbnQgVmFyaWFibGVzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIEJlbGFzdHVuZyA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBCU0NMX1BTVCAgICAgICAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfR1NJICAgICAgICAgIDAuMDM2ICAgIDAuMDAxICAgMzMuNDM2ICAgIDAuMDAwXG4gICAgR0hRX1BzeSAgICAgICAgICAgMC4wNDggICAgMC4wMTAgICAgNC44MjQgICAgMC4wMDBcbiAgICBHSFFfRW1vdCAgICAgICAgICAwLjEyMiAgICAwLjAxMSAgIDExLjM2MSAgICAwLjAwMFxuICBkeXNmdW5jdGlvbmFsID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgY3BfZHlzZm5jdF9zYnMgICAgMS4wMDAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfZHlzZm5jdF92ZCAgICAxLjI4MiAgICAwLjMxMiAgICA0LjEwOSAgICAwLjAwMFxuXG5SZWdyZXNzaW9uczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuICBkeXNmdW5jdGlvbmFsIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgU1dFX1NrYWxhICAgICAgICAgMC4wMTQgICAgMC4wMDYgICAgMi40NjQgICAgMC4wMTRcbiAgUFRTU19Ta2FsYSB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGR5c2Z1bmN0aW9uYWwgICAgMTQuOTI5ICAgIDQuMDgzICAgIDMuNjU3ICAgIDAuMDAwXG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAxLjI5OSAgICAwLjA3OSAgIDE2LjM1NCAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgICA2LjY1NSAgICAxLjE3NCAgICA1LjY2NyAgICAwLjAwMFxuICAgLkJTQ0xfR1NJICAgICAgICAgIDAuMDAyICAgIDAuMDAxICAgIDEuNzM0ICAgIDAuMDgzXG4gICAuR0hRX1BzeSAgICAgICAgICAgMS4zMzYgICAgMC4xMjIgICAxMC45MDYgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAxLjQ1MiAgICAwLjEzNSAgIDEwLjc2MyAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMTQxICAgIDAuMDE5ICAgIDcuNTg5ICAgIDAuMDAwXG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC40NTEgICAgMC4wNDcgICAgOS41MzEgICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgICA4LjYzMyAgICAzLjA0MCAgICAyLjg0MCAgICAwLjAwNVxuICAgLkJlbGFzdHVuZyAgICAgICAgMjQuMjAyICAgIDIuNTMxICAgIDkuNTYxICAgIDAuMDAwXG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wNDggICAgMC4wMTcgICAgMi44NDggICAgMC4wMDRcbiJ9 -->
+<pre><code>lavaan (0.5-23.1097) converged normally after  81 iterations
 
-                                                  Used       Total
-  Number of observations                           201         239
+  Number of observations                           239
 
   Estimator                                         ML
-  Minimum Function Test Statistic              129.551
-  Degrees of freedom                                49
+  Minimum Function Test Statistic              156.491
+  Degrees of freedom                                19
   P-value (Chi-square)                           0.000
 
 Model test baseline model:
 
-  Minimum Function Test Statistic              504.248
-  Degrees of freedom                                63
+  Minimum Function Test Statistic             1046.809
+  Degrees of freedom                                28
   P-value                                        0.000
 
 User model versus baseline model:
 
-  Comparative Fit Index (CFI)                    0.817
-  Tucker-Lewis Index (TLI)                       0.765
+  Comparative Fit Index (CFI)                    0.865
+  Tucker-Lewis Index (TLI)                       0.801
 
 Loglikelihood and Information Criteria:
 
-  Loglikelihood user model (H0)              -3891.254
-  Loglikelihood unrestricted model (H1)      -3826.479
+  Loglikelihood user model (H0)              -2998.930
+  Loglikelihood unrestricted model (H1)      -2920.685
 
-  Number of free parameters                         21
-  Akaike (AIC)                                7824.509
-  Bayesian (BIC)                              7893.878
-  Sample-size adjusted Bayesian (BIC)         7827.347
+  Number of free parameters                         16
+  Akaike (AIC)                                6029.860
+  Bayesian (BIC)                              6085.484
+  Sample-size adjusted Bayesian (BIC)         6034.768
 
 Root Mean Square Error of Approximation:
 
-  RMSEA                                          0.090
-  90 Percent Confidence Interval          0.072  0.110
+  RMSEA                                          0.174
+  90 Percent Confidence Interval          0.149  0.200
   P-value RMSEA &lt;= 0.05                          0.000
 
 Standardized Root Mean Square Residual:
 
-  SRMR                                           0.070
+  SRMR                                           0.104
 
 Parameter Estimates:
 
@@ -1171,38 +1181,33 @@ Latent Variables:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   Belastung =~                                        
     BSCL_PST          1.000                           
-    BSCL_PSDI         0.027    0.005    5.133    0.000
-    GHQ_Psy           0.097    0.016    6.074    0.000
-    GHQ_Emot          0.187    0.019    9.694    0.000
+    BSCL_GSI          0.036    0.001   33.436    0.000
+    GHQ_Psy           0.048    0.010    4.824    0.000
+    GHQ_Emot          0.122    0.011   11.361    0.000
   dysfunctional =~                                    
     cp_dysfnct_sbs    1.000                           
-    cop_dysfnct_vd    1.247    0.358    3.481    0.000
+    cop_dysfnct_vd    1.282    0.312    4.109    0.000
 
 Regressions:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   dysfunctional ~                                     
-    SWE_Skala         0.017    0.007    2.457    0.014
-    TraumaVorBeruf    0.032    0.042    0.760    0.448
+    SWE_Skala         0.014    0.006    2.464    0.014
   PTSS_Skala ~                                        
-    cop_prblfc_ctv    0.005    0.452    0.012    0.991
-    dysfunctional    17.163    5.647    3.039    0.002
-    TraumaArbeit      1.151    0.750    1.534    0.125
-    dauer             0.047    0.035    1.349    0.177
-    geschlecht        0.412    1.373    0.300    0.764
+    dysfunctional    14.929    4.083    3.657    0.000
   Belastung ~                                         
-    PTSS_Skala        1.187    0.091   13.054    0.000
+    PTSS_Skala        1.299    0.079   16.354    0.000
 
 Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
-   .BSCL_PST         28.274    3.628    7.793    0.000
-   .BSCL_PSDI         0.150    0.015    9.784    0.000
-   .GHQ_Psy           1.296    0.134    9.658    0.000
-   .GHQ_Emot          1.202    0.145    8.283    0.000
-   .cp_dysfnct_sbs    0.169    0.022    7.726    0.000
-   .cop_dysfnct_vd    0.489    0.054    9.051    0.000
-   .PTSS_Skala        7.146    4.061    1.760    0.078
-   .Belastung         6.068    2.270    2.674    0.008
-   .dysfunctional     0.041    0.017    2.366    0.018</code></pre>
+   .BSCL_PST          6.655    1.174    5.667    0.000
+   .BSCL_GSI          0.002    0.001    1.734    0.083
+   .GHQ_Psy           1.336    0.122   10.906    0.000
+   .GHQ_Emot          1.452    0.135   10.763    0.000
+   .cp_dysfnct_sbs    0.141    0.019    7.589    0.000
+   .cop_dysfnct_vd    0.451    0.047    9.531    0.000
+   .PTSS_Skala        8.633    3.040    2.840    0.005
+   .Belastung        24.202    2.531    9.561    0.000
+   .dysfunctional     0.048    0.017    2.848    0.004</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1maWxlLnBhdGgoUEFUSF9GSUdVUkVTLFwiU0VNMi1GZXVcIikpXG5gYGAifQ== -->
 <pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
@@ -1219,47 +1224,46 @@ Variances:
 <pre class="r"><code>fit = sem(model=model, data=d.g3_pol)
 summary(fit, fit.measures=TRUE)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyICA4OCBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgNDQ0ICAgICAgICAgNDk5XG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAxNzUuMjc1XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDlcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgMTM2OC43MTZcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA2M1xuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC45MDNcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjg3NlxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgLTkxODkuMDQ5XG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAtOTEwMS40MTJcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDIxXG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxODQyMC4wOThcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDE4NTA2LjExMVxuICBTYW1wbGUtc2l6ZSBhZGp1c3RlZCBCYXllc2lhbiAoQklDKSAgICAgICAgMTg0MzkuNDY2XG5cblJvb3QgTWVhbiBTcXVhcmUgRXJyb3Igb2YgQXBwcm94aW1hdGlvbjpcblxuICBSTVNFQSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDc2XG4gIDkwIFBlcmNlbnQgQ29uZmlkZW5jZSBJbnRlcnZhbCAgICAgICAgICAwLjA2NCAgMC4wODlcbiAgUC12YWx1ZSBSTVNFQSA8PSAwLjA1ICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5TdGFuZGFyZGl6ZWQgUm9vdCBNZWFuIFNxdWFyZSBSZXNpZHVhbDpcblxuICBTUk1SICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDU1XG5cblBhcmFtZXRlciBFc3RpbWF0ZXM6XG5cbiAgSW5mb3JtYXRpb24gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBFeHBlY3RlZFxuICBTdGFuZGFyZCBFcnJvcnMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFN0YW5kYXJkXG5cbkxhdGVudCBWYXJpYWJsZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgQmVsYXN0dW5nID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfUFNUICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU0RJICAgICAgICAgMC4wMjQgICAgMC4wMDMgICAgOC4wNDkgICAgMC4wMDBcbiAgICBHSFFfUHN5ICAgICAgICAgICAwLjEzMiAgICAwLjAwOSAgIDE0Ljk3NyAgICAwLjAwMFxuICAgIEdIUV9FbW90ICAgICAgICAgIDAuMjA3ICAgIDAuMDExICAgMTkuMDUzICAgIDAuMDAwXG4gIGR5c2Z1bmN0aW9uYWwgPX4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjcF9keXNmbmN0X3NicyAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDEuMTc2ICAgIDAuMTc3ICAgIDYuNjYyICAgIDAuMDAwXG5cblJlZ3Jlc3Npb25zOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIGR5c2Z1bmN0aW9uYWwgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBTV0VfU2thbGEgICAgICAgICAwLjAyNiAgICAwLjAwNiAgICA0LjU3MiAgICAwLjAwMFxuICAgIFRyYXVtYVZvckJlcnVmICAgIDAuMDc2ICAgIDAuMDM3ICAgIDIuMDI1ICAgIDAuMDQzXG4gIFBUU1NfU2thbGEgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfcHJibGZjX2N0diAgIC0wLjI3MCAgICAwLjI4MCAgIC0wLjk2MyAgICAwLjMzNlxuICAgIGR5c2Z1bmN0aW9uYWwgICAgMTEuNjcwICAgIDEuNzA1ICAgIDYuODQ0ICAgIDAuMDAwXG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMS42MjkgICAgMC42OTAgICAgMi4zNjAgICAgMC4wMThcbiAgICBkYXVlciAgICAgICAgICAgICAwLjA0MSAgICAwLjAyNSAgICAxLjY3OCAgICAwLjA5M1xuICAgIGdlc2NobGVjaHQgICAgICAgLTEuNzU0ICAgIDAuNTUzICAgLTMuMTY5ICAgIDAuMDAyXG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAxLjI5MCAgICAwLjA1MyAgIDI0LjQ2NSAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgIDE5LjY3MiAgICAyLjE3NCAgICA5LjA1MCAgICAwLjAwMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMjAyICAgIDAuMDE0ICAgMTQuNTk2ICAgIDAuMDAwXG4gICAuR0hRX1BzeSAgICAgICAgICAgMS40MTkgICAgMC4xMDQgICAxMy41ODkgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAxLjcxMyAgICAwLjE0MSAgIDEyLjE0NCAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMTM5ICAgIDAuMDE2ICAgIDguODgzICAgIDAuMDAwXG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC40MzkgICAgMC4wMzUgICAxMi41MzYgICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgIDE0LjA5NyAgICAxLjk0NiAgICA3LjI0NCAgICAwLjAwMFxuICAgLkJlbGFzdHVuZyAgICAgICAgMTQuNzYxICAgIDIuMDA2ICAgIDcuMzU5ICAgIDAuMDAwXG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wODIgICAgMC4wMTYgICAgNS4xMDEgICAgMC4wMDBcbiJ9 -->
-<pre><code>lavaan (0.5-23.1097) converged normally after  88 iterations
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyICA3MSBpdGVyYXRpb25zXG5cbiAgTnVtYmVyIG9mIG9ic2VydmF0aW9ucyAgICAgICAgICAgICAgICAgICAgICAgICAgIDQ5OVxuXG4gIEVzdGltYXRvciAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTUxcbiAgTWluaW11bSBGdW5jdGlvbiBUZXN0IFN0YXRpc3RpYyAgICAgICAgICAgICAgMTgyLjIxN1xuICBEZWdyZWVzIG9mIGZyZWVkb20gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDE5XG4gIFAtdmFsdWUgKENoaS1zcXVhcmUpICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDBcblxuTW9kZWwgdGVzdCBiYXNlbGluZSBtb2RlbDpcblxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgIDI1OTEuNDE3XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMjhcbiAgUC12YWx1ZSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Vc2VyIG1vZGVsIHZlcnN1cyBiYXNlbGluZSBtb2RlbDpcblxuICBDb21wYXJhdGl2ZSBGaXQgSW5kZXggKENGSSkgICAgICAgICAgICAgICAgICAgIDAuOTM2XG4gIFR1Y2tlci1MZXdpcyBJbmRleCAoVExJKSAgICAgICAgICAgICAgICAgICAgICAgMC45MDZcblxuTG9nbGlrZWxpaG9vZCBhbmQgSW5mb3JtYXRpb24gQ3JpdGVyaWE6XG5cbiAgTG9nbGlrZWxpaG9vZCB1c2VyIG1vZGVsIChIMCkgICAgICAgICAgICAgIC02NTMzLjEzOFxuICBMb2dsaWtlbGlob29kIHVucmVzdHJpY3RlZCBtb2RlbCAoSDEpICAgICAgLTY0NDIuMDI5XG5cbiAgTnVtYmVyIG9mIGZyZWUgcGFyYW1ldGVycyAgICAgICAgICAgICAgICAgICAgICAgICAxNlxuICBBa2Fpa2UgKEFJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMTMwOTguMjc1XG4gIEJheWVzaWFuIChCSUMpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMzE2NS42NzdcbiAgU2FtcGxlLXNpemUgYWRqdXN0ZWQgQmF5ZXNpYW4gKEJJQykgICAgICAgIDEzMTE0Ljg5MlxuXG5Sb290IE1lYW4gU3F1YXJlIEVycm9yIG9mIEFwcHJveGltYXRpb246XG5cbiAgUk1TRUEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjEzMVxuICA5MCBQZXJjZW50IENvbmZpZGVuY2UgSW50ZXJ2YWwgICAgICAgICAgMC4xMTQgIDAuMTQ5XG4gIFAtdmFsdWUgUk1TRUEgPD0gMC4wNSAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDBcblxuU3RhbmRhcmRpemVkIFJvb3QgTWVhbiBTcXVhcmUgUmVzaWR1YWw6XG5cbiAgU1JNUiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjA2M1xuXG5QYXJhbWV0ZXIgRXN0aW1hdGVzOlxuXG4gIEluZm9ybWF0aW9uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRXhwZWN0ZWRcbiAgU3RhbmRhcmQgRXJyb3JzICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTdGFuZGFyZFxuXG5MYXRlbnQgVmFyaWFibGVzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIEJlbGFzdHVuZyA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBCU0NMX1BTVCAgICAgICAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfR1NJICAgICAgICAgIDAuMDM5ICAgIDAuMDAxICAgNTguMjUzICAgIDAuMDAwXG4gICAgR0hRX1BzeSAgICAgICAgICAgMC4wOTkgICAgMC4wMDYgICAxNS42NjYgICAgMC4wMDBcbiAgICBHSFFfRW1vdCAgICAgICAgICAwLjE1OSAgICAwLjAwOCAgIDIwLjgxMiAgICAwLjAwMFxuICBkeXNmdW5jdGlvbmFsID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgY3BfZHlzZm5jdF9zYnMgICAgMS4wMDAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfZHlzZm5jdF92ZCAgICAxLjE0NCAgICAwLjE2MCAgICA3LjE0NiAgICAwLjAwMFxuXG5SZWdyZXNzaW9uczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuICBkeXNmdW5jdGlvbmFsIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgU1dFX1NrYWxhICAgICAgICAgMC4wMjggICAgMC4wMDUgICAgNS4zNjkgICAgMC4wMDBcbiAgUFRTU19Ta2FsYSB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGR5c2Z1bmN0aW9uYWwgICAgMTIuOTYyICAgIDEuNzQwICAgIDcuNDUxICAgIDAuMDAwXG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAxLjM5NCAgICAwLjA0NSAgIDMxLjAxMSAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgICAzLjcyMCAgICAwLjcxNCAgICA1LjIwOCAgICAwLjAwMFxuICAgLkJTQ0xfR1NJICAgICAgICAgIDAuMDA5ICAgIDAuMDAxICAgIDcuMzc3ICAgIDAuMDAwXG4gICAuR0hRX1BzeSAgICAgICAgICAgMS41NDEgICAgMC4wOTkgICAxNS41ODcgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAyLjE4NyAgICAwLjE0MiAgIDE1LjQxNiAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMTI4ICAgIDAuMDE0ICAgIDkuNDA5ICAgIDAuMDAwXG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC40MjkgICAgMC4wMzEgICAxMy42NDkgICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgIDE0LjE1NiAgICAyLjAyOCAgICA2Ljk4MSAgICAwLjAwMFxuICAgLkJlbGFzdHVuZyAgICAgICAgMjUuMzc2ICAgIDEuODAwICAgMTQuMTAxICAgIDAuMDAwXG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wNzggICAgMC4wMTQgICAgNS41NDggICAgMC4wMDBcbiJ9 -->
+<pre><code>lavaan (0.5-23.1097) converged normally after  71 iterations
 
-                                                  Used       Total
-  Number of observations                           444         499
+  Number of observations                           499
 
   Estimator                                         ML
-  Minimum Function Test Statistic              175.275
-  Degrees of freedom                                49
+  Minimum Function Test Statistic              182.217
+  Degrees of freedom                                19
   P-value (Chi-square)                           0.000
 
 Model test baseline model:
 
-  Minimum Function Test Statistic             1368.716
-  Degrees of freedom                                63
+  Minimum Function Test Statistic             2591.417
+  Degrees of freedom                                28
   P-value                                        0.000
 
 User model versus baseline model:
 
-  Comparative Fit Index (CFI)                    0.903
-  Tucker-Lewis Index (TLI)                       0.876
+  Comparative Fit Index (CFI)                    0.936
+  Tucker-Lewis Index (TLI)                       0.906
 
 Loglikelihood and Information Criteria:
 
-  Loglikelihood user model (H0)              -9189.049
-  Loglikelihood unrestricted model (H1)      -9101.412
+  Loglikelihood user model (H0)              -6533.138
+  Loglikelihood unrestricted model (H1)      -6442.029
 
-  Number of free parameters                         21
-  Akaike (AIC)                               18420.098
-  Bayesian (BIC)                             18506.111
-  Sample-size adjusted Bayesian (BIC)        18439.466
+  Number of free parameters                         16
+  Akaike (AIC)                               13098.275
+  Bayesian (BIC)                             13165.677
+  Sample-size adjusted Bayesian (BIC)        13114.892
 
 Root Mean Square Error of Approximation:
 
-  RMSEA                                          0.076
-  90 Percent Confidence Interval          0.064  0.089
+  RMSEA                                          0.131
+  90 Percent Confidence Interval          0.114  0.149
   P-value RMSEA &lt;= 0.05                          0.000
 
 Standardized Root Mean Square Residual:
 
-  SRMR                                           0.055
+  SRMR                                           0.063
 
 Parameter Estimates:
 
@@ -1270,38 +1274,33 @@ Latent Variables:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   Belastung =~                                        
     BSCL_PST          1.000                           
-    BSCL_PSDI         0.024    0.003    8.049    0.000
-    GHQ_Psy           0.132    0.009   14.977    0.000
-    GHQ_Emot          0.207    0.011   19.053    0.000
+    BSCL_GSI          0.039    0.001   58.253    0.000
+    GHQ_Psy           0.099    0.006   15.666    0.000
+    GHQ_Emot          0.159    0.008   20.812    0.000
   dysfunctional =~                                    
     cp_dysfnct_sbs    1.000                           
-    cop_dysfnct_vd    1.176    0.177    6.662    0.000
+    cop_dysfnct_vd    1.144    0.160    7.146    0.000
 
 Regressions:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   dysfunctional ~                                     
-    SWE_Skala         0.026    0.006    4.572    0.000
-    TraumaVorBeruf    0.076    0.037    2.025    0.043
+    SWE_Skala         0.028    0.005    5.369    0.000
   PTSS_Skala ~                                        
-    cop_prblfc_ctv   -0.270    0.280   -0.963    0.336
-    dysfunctional    11.670    1.705    6.844    0.000
-    TraumaArbeit      1.629    0.690    2.360    0.018
-    dauer             0.041    0.025    1.678    0.093
-    geschlecht       -1.754    0.553   -3.169    0.002
+    dysfunctional    12.962    1.740    7.451    0.000
   Belastung ~                                         
-    PTSS_Skala        1.290    0.053   24.465    0.000
+    PTSS_Skala        1.394    0.045   31.011    0.000
 
 Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
-   .BSCL_PST         19.672    2.174    9.050    0.000
-   .BSCL_PSDI         0.202    0.014   14.596    0.000
-   .GHQ_Psy           1.419    0.104   13.589    0.000
-   .GHQ_Emot          1.713    0.141   12.144    0.000
-   .cp_dysfnct_sbs    0.139    0.016    8.883    0.000
-   .cop_dysfnct_vd    0.439    0.035   12.536    0.000
-   .PTSS_Skala       14.097    1.946    7.244    0.000
-   .Belastung        14.761    2.006    7.359    0.000
-   .dysfunctional     0.082    0.016    5.101    0.000</code></pre>
+   .BSCL_PST          3.720    0.714    5.208    0.000
+   .BSCL_GSI          0.009    0.001    7.377    0.000
+   .GHQ_Psy           1.541    0.099   15.587    0.000
+   .GHQ_Emot          2.187    0.142   15.416    0.000
+   .cp_dysfnct_sbs    0.128    0.014    9.409    0.000
+   .cop_dysfnct_vd    0.429    0.031   13.649    0.000
+   .PTSS_Skala       14.156    2.028    6.981    0.000
+   .Belastung        25.376    1.800   14.101    0.000
+   .dysfunctional     0.078    0.014    5.548    0.000</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1maWxlLnBhdGgoUEFUSF9GSUdVUkVTLFwiU0VNMy1Qb2xcIikpXG5gYGAifQ== -->
 <pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
@@ -1318,47 +1317,46 @@ Variances:
 <pre class="r"><code>fit = sem(model=model, data=d.g4_spi)
 summary(fit, fit.measures=TRUE)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyICA5MCBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgIDc4ICAgICAgICAgIDg1XG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAgOTYuNzE4XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDlcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgIDIzOC4yNTJcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA2M1xuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC43MjhcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjY1MFxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgLTE0MTMuMTExXG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAtMTM2NC43NTJcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDIxXG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMjg2OC4yMjJcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAyOTE3LjcxM1xuICBTYW1wbGUtc2l6ZSBhZGp1c3RlZCBCYXllc2lhbiAoQklDKSAgICAgICAgIDI4NTEuNTA1XG5cblJvb3QgTWVhbiBTcXVhcmUgRXJyb3Igb2YgQXBwcm94aW1hdGlvbjpcblxuICBSTVNFQSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMTEyXG4gIDkwIFBlcmNlbnQgQ29uZmlkZW5jZSBJbnRlcnZhbCAgICAgICAgICAwLjA3OSAgMC4xNDRcbiAgUC12YWx1ZSBSTVNFQSA8PSAwLjA1ICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMlxuXG5TdGFuZGFyZGl6ZWQgUm9vdCBNZWFuIFNxdWFyZSBSZXNpZHVhbDpcblxuICBTUk1SICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMTA0XG5cblBhcmFtZXRlciBFc3RpbWF0ZXM6XG5cbiAgSW5mb3JtYXRpb24gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBFeHBlY3RlZFxuICBTdGFuZGFyZCBFcnJvcnMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFN0YW5kYXJkXG5cbkxhdGVudCBWYXJpYWJsZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgQmVsYXN0dW5nID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfUFNUICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU0RJICAgICAgICAgMC4wMTQgICAgMC4wMDggICAgMS43NTAgICAgMC4wODBcbiAgICBHSFFfUHN5ICAgICAgICAgICAwLjA5MCAgICAwLjAyNSAgICAzLjY0NyAgICAwLjAwMFxuICAgIEdIUV9FbW90ICAgICAgICAgIDAuMTk1ICAgIDAuMDMzICAgIDUuOTg5ICAgIDAuMDAwXG4gIGR5c2Z1bmN0aW9uYWwgPX4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjcF9keXNmbmN0X3NicyAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDEuMDEwICAgIDAuMzUxICAgIDIuODc5ICAgIDAuMDA0XG5cblJlZ3Jlc3Npb25zOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIGR5c2Z1bmN0aW9uYWwgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBTV0VfU2thbGEgICAgICAgIC0wLjA0NCAgICAwLjAxMyAgIC0zLjUyOSAgICAwLjAwMFxuICAgIFRyYXVtYVZvckJlcnVmICAgLTAuMDMyICAgIDAuMDc0ICAgLTAuNDMxICAgIDAuNjY2XG4gIFBUU1NfU2thbGEgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfcHJibGZjX2N0diAgIC0wLjEyMSAgICAwLjY1OCAgIC0wLjE4NCAgICAwLjg1NFxuICAgIGR5c2Z1bmN0aW9uYWwgICAgIDguODc5ICAgIDIuODY5ICAgIDMuMDk0ICAgIDAuMDAyXG4gICAgVHJhdW1hQXJiZWl0ICAgICAgOC43ODMgICAgNC4xNDkgICAgMi4xMTcgICAgMC4wMzRcbiAgICBkYXVlciAgICAgICAgICAgICAwLjEyNyAgICAwLjA1MCAgICAyLjU1MyAgICAwLjAxMVxuICAgIGdlc2NobGVjaHQgICAgICAgLTMuNzkyICAgIDEuMzY3ICAgLTIuNzc0ICAgIDAuMDA2XG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAwLjgxNSAgICAwLjExNSAgICA3LjEwMSAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgIDEwLjc0NiAgICA0LjE0NyAgICAyLjU5MSAgICAwLjAxMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMTIwICAgIDAuMDE5ICAgIDYuMTg4ICAgIDAuMDAwXG4gICAuR0hRX1BzeSAgICAgICAgICAgMS4wNjYgICAgMC4xNzkgICAgNS45NTcgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAxLjEyNyAgICAwLjIzNiAgICA0Ljc4NiAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMDczICAgIDAuMDI2ICAgIDIuODM1ICAgIDAuMDA1XG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC4zMDMgICAgMC4wNTYgICAgNS40MDAgICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgIDE0LjA4MiAgICAyLjk3NSAgICA0LjczMyAgICAwLjAwMFxuICAgLkJlbGFzdHVuZyAgICAgICAgMTQuOTQ1ICAgIDQuNTc2ICAgIDMuMjY2ICAgIDAuMDAxXG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wNjEgICAgMC4wMjYgICAgMi4zMjggICAgMC4wMjBcbiJ9 -->
-<pre><code>lavaan (0.5-23.1097) converged normally after  90 iterations
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyICA4MiBpdGVyYXRpb25zXG5cbiAgTnVtYmVyIG9mIG9ic2VydmF0aW9ucyAgICAgICAgICAgICAgICAgICAgICAgICAgICA4NVxuXG4gIEVzdGltYXRvciAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTUxcbiAgTWluaW11bSBGdW5jdGlvbiBUZXN0IFN0YXRpc3RpYyAgICAgICAgICAgICAgIDUzLjIxNFxuICBEZWdyZWVzIG9mIGZyZWVkb20gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDE5XG4gIFAtdmFsdWUgKENoaS1zcXVhcmUpICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDBcblxuTW9kZWwgdGVzdCBiYXNlbGluZSBtb2RlbDpcblxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAzOTguNTEzXG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMjhcbiAgUC12YWx1ZSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Vc2VyIG1vZGVsIHZlcnN1cyBiYXNlbGluZSBtb2RlbDpcblxuICBDb21wYXJhdGl2ZSBGaXQgSW5kZXggKENGSSkgICAgICAgICAgICAgICAgICAgIDAuOTA4XG4gIFR1Y2tlci1MZXdpcyBJbmRleCAoVExJKSAgICAgICAgICAgICAgICAgICAgICAgMC44NjRcblxuTG9nbGlrZWxpaG9vZCBhbmQgSW5mb3JtYXRpb24gQ3JpdGVyaWE6XG5cbiAgTG9nbGlrZWxpaG9vZCB1c2VyIG1vZGVsIChIMCkgICAgICAgICAgICAgICAtOTgzLjM1M1xuICBMb2dsaWtlbGlob29kIHVucmVzdHJpY3RlZCBtb2RlbCAoSDEpICAgICAgIC05NTYuNzQ2XG5cbiAgTnVtYmVyIG9mIGZyZWUgcGFyYW1ldGVycyAgICAgICAgICAgICAgICAgICAgICAgICAxNlxuICBBa2Fpa2UgKEFJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDE5OTguNzA2XG4gIEJheWVzaWFuIChCSUMpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMjAzNy43ODhcbiAgU2FtcGxlLXNpemUgYWRqdXN0ZWQgQmF5ZXNpYW4gKEJJQykgICAgICAgICAxOTg3LjMxMVxuXG5Sb290IE1lYW4gU3F1YXJlIEVycm9yIG9mIEFwcHJveGltYXRpb246XG5cbiAgUk1TRUEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjE0NlxuICA5MCBQZXJjZW50IENvbmZpZGVuY2UgSW50ZXJ2YWwgICAgICAgICAgMC4xMDAgIDAuMTkzXG4gIFAtdmFsdWUgUk1TRUEgPD0gMC4wNSAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDFcblxuU3RhbmRhcmRpemVkIFJvb3QgTWVhbiBTcXVhcmUgUmVzaWR1YWw6XG5cbiAgU1JNUiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjEwN1xuXG5QYXJhbWV0ZXIgRXN0aW1hdGVzOlxuXG4gIEluZm9ybWF0aW9uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRXhwZWN0ZWRcbiAgU3RhbmRhcmQgRXJyb3JzICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTdGFuZGFyZFxuXG5MYXRlbnQgVmFyaWFibGVzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIEJlbGFzdHVuZyA9fiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBCU0NMX1BTVCAgICAgICAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfR1NJICAgICAgICAgIDAuMDMzICAgIDAuMDAxICAgMjUuNDYxICAgIDAuMDAwXG4gICAgR0hRX1BzeSAgICAgICAgICAgMC4wNjIgICAgMC4wMTggICAgMy40OTggICAgMC4wMDBcbiAgICBHSFFfRW1vdCAgICAgICAgICAwLjEzNCAgICAwLjAyMSAgICA2LjM3OSAgICAwLjAwMFxuICBkeXNmdW5jdGlvbmFsID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgY3BfZHlzZm5jdF9zYnMgICAgMS4wMDAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfZHlzZm5jdF92ZCAgICAwLjgzOCAgICAwLjQwNCAgICAyLjA3NyAgICAwLjAzOFxuXG5SZWdyZXNzaW9uczpcbiAgICAgICAgICAgICAgICAgICBFc3RpbWF0ZSAgU3RkLkVyciAgei12YWx1ZSAgUCg+fHp8KVxuICBkeXNmdW5jdGlvbmFsIH4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgU1dFX1NrYWxhICAgICAgICAtMC4wMzcgICAgMC4wMTIgICAtMy4xMjkgICAgMC4wMDJcbiAgUFRTU19Ta2FsYSB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGR5c2Z1bmN0aW9uYWwgICAgIDUuMTA4ICAgIDIuNjg4ICAgIDEuOTAwICAgIDAuMDU3XG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAwLjkzMiAgICAwLjExMCAgICA4LjQzNiAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgICAxLjk5OCAgICAxLjExNSAgICAxLjc5MyAgICAwLjA3M1xuICAgLkJTQ0xfR1NJICAgICAgICAgIDAuMDAyICAgIDAuMDAxICAgIDEuMzA1ICAgIDAuMTkyXG4gICAuR0hRX1BzeSAgICAgICAgICAgMS4xMDMgICAgMC4xNzAgICAgNi41MDEgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAxLjUyNiAgICAwLjIzNiAgICA2LjQ1NyAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMDQ3ICAgIDAuMDQzICAgIDEuMDk2ICAgIDAuMjczXG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC4zMzIgICAgMC4wNjAgICAgNS41NDUgICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgIDIwLjg3NyAgICAzLjQ1MiAgICA2LjA0OCAgICAwLjAwMFxuICAgLkJlbGFzdHVuZyAgICAgICAgMjIuNTg0ICAgIDMuNzEzICAgIDYuMDgyICAgIDAuMDAwXG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wODQgICAgMC4wNDUgICAgMS44NjkgICAgMC4wNjJcbiJ9 -->
+<pre><code>lavaan (0.5-23.1097) converged normally after  82 iterations
 
-                                                  Used       Total
-  Number of observations                            78          85
+  Number of observations                            85
 
   Estimator                                         ML
-  Minimum Function Test Statistic               96.718
-  Degrees of freedom                                49
+  Minimum Function Test Statistic               53.214
+  Degrees of freedom                                19
   P-value (Chi-square)                           0.000
 
 Model test baseline model:
 
-  Minimum Function Test Statistic              238.252
-  Degrees of freedom                                63
+  Minimum Function Test Statistic              398.513
+  Degrees of freedom                                28
   P-value                                        0.000
 
 User model versus baseline model:
 
-  Comparative Fit Index (CFI)                    0.728
-  Tucker-Lewis Index (TLI)                       0.650
+  Comparative Fit Index (CFI)                    0.908
+  Tucker-Lewis Index (TLI)                       0.864
 
 Loglikelihood and Information Criteria:
 
-  Loglikelihood user model (H0)              -1413.111
-  Loglikelihood unrestricted model (H1)      -1364.752
+  Loglikelihood user model (H0)               -983.353
+  Loglikelihood unrestricted model (H1)       -956.746
 
-  Number of free parameters                         21
-  Akaike (AIC)                                2868.222
-  Bayesian (BIC)                              2917.713
-  Sample-size adjusted Bayesian (BIC)         2851.505
+  Number of free parameters                         16
+  Akaike (AIC)                                1998.706
+  Bayesian (BIC)                              2037.788
+  Sample-size adjusted Bayesian (BIC)         1987.311
 
 Root Mean Square Error of Approximation:
 
-  RMSEA                                          0.112
-  90 Percent Confidence Interval          0.079  0.144
-  P-value RMSEA &lt;= 0.05                          0.002
+  RMSEA                                          0.146
+  90 Percent Confidence Interval          0.100  0.193
+  P-value RMSEA &lt;= 0.05                          0.001
 
 Standardized Root Mean Square Residual:
 
-  SRMR                                           0.104
+  SRMR                                           0.107
 
 Parameter Estimates:
 
@@ -1369,38 +1367,33 @@ Latent Variables:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   Belastung =~                                        
     BSCL_PST          1.000                           
-    BSCL_PSDI         0.014    0.008    1.750    0.080
-    GHQ_Psy           0.090    0.025    3.647    0.000
-    GHQ_Emot          0.195    0.033    5.989    0.000
+    BSCL_GSI          0.033    0.001   25.461    0.000
+    GHQ_Psy           0.062    0.018    3.498    0.000
+    GHQ_Emot          0.134    0.021    6.379    0.000
   dysfunctional =~                                    
     cp_dysfnct_sbs    1.000                           
-    cop_dysfnct_vd    1.010    0.351    2.879    0.004
+    cop_dysfnct_vd    0.838    0.404    2.077    0.038
 
 Regressions:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   dysfunctional ~                                     
-    SWE_Skala        -0.044    0.013   -3.529    0.000
-    TraumaVorBeruf   -0.032    0.074   -0.431    0.666
+    SWE_Skala        -0.037    0.012   -3.129    0.002
   PTSS_Skala ~                                        
-    cop_prblfc_ctv   -0.121    0.658   -0.184    0.854
-    dysfunctional     8.879    2.869    3.094    0.002
-    TraumaArbeit      8.783    4.149    2.117    0.034
-    dauer             0.127    0.050    2.553    0.011
-    geschlecht       -3.792    1.367   -2.774    0.006
+    dysfunctional     5.108    2.688    1.900    0.057
   Belastung ~                                         
-    PTSS_Skala        0.815    0.115    7.101    0.000
+    PTSS_Skala        0.932    0.110    8.436    0.000
 
 Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
-   .BSCL_PST         10.746    4.147    2.591    0.010
-   .BSCL_PSDI         0.120    0.019    6.188    0.000
-   .GHQ_Psy           1.066    0.179    5.957    0.000
-   .GHQ_Emot          1.127    0.236    4.786    0.000
-   .cp_dysfnct_sbs    0.073    0.026    2.835    0.005
-   .cop_dysfnct_vd    0.303    0.056    5.400    0.000
-   .PTSS_Skala       14.082    2.975    4.733    0.000
-   .Belastung        14.945    4.576    3.266    0.001
-   .dysfunctional     0.061    0.026    2.328    0.020</code></pre>
+   .BSCL_PST          1.998    1.115    1.793    0.073
+   .BSCL_GSI          0.002    0.001    1.305    0.192
+   .GHQ_Psy           1.103    0.170    6.501    0.000
+   .GHQ_Emot          1.526    0.236    6.457    0.000
+   .cp_dysfnct_sbs    0.047    0.043    1.096    0.273
+   .cop_dysfnct_vd    0.332    0.060    5.545    0.000
+   .PTSS_Skala       20.877    3.452    6.048    0.000
+   .Belastung        22.584    3.713    6.082    0.000
+   .dysfunctional     0.084    0.045    1.869    0.062</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1maWxlLnBhdGgoUEFUSF9GSUdVUkVTLFwiU0VNNC1TcGlcIikpXG5gYGAifQ== -->
 <pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
@@ -1417,47 +1410,47 @@ Variances:
 <pre class="r"><code>fit = sem(model=model, data=d.g5_psy)
 summary(fit, fit.measures=TRUE)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyICA4NSBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgIDYzICAgICAgICAgIDgyXG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAxMDkuMDk5XG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDlcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgIDI1NC4wMDlcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA2M1xuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC42ODVcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjU5NVxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgLTEyOTcuNTU4XG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAtMTI0My4wMDlcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDIxXG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMjYzNy4xMTdcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAyNjgyLjEyMlxuICBTYW1wbGUtc2l6ZSBhZGp1c3RlZCBCYXllc2lhbiAoQklDKSAgICAgICAgIDI2MTYuMDQwXG5cblJvb3QgTWVhbiBTcXVhcmUgRXJyb3Igb2YgQXBwcm94aW1hdGlvbjpcblxuICBSTVNFQSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMTQwXG4gIDkwIFBlcmNlbnQgQ29uZmlkZW5jZSBJbnRlcnZhbCAgICAgICAgICAwLjEwNCAgMC4xNzVcbiAgUC12YWx1ZSBSTVNFQSA8PSAwLjA1ICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5TdGFuZGFyZGl6ZWQgUm9vdCBNZWFuIFNxdWFyZSBSZXNpZHVhbDpcblxuICBTUk1SICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMTA0XG5cblBhcmFtZXRlciBFc3RpbWF0ZXM6XG5cbiAgSW5mb3JtYXRpb24gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBFeHBlY3RlZFxuICBTdGFuZGFyZCBFcnJvcnMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFN0YW5kYXJkXG5cbkxhdGVudCBWYXJpYWJsZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgQmVsYXN0dW5nID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfUFNUICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9QU0RJICAgICAgICAgMC4wMjEgICAgMC4wMDcgICAgMi44MjYgICAgMC4wMDVcbiAgICBHSFFfUHN5ICAgICAgICAgICAwLjE5OCAgICAwLjAzNSAgICA1LjYyNCAgICAwLjAwMFxuICAgIEdIUV9FbW90ICAgICAgICAgIDAuMjUwICAgIDAuMDQ0ICAgIDUuNjcwICAgIDAuMDAwXG4gIGR5c2Z1bmN0aW9uYWwgPX4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjcF9keXNmbmN0X3NicyAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDAuNzI3ICAgIDAuNDYwICAgIDEuNTgyICAgIDAuMTE0XG5cblJlZ3Jlc3Npb25zOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIGR5c2Z1bmN0aW9uYWwgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBTV0VfU2thbGEgICAgICAgIC0wLjAzNiAgICAwLjAyMiAgIC0xLjYyNSAgICAwLjEwNFxuICAgIFRyYXVtYVZvckJlcnVmICAgIDAuMDkyICAgIDAuMDkwICAgIDEuMDI4ICAgIDAuMzA0XG4gIFBUU1NfU2thbGEgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjb3BfcHJibGZjX2N0diAgICAwLjc1NiAgICAwLjY5MCAgICAxLjA5NiAgICAwLjI3M1xuICAgIGR5c2Z1bmN0aW9uYWwgICAgMTMuNTAzICAgIDcuODMyICAgIDEuNzI0ICAgIDAuMDg1XG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMC43MDkgICAgMS43NzcgICAgMC4zOTkgICAgMC42OTBcbiAgICBkYXVlciAgICAgICAgICAgICAwLjA4NyAgICAwLjA0MSAgICAyLjEwMiAgICAwLjAzNlxuICAgIGdlc2NobGVjaHQgICAgICAgLTAuMjA1ICAgIDEuMDE3ICAgLTAuMjAyICAgIDAuODQwXG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAxLjIzMSAgICAwLjEzOCAgICA4LjkxNiAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgIDE2LjYwNSAgICA0LjI1NSAgICAzLjkwMiAgICAwLjAwMFxuICAgLkJTQ0xfUFNESSAgICAgICAgIDAuMDk1ICAgIDAuMDE3ICAgIDUuNTEwICAgIDAuMDAwXG4gICAuR0hRX1BzeSAgICAgICAgICAgMS42NzAgICAgMC4zMzIgICAgNS4wMzIgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAyLjYwNCAgICAwLjUxOSAgICA1LjAxNyAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMzkzICAgIDAuMDgwICAgIDQuOTM3ICAgIDAuMDAwXG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC41MjMgICAgMC4wOTYgICAgNS40MzMgICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgICA0LjI2OCAgICA2LjY0OSAgICAwLjY0MiAgICAwLjUyMVxuICAgLkJlbGFzdHVuZyAgICAgICAgIDYuMjE5ICAgIDMuMTcyICAgIDEuOTYxICAgIDAuMDUwXG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wNTcgICAgMC4wNDQgICAgMS4yOTYgICAgMC4xOTVcbiJ9 -->
-<pre><code>lavaan (0.5-23.1097) converged normally after  85 iterations
+<!-- rnb-output-begin eyJkYXRhIjoibGF2YWFuICgwLjUtMjMuMTA5NykgY29udmVyZ2VkIG5vcm1hbGx5IGFmdGVyICA5MyBpdGVyYXRpb25zXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVXNlZCAgICAgICBUb3RhbFxuICBOdW1iZXIgb2Ygb2JzZXJ2YXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgIDY4ICAgICAgICAgIDgyXG5cbiAgRXN0aW1hdG9yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNTFxuICBNaW5pbXVtIEZ1bmN0aW9uIFRlc3QgU3RhdGlzdGljICAgICAgICAgICAgICAxMjYuOTMxXG4gIERlZ3JlZXMgb2YgZnJlZWRvbSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDlcbiAgUC12YWx1ZSAoQ2hpLXNxdWFyZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5Nb2RlbCB0ZXN0IGJhc2VsaW5lIG1vZGVsOlxuXG4gIE1pbmltdW0gRnVuY3Rpb24gVGVzdCBTdGF0aXN0aWMgICAgICAgICAgICAgIDQxOS44NDNcbiAgRGVncmVlcyBvZiBmcmVlZG9tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA2M1xuICBQLXZhbHVlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAwXG5cblVzZXIgbW9kZWwgdmVyc3VzIGJhc2VsaW5lIG1vZGVsOlxuXG4gIENvbXBhcmF0aXZlIEZpdCBJbmRleCAoQ0ZJKSAgICAgICAgICAgICAgICAgICAgMC43ODJcbiAgVHVja2VyLUxld2lzIEluZGV4IChUTEkpICAgICAgICAgICAgICAgICAgICAgICAwLjcxOVxuXG5Mb2dsaWtlbGlob29kIGFuZCBJbmZvcm1hdGlvbiBDcml0ZXJpYTpcblxuICBMb2dsaWtlbGlob29kIHVzZXIgbW9kZWwgKEgwKSAgICAgICAgICAgICAgLTEzMTIuODQyXG4gIExvZ2xpa2VsaWhvb2QgdW5yZXN0cmljdGVkIG1vZGVsIChIMSkgICAgICAtMTI0OS4zNzZcblxuICBOdW1iZXIgb2YgZnJlZSBwYXJhbWV0ZXJzICAgICAgICAgICAgICAgICAgICAgICAgIDIxXG4gIEFrYWlrZSAoQUlDKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMjY2Ny42ODRcbiAgQmF5ZXNpYW4gKEJJQykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAyNzE0LjI5M1xuICBTYW1wbGUtc2l6ZSBhZGp1c3RlZCBCYXllc2lhbiAoQklDKSAgICAgICAgIDI2NDguMTYzXG5cblJvb3QgTWVhbiBTcXVhcmUgRXJyb3Igb2YgQXBwcm94aW1hdGlvbjpcblxuICBSTVNFQSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMTUzXG4gIDkwIFBlcmNlbnQgQ29uZmlkZW5jZSBJbnRlcnZhbCAgICAgICAgICAwLjEyMSAgMC4xODZcbiAgUC12YWx1ZSBSTVNFQSA8PSAwLjA1ICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMFxuXG5TdGFuZGFyZGl6ZWQgUm9vdCBNZWFuIFNxdWFyZSBSZXNpZHVhbDpcblxuICBTUk1SICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMTEzXG5cblBhcmFtZXRlciBFc3RpbWF0ZXM6XG5cbiAgSW5mb3JtYXRpb24gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBFeHBlY3RlZFxuICBTdGFuZGFyZCBFcnJvcnMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFN0YW5kYXJkXG5cbkxhdGVudCBWYXJpYWJsZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgQmVsYXN0dW5nID1+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIEJTQ0xfUFNUICAgICAgICAgIDEuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgQlNDTF9HU0kgICAgICAgICAgMC4wMzQgICAgMC4wMDIgICAyMS41NDcgICAgMC4wMDBcbiAgICBHSFFfUHN5ICAgICAgICAgICAwLjEyNyAgICAwLjAyNCAgICA1LjE5MyAgICAwLjAwMFxuICAgIEdIUV9FbW90ICAgICAgICAgIDAuMTQ3ICAgIDAuMDMyICAgIDQuNjUwICAgIDAuMDAwXG4gIGR5c2Z1bmN0aW9uYWwgPX4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBjcF9keXNmbmN0X3NicyAgICAxLjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGNvcF9keXNmbmN0X3ZkICAgIDAuNzQ3ICAgIDAuNDQ2ICAgIDEuNjc2ICAgIDAuMDk0XG5cblJlZ3Jlc3Npb25zOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlICBTdGQuRXJyICB6LXZhbHVlICBQKD58enwpXG4gIGR5c2Z1bmN0aW9uYWwgfiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBTV0VfU2thbGEgICAgICAgIC0wLjAzMyAgICAwLjAyMCAgIC0xLjY4OSAgICAwLjA5MVxuICAgIFRyYXVtYVZvckJlcnVmICAgIDAuMDY3ICAgIDAuMDc5ICAgIDAuODUwICAgIDAuMzk1XG4gICAgVHJhdW1hQXJiZWl0ICAgICAgMC4xMTEgICAgMC4xMzUgICAgMC44MjYgICAgMC40MDlcbiAgUFRTU19Ta2FsYSB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgIGNvcF9wcmJsZmNfY3R2ICAgIDAuNzkwICAgIDAuNjgzICAgIDEuMTU2ICAgIDAuMjQ4XG4gICAgZHlzZnVuY3Rpb25hbCAgICAxNC4wNDYgICAgNy42MjcgICAgMS44NDIgICAgMC4wNjZcbiAgICBkYXVlciAgICAgICAgICAgICAwLjA4OCAgICAwLjA0MCAgICAyLjE4MiAgICAwLjAyOVxuICAgIGdlc2NobGVjaHQgICAgICAgLTAuMjk3ICAgIDAuOTc4ICAgLTAuMzAzICAgIDAuNzYyXG4gIEJlbGFzdHVuZyB+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICBQVFNTX1NrYWxhICAgICAgICAxLjMzNiAgICAwLjEyMyAgIDEwLjg3MiAgICAwLjAwMFxuXG5WYXJpYW5jZXM6XG4gICAgICAgICAgICAgICAgICAgRXN0aW1hdGUgIFN0ZC5FcnIgIHotdmFsdWUgIFAoPnx6fClcbiAgIC5CU0NMX1BTVCAgICAgICAgICAyLjA5MSAgICAxLjM0MSAgICAxLjU2MCAgICAwLjExOVxuICAgLkJTQ0xfR1NJICAgICAgICAgIDAuMDA0ICAgIDAuMDAyICAgIDIuNDIxICAgIDAuMDE1XG4gICAuR0hRX1BzeSAgICAgICAgICAgMi4wMTggICAgMC4zNDkgICAgNS43NzMgICAgMC4wMDBcbiAgIC5HSFFfRW1vdCAgICAgICAgICAzLjM4MCAgICAwLjU4NCAgICA1Ljc4NSAgICAwLjAwMFxuICAgLmNwX2R5c2ZuY3Rfc2JzICAgIDAuMzc5ICAgIDAuMDczICAgIDUuMTY3ICAgIDAuMDAwXG4gICAuY29wX2R5c2ZuY3RfdmQgICAgMC41MjMgICAgMC4wOTIgICAgNS42NTIgICAgMC4wMDBcbiAgIC5QVFNTX1NrYWxhICAgICAgICA0LjAyOCAgICA2LjQ1OCAgICAwLjYyNCAgICAwLjUzM1xuICAgLkJlbGFzdHVuZyAgICAgICAgMTcuNjUwICAgIDMuMzU2ICAgIDUuMjU5ICAgIDAuMDAwXG4gICAuZHlzZnVuY3Rpb25hbCAgICAgMC4wNTUgICAgMC4wNDAgICAgMS4zNzMgICAgMC4xNzBcbiJ9 -->
+<pre><code>lavaan (0.5-23.1097) converged normally after  93 iterations
 
                                                   Used       Total
-  Number of observations                            63          82
+  Number of observations                            68          82
 
   Estimator                                         ML
-  Minimum Function Test Statistic              109.099
+  Minimum Function Test Statistic              126.931
   Degrees of freedom                                49
   P-value (Chi-square)                           0.000
 
 Model test baseline model:
 
-  Minimum Function Test Statistic              254.009
+  Minimum Function Test Statistic              419.843
   Degrees of freedom                                63
   P-value                                        0.000
 
 User model versus baseline model:
 
-  Comparative Fit Index (CFI)                    0.685
-  Tucker-Lewis Index (TLI)                       0.595
+  Comparative Fit Index (CFI)                    0.782
+  Tucker-Lewis Index (TLI)                       0.719
 
 Loglikelihood and Information Criteria:
 
-  Loglikelihood user model (H0)              -1297.558
-  Loglikelihood unrestricted model (H1)      -1243.009
+  Loglikelihood user model (H0)              -1312.842
+  Loglikelihood unrestricted model (H1)      -1249.376
 
   Number of free parameters                         21
-  Akaike (AIC)                                2637.117
-  Bayesian (BIC)                              2682.122
-  Sample-size adjusted Bayesian (BIC)         2616.040
+  Akaike (AIC)                                2667.684
+  Bayesian (BIC)                              2714.293
+  Sample-size adjusted Bayesian (BIC)         2648.163
 
 Root Mean Square Error of Approximation:
 
-  RMSEA                                          0.140
-  90 Percent Confidence Interval          0.104  0.175
+  RMSEA                                          0.153
+  90 Percent Confidence Interval          0.121  0.186
   P-value RMSEA &lt;= 0.05                          0.000
 
 Standardized Root Mean Square Residual:
 
-  SRMR                                           0.104
+  SRMR                                           0.113
 
 Parameter Estimates:
 
@@ -1468,38 +1461,38 @@ Latent Variables:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   Belastung =~                                        
     BSCL_PST          1.000                           
-    BSCL_PSDI         0.021    0.007    2.826    0.005
-    GHQ_Psy           0.198    0.035    5.624    0.000
-    GHQ_Emot          0.250    0.044    5.670    0.000
+    BSCL_GSI          0.034    0.002   21.547    0.000
+    GHQ_Psy           0.127    0.024    5.193    0.000
+    GHQ_Emot          0.147    0.032    4.650    0.000
   dysfunctional =~                                    
     cp_dysfnct_sbs    1.000                           
-    cop_dysfnct_vd    0.727    0.460    1.582    0.114
+    cop_dysfnct_vd    0.747    0.446    1.676    0.094
 
 Regressions:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
   dysfunctional ~                                     
-    SWE_Skala        -0.036    0.022   -1.625    0.104
-    TraumaVorBeruf    0.092    0.090    1.028    0.304
+    SWE_Skala        -0.033    0.020   -1.689    0.091
+    TraumaVorBeruf    0.067    0.079    0.850    0.395
+    TraumaArbeit      0.111    0.135    0.826    0.409
   PTSS_Skala ~                                        
-    cop_prblfc_ctv    0.756    0.690    1.096    0.273
-    dysfunctional    13.503    7.832    1.724    0.085
-    TraumaArbeit      0.709    1.777    0.399    0.690
-    dauer             0.087    0.041    2.102    0.036
-    geschlecht       -0.205    1.017   -0.202    0.840
+    cop_prblfc_ctv    0.790    0.683    1.156    0.248
+    dysfunctional    14.046    7.627    1.842    0.066
+    dauer             0.088    0.040    2.182    0.029
+    geschlecht       -0.297    0.978   -0.303    0.762
   Belastung ~                                         
-    PTSS_Skala        1.231    0.138    8.916    0.000
+    PTSS_Skala        1.336    0.123   10.872    0.000
 
 Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
-   .BSCL_PST         16.605    4.255    3.902    0.000
-   .BSCL_PSDI         0.095    0.017    5.510    0.000
-   .GHQ_Psy           1.670    0.332    5.032    0.000
-   .GHQ_Emot          2.604    0.519    5.017    0.000
-   .cp_dysfnct_sbs    0.393    0.080    4.937    0.000
-   .cop_dysfnct_vd    0.523    0.096    5.433    0.000
-   .PTSS_Skala        4.268    6.649    0.642    0.521
-   .Belastung         6.219    3.172    1.961    0.050
-   .dysfunctional     0.057    0.044    1.296    0.195</code></pre>
+   .BSCL_PST          2.091    1.341    1.560    0.119
+   .BSCL_GSI          0.004    0.002    2.421    0.015
+   .GHQ_Psy           2.018    0.349    5.773    0.000
+   .GHQ_Emot          3.380    0.584    5.785    0.000
+   .cp_dysfnct_sbs    0.379    0.073    5.167    0.000
+   .cop_dysfnct_vd    0.523    0.092    5.652    0.000
+   .PTSS_Skala        4.028    6.458    0.624    0.533
+   .Belastung        17.650    3.356    5.259    0.000
+   .dysfunctional     0.055    0.040    1.373    0.170</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VtUGF0aHMoZml0LCB3aGF0ID0gXCJzdGRcIiwgbGF5b3V0ID0gXCJ0cmVlXCIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9IFwiTElTUkVMXCIsXG4gICAgICAgICBmaWxldHlwZT1cInBuZ1wiLCBmaWxlbmFtZT1maWxlLnBhdGgoUEFUSF9GSUdVUkVTLFwiU0VNNS1Qc3lcIikpXG5gYGAifQ== -->
 <pre class="r"><code>semPaths(fit, what = &quot;std&quot;, layout = &quot;tree&quot;, title = FALSE,  style = &quot;LISREL&quot;,
@@ -1509,7 +1502,7 @@ Variances:
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUFRTRCIKYXV0aG9yOiAiU2ltb24gU2Nod2FiIgpkYXRlOiAiMjQgT2N0IDIwMTciCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIExpYnJhcmllcwpgYGB7cn0KIyBpbnN0YWxsLnBhY2thZ2VzKCJnZ3Bsb3QyIikKIyBpbnN0YWxsLnBhY2thZ2VzKCJjb3dwbG90IikKIyBpbnN0YWxsLnBhY2thZ2VzKCJmb3JlaWduIikKIyBpbnN0YWxsLnBhY2thZ2VzKCJ0ZXN0aXQiKQojIGluc3RhbGwucGFja2FnZXMoImNhciIpCiMgaW5zdGFsbC5wYWNrYWdlcygicmVzaGFwZTIiKQoKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGNvd3Bsb3QpCmxpYnJhcnkoZm9yZWlnbikKbGlicmFyeSh0ZXN0aXQpCmxpYnJhcnkoY2FyKQpsaWJyYXJ5KHJlc2hhcGUyKQpgYGAKCiMjIFZhcmlhYmxlcyBhbmQgcGF0aHMKYGBge3J9Ck4gPSAxMDAyCgpQQVRIX0hPTUUgPSAnL2hvbWUvc2ltb24nClBBVEggPSBmaWxlLnBhdGgoUEFUSF9IT01FLCAnRHJvcGJveCcsICdEYXRhJywgJ1BUU0QnKQpQQVRIX0RBVEEgPSBmaWxlLnBhdGgoUEFUSCwgJ2RhdGEnKQpQQVRIX0ZJR1VSRVMgPSBmaWxlLnBhdGgoUEFUSCwgJ2ZpZ3VyZXMnKQpgYGAKCiMjIExvYWQgZGF0YQpgYGB7cn0gCmQgPSByZWFkLnNwc3MoZmlsZS5wYXRoKFBBVEhfREFUQSwgJ1BUU0RfU2thbGVuXzEgMDYgMjAxN19HRVNBTVRfTFMuc2F2JyksIAogICAgICAgICAgICAgIHRvLmRhdGEuZnJhbWUgPSBUKQphc3NlcnQobnJvdyhkKSA9PSBOKQoKIyBTb21lIGlkcyBhcmUgZHVibGljYXRlcyBidXQgaW4gZmFjdCBkaWZmZXJlbnQgc3ViamVjdHMsIHRodXMgd2UgcmVjcmVhdGUgdGhlIElEcwpkJGlkX25ldyA9IGFzLmZhY3RvcigxOk4pCgpnMV9zYW4gPSBkJGFyYmVpdHNvcnQ9PSdTYW5pdMOkdCwgQW1idWxhbnonCmcyX2ZldSA9IGQkYXJiZWl0c29ydD09J0ZldWVyd2VocicKZzNfcG9sID0gZCRhcmJlaXRzb3J0PT0nUG9saXplaScKZzRfc3BpID0gZCRhcmJlaXRzb3J0PT0nU3BpdGFsbm90ZmFsbCcKZzVfcHN5ID0gZCRhcmJlaXRzb3J0PT0nUHN5Y2hpYXRyaWUnCgojIyBDcmVhdGUgc3ViZ3JvdXBzCmQuZzFfc2FuID0gc3Vic2V0KGQsIGcxX3NhbikKZC5nMl9mZXUgPSBzdWJzZXQoZCwgZzJfZmV1KQpkLmczX3BvbCA9IHN1YnNldChkLCBnM19wb2wpCmQuZzRfc3BpID0gc3Vic2V0KGQsIGc0X3NwaSkKZC5nNV9wc3kgPSBzdWJzZXQoZCwgZzVfcHN5KQoKbGFiZWxzID0gYygnU2FuaXTDpHQsIEFtYnVsYW56JywgJ0ZldWVyd2VocicsICdQb2xpemVpJywgJ1NwaXRhbG5vdGZhbGwnLCAnUHN5Y2hpYXRyaWUnKQpOX3Blckdyb3VwID0gc3VtbWFyeShkJGFyYmVpdHNvcnQpCmBgYAojIyBDaGVjayB2YXJpYWJsZXMKYGBge3J9CgpzdW1tYXJ5KGQkd29obnNpdHVhdGlvbikKZCRpZFt3aGljaChkJHdvaG5zaXR1YXRpb249PSI3IildICMgNCBjYXNlcyBoYXZlIGZhY3RvciAiNyIKCnN1bW1hcnkoZCRzY2h3aWVyaWdlc0VyZWlnbmlzKQpkJGlkW3doaWNoKGQkc2Nod2llcmlnZXNFcmVpZ25pcz09IjQiKV0gIyA0IGJlZGV1dGV0IApgYGAKCgojIyBEZXNjcmlwdGl2ZXMKYGBge3J9CiNuYW1lcyhkKQpzdW1tYXJ5KGRbLGMoMTAsCiAgICAgICAgICAgICAxNjQ6MTY2LDE3MToxNzIsMTUsNiw0LDUsCiAgICAgICAgICAgICAxNjoxOCwyMDoyMiwyNSldKQpgYGAKCiMjIyBHbG9iYWwgR2VuZGVyLCBBcmJlaXRzb3J0IGFuZCBHcm91cApgYGB7cn0Kc3VtbWFyeShkJGdlc2NobGVjaHQpCnN1bW1hcnkoZCRhcmJlaXRzb3J0KQpzdW1tYXJ5KGQkZ3JvdXApCndoaWNoKGlzLm5hKGQkZ3JvdXApKQpgYGAKCiMjIyBNZWFuIGFnZSBhbmQgU0QgcGVyIGdyb3VwCmBgYHtyfQp0YXBwbHkoZCRhbHRlciwgZCRhcmJlaXRzb3J0LCBtZWFuKQp0YXBwbHkoZCRhbHRlciwgZCRhcmJlaXRzb3J0LCBzZCkKYGBgCgojIyMgR2VuZGVyIHBlciBHcm91cApgYGB7cn0KdGFwcGx5KGQkZ2VzY2hsZWNodCwgZCRhcmJlaXRzb3J0LCBzdW1tYXJ5KQpgYGAKCiMjIFBUU1MgZGlmZmVyZW5jZSBpbiBtZWFuIGJldHdlZW4gR3JvdXBzCmBgYHtyIDIsIGZpZy5oZWlnaHQ9MiwgZmlnLndpZHRoPTEwfQpzZXQuc2VlZCgxOTgwKQpwMT1nZ3Bsb3QoZGF0YT1kLCBhZXMoeD1hcmJlaXRzb3J0LCB5PVBUU1NfU2thbGEsIGZpbGw9YXJiZWl0c29ydCkpICsKICBnZW9tX2JhcihzdGF0PSJzdW1tYXJ5IiwgZnVuLnk9Im1lYW4iKSArCiAgdGhlbWUoYXhpcy50ZXh0Lng9ZWxlbWVudF9ibGFuaygpKQoKcDI9Z2dwbG90KGRhdGE9ZCwgYWVzKHg9YXJiZWl0c29ydCwgeT1QVFNTX1NrYWxhLCBmaWxsPWFyYmVpdHNvcnQpKSArCiAgZ2VvbV9ib3hwbG90KCkgKwogIGdlb21fcG9pbnQoc2hhcGU9MSwgY29sb3I9ImdyYXk3MCIsIHNpemU9MC4zLCBwb3NpdGlvbiA9IHBvc2l0aW9uX2ppdHRlcih3aWR0aCA9IDAuMywgaGVpZ2h0ID0gMSkpICsKICB0aGVtZShheGlzLnRleHQueD1lbGVtZW50X2JsYW5rKCkpCgpwbG90X2dyaWQocDEsIHAyLCBuY29sID0gMiwgbnJvdyA9IDEsIHJlbF93aWR0aHMgPSBjKDEsIDEpKQpnZ3NhdmUocGF0aCA9IFBBVEhfRklHVVJFUywgImFyYmVpdHNwbGF0ei5wbmciKQpgYGAKCiMjIyBBTk9WQQpgYGB7cn0KZml0PWFvdihQVFNTX1NrYWxhIH4gYXJiZWl0c29ydCwgZGF0YT1kKQpzdW1tYXJ5KGZpdCkKYGBgCgojIyBWZXJkYWNodApgYGB7cn0KTT1hcnJheShOQSwgZGltPWMoNSwyKSkKTVsxLF0gPSBzdW1tYXJ5KGQkUFNTX0dyW2cxX3Nhbl0pL05fcGVyR3JvdXBbMV0KTVsyLF0gPSBzdW1tYXJ5KGQkUFNTX0dyW2cyX2ZldV0pL05fcGVyR3JvdXBbMl0KTVszLF0gPSBzdW1tYXJ5KGQkUFNTX0dyW2czX3BvbF0pL05fcGVyR3JvdXBbM10KTVs0LF0gPSBzdW1tYXJ5KGQkUFNTX0dyW2c0X3NwaV0pL05fcGVyR3JvdXBbNF0KTVs1LF0gPSBzdW1tYXJ5KGQkUFNTX0dyW2c1X3BzeV0pL05fcGVyR3JvdXBbNV0KCnJvd25hbWVzKE0pPWxhYmVscwpjb2xuYW1lcyhNKT1jKCdrZWluIFZlcmRhY2h0JywgJ1ZlcmRhY2h0JykKcHJpbnQoTSwgZGlnaXRzID0gMikKYGBgCgojIyBNdWx0aXBsZSByZWdyZXNzaW9ucwpXZSBwZXJmb3JtIHN1Ymdyb3VwIGFuYWx5c2VzCgojIyMgQWxsZQpgYGB7cn0KZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArCiAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArIFRyYXVtYUFyYmVpdCArIFRyYXVtYVZvckJlcnVmICsKICAgICAgICAgICBTV0VfU2thbGEgKyBkYXVlciArIGdlc2NobGVjaHQsIGRhdGE9ZCkKdmlmKGZpdCkgPiA0CnN1bW1hcnkoZml0KQpgYGAKCiMjIyBTYW5pdMOkdApgYGB7cn0KZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArCiAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArIFRyYXVtYUFyYmVpdCArIFRyYXVtYVZvckJlcnVmICsKICAgICAgICAgICBTV0VfU2thbGEgKyBkYXVlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nMV9zYW4pCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCiMjIyBGZXVlcndlaHIKYGBge3J9CmZpdCA9IGxtKFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArCiAgICAgICAgICAgU1dFX1NrYWxhICsgZGF1ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzJfZmV1KQp2aWYoZml0KSA+IDQKc3VtbWFyeShmaXQpCmBgYAoKIyMjIFBvbGl6ZWkKYGBge3J9CmZpdCA9IGxtKFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArCiAgICAgICAgICAgU1dFX1NrYWxhICsgZGF1ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzNfcG9sKQp2aWYoZml0KSA+IDQKc3VtbWFyeShmaXQpCmBgYAojIyMgU3BpdGFsbm90ZmFsbApgYGB7cn0KZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArCiAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArIFRyYXVtYUFyYmVpdCArIFRyYXVtYVZvckJlcnVmICsKICAgICAgICAgICBTV0VfU2thbGEgKyBkYXVlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nNF9zcGkpCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCiMjIyBQc3ljaGlhdHJpZQpgYGB7cn0KZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArCiAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArIFRyYXVtYUFyYmVpdCArIFRyYXVtYVZvckJlcnVmICsKICAgICAgICAgICBTV0VfU2thbGEgKyBkYXVlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nNV9wc3kpCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCgojIyMgCmBgYHtyLCBmaWcuaGVpZ2h0PTYsIGZpZy53aWR0aD02fQp0bXA9ZC5nMV9zYW4KeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDEgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nMl9mZXUKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDIgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nM19wb2wKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDMgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nNF9zcGkKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDQgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nNV9wc3kKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDUgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgpwbG90X2dyaWQocDEsIHAyLCBwMywgcDQgLCBwNSwgbmNvbCA9IDIsIG5yb3cgPSAzKQpgYGAKCiMjIFNFTQpBIGdvb2QgbW9kZWwgZml0IGlzIGNvbnNpZGVyZWQgYXMgZm9sbG93czoKKiBDRkkgaWRlYWxseSBsYXJnZXIgdGhhbiAwLjkKKiBSTVNFQSBiZWxvdyAwLjEwCgpNb2RlbCBzcGVjaWZpY2F0aW9uCgpgPX5gIGZvciBsYXRlbnQgdmFyaWFibGVzCmB+YCAgY2F1c2FsIHJlbGF0aW9uc2hvcApgfn5gIGNvcnJlbGF0aW9uCgpEYXRhIHNjcmVlbmluZy8gU0VNIGFzc3VtcHRpb25zCiogTWlzc2luZyB2YWx1ZXMKKiBub3JtYWxpdHkKKiBPdXRsaWVycyAKCmBgYHtyfQojIGluc3RhbGwucGFja2FnZXMoImxhdmFhbiIpCiMgaW5zdGFsbC5wYWNrYWdlcygic2VtUGxvdCIpCmxpYnJhcnkobGF2YWFuKQpsaWJyYXJ5KHNlbVBsb3QpCmBgYAoKIyMjIE1vZGVsCgpgYGB7cn0KbW9kZWwgPSAnQmVsYXN0dW5nID1+IEJTQ0xfUFNUICsgQlNDTF9QU0RJICsgR0hRX1BzeSArIEdIUV9FbW90CiAgICAgICAgIGR5c2Z1bmN0aW9uYWwgPX4KICAgICAgICAgICAgICAgICAgIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZAogICAgICAgICBkeXNmdW5jdGlvbmFsIH4gU1dFX1NrYWxhICsgVHJhdW1hVm9yQmVydWYKICAgICAgICAgUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgCiAgICAgICAgICAgICAgICAgICAgICBkeXNmdW5jdGlvbmFsICsKICAgICAgICAgICAgICAgICAgICAgIFRyYXVtYUFyYmVpdCArCiAgICAgICAgICAgICAgICAgICAgICBkYXVlciArCiAgICAgICAgICAgICAgICAgICAgICBnZXNjaGxlY2h0CiAgICAgICAgIEJlbGFzdHVuZyB+IFBUU1NfU2thbGEnCmBgYAoKIyMjIEFsbGUKYGBge3J9CmZpdCA9IHNlbShtb2RlbD1tb2RlbCwgZGF0YT1kKQpzdW1tYXJ5KGZpdCwgZml0Lm1lYXN1cmVzPVRSVUUpCgpzZW1QYXRocyhmaXQsIHdoYXQgPSAic3RkIiwgbGF5b3V0ID0gInRyZWUiLCB0aXRsZSA9IEZBTFNFLCAgc3R5bGUgPSAiTElTUkVMIiwKICAgICAgICAgZmlsZXR5cGU9InBuZyIsIGZpbGVuYW1lPWZpbGUucGF0aChQQVRIX0ZJR1VSRVMsIlNFTTAtYWxsIikpCgojaW5zcGVjdChmaXQsICJyc3F1YXJlIikKIyBwYXJhbWV0ZXJFc3RpbWF0ZXMoZml0LCBjaSA9IFRSVUUsIGJvb3QuY2kudHlwZSA9ICJub3JtIikKYGBgCgojIyMgU2FuaXTDpHQKYGBge3J9CmZpdCA9IHNlbShtb2RlbD1tb2RlbCwgZGF0YT1kLmcxX3NhbikKc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKQoKc2VtUGF0aHMoZml0LCB3aGF0ID0gInN0ZCIsIGxheW91dCA9ICJ0cmVlIiwgdGl0bGUgPSBGQUxTRSwgIHN0eWxlID0gIkxJU1JFTCIsCiAgICAgICAgIGZpbGV0eXBlPSJwbmciLCBmaWxlbmFtZT1maWxlLnBhdGgoUEFUSF9GSUdVUkVTLCJTRU0xLVNhbiIpKQpgYGAKCiMjIyBGZXVlcndlaHIKYGBge3J9CmZpdCA9IHNlbShtb2RlbD1tb2RlbCwgZGF0YT1kLmcyX2ZldSkKc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKQoKc2VtUGF0aHMoZml0LCB3aGF0ID0gInN0ZCIsIGxheW91dCA9ICJ0cmVlIiwgdGl0bGUgPSBGQUxTRSwgIHN0eWxlID0gIkxJU1JFTCIsCiAgICAgICAgIGZpbGV0eXBlPSJwbmciLCBmaWxlbmFtZT1maWxlLnBhdGgoUEFUSF9GSUdVUkVTLCJTRU0yLUZldSIpKQpgYGAKCiMjIyBQb2xpemVpCmBgYHtyfQpmaXQgPSBzZW0obW9kZWw9bW9kZWwsIGRhdGE9ZC5nM19wb2wpCnN1bW1hcnkoZml0LCBmaXQubWVhc3VyZXM9VFJVRSkKCnNlbVBhdGhzKGZpdCwgd2hhdCA9ICJzdGQiLCBsYXlvdXQgPSAidHJlZSIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9ICJMSVNSRUwiLAogICAgICAgICBmaWxldHlwZT0icG5nIiwgZmlsZW5hbWU9ZmlsZS5wYXRoKFBBVEhfRklHVVJFUywiU0VNMy1Qb2wiKSkKYGBgCgojIyMgU3BpdGFsCmBgYHtyfQpmaXQgPSBzZW0obW9kZWw9bW9kZWwsIGRhdGE9ZC5nNF9zcGkpCnN1bW1hcnkoZml0LCBmaXQubWVhc3VyZXM9VFJVRSkKCnNlbVBhdGhzKGZpdCwgd2hhdCA9ICJzdGQiLCBsYXlvdXQgPSAidHJlZSIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9ICJMSVNSRUwiLAogICAgICAgICBmaWxldHlwZT0icG5nIiwgZmlsZW5hbWU9ZmlsZS5wYXRoKFBBVEhfRklHVVJFUywiU0VNNC1TcGkiKSkKYGBgCgojIyMgUHN5Y2hpYXRyaWUKYGBge3J9CmZpdCA9IHNlbShtb2RlbD1tb2RlbCwgZGF0YT1kLmc1X3BzeSkKc3VtbWFyeShmaXQsIGZpdC5tZWFzdXJlcz1UUlVFKQoKc2VtUGF0aHMoZml0LCB3aGF0ID0gInN0ZCIsIGxheW91dCA9ICJ0cmVlIiwgdGl0bGUgPSBGQUxTRSwgIHN0eWxlID0gIkxJU1JFTCIsCiAgICAgICAgIGZpbGV0eXBlPSJwbmciLCBmaWxlbmFtZT1maWxlLnBhdGgoUEFUSF9GSUdVUkVTLCJTRU01LVBzeSIpKQpgYGA=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUFRTRCIKYXV0aG9yOiAiU2ltb24gU2Nod2FiIgpkYXRlOiAiMjQgT2N0IDIwMTciCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIExpYnJhcmllcwpgYGB7cn0KIyBpbnN0YWxsLnBhY2thZ2VzKCJnZ3Bsb3QyIikKIyBpbnN0YWxsLnBhY2thZ2VzKCJjb3dwbG90IikKIyBpbnN0YWxsLnBhY2thZ2VzKCJmb3JlaWduIikKIyBpbnN0YWxsLnBhY2thZ2VzKCJ0ZXN0aXQiKQojIGluc3RhbGwucGFja2FnZXMoImNhciIpCiMgaW5zdGFsbC5wYWNrYWdlcygicmVzaGFwZTIiKQoKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGNvd3Bsb3QpCmxpYnJhcnkoZm9yZWlnbikKbGlicmFyeSh0ZXN0aXQpCmxpYnJhcnkoY2FyKQpsaWJyYXJ5KHJlc2hhcGUyKQpgYGAKCiMjIFZhcmlhYmxlcyBhbmQgcGF0aHMKYGBge3J9Ck4gPSAxMDAyCgpQQVRIX0hPTUUgPSAnL2hvbWUvc2ltb24nClBBVEggPSBmaWxlLnBhdGgoUEFUSF9IT01FLCAnRHJvcGJveCcsICdEYXRhJywgJ1BUU0QnKQpQQVRIX0RBVEEgPSBmaWxlLnBhdGgoUEFUSCwgJ2RhdGEnKQpQQVRIX0ZJR1VSRVMgPSBmaWxlLnBhdGgoUEFUSCwgJ2ZpZ3VyZXMnKQpgYGAKCiMjIExvYWQgZGF0YQpgYGB7cn0gCmQgPSByZWFkLnNwc3MoZmlsZS5wYXRoKFBBVEhfREFUQSwgJ1BUU0RfU2thbGVuXzEgMDYgMjAxN19HRVNBTVRfTFMuc2F2JyksIAogICAgICAgICAgICAgIHRvLmRhdGEuZnJhbWUgPSBUKQphc3NlcnQobnJvdyhkKSA9PSBOKQoKIyBTb21lIGlkcyBhcmUgZHVibGljYXRlcyBidXQgaW4gZmFjdCBkaWZmZXJlbnQgc3ViamVjdHMsIHRodXMgd2UgcmVjcmVhdGUgdGhlIElEcwpkJGlkX25ldyA9IGFzLmZhY3RvcigxOk4pCgpnMV9zYW4gPSBkJGFyYmVpdHNvcnQ9PSdTYW5pdMOkdCwgQW1idWxhbnonCmcyX2ZldSA9IGQkYXJiZWl0c29ydD09J0ZldWVyd2VocicKZzNfcG9sID0gZCRhcmJlaXRzb3J0PT0nUG9saXplaScKZzRfc3BpID0gZCRhcmJlaXRzb3J0PT0nU3BpdGFsbm90ZmFsbCcKZzVfcHN5ID0gZCRhcmJlaXRzb3J0PT0nUHN5Y2hpYXRyaWUnCgojIyBDcmVhdGUgc3ViZ3JvdXBzCmQuZzFfc2FuID0gc3Vic2V0KGQsIGcxX3NhbikKZC5nMl9mZXUgPSBzdWJzZXQoZCwgZzJfZmV1KQpkLmczX3BvbCA9IHN1YnNldChkLCBnM19wb2wpCmQuZzRfc3BpID0gc3Vic2V0KGQsIGc0X3NwaSkKZC5nNV9wc3kgPSBzdWJzZXQoZCwgZzVfcHN5KQoKbGFiZWxzID0gYygnU2FuaXTDpHQsIEFtYnVsYW56JywgJ0ZldWVyd2VocicsICdQb2xpemVpJywgJ1NwaXRhbG5vdGZhbGwnLCAnUHN5Y2hpYXRyaWUnKQpOX3Blckdyb3VwID0gc3VtbWFyeShkJGFyYmVpdHNvcnQpCmBgYAojIyBDaGVjayB2YXJpYWJsZXMKYGBge3J9CgpzdW1tYXJ5KGQkd29obnNpdHVhdGlvbikKZCRpZFt3aGljaChkJHdvaG5zaXR1YXRpb249PSI3IildICMgNCBjYXNlcyBoYXZlIGZhY3RvciAiNyIKCnN1bW1hcnkoZCRzY2h3aWVyaWdlc0VyZWlnbmlzKQpkJGlkW3doaWNoKGQkc2Nod2llcmlnZXNFcmVpZ25pcz09IjQiKV0gIyA0IGJlZGV1dGV0IApgYGAKCgojIyBEZXNjcmlwdGl2ZXMKYGBge3J9CiNuYW1lcyhkKQpzdW1tYXJ5KGRbLGMoMTAsCiAgICAgICAgICAgICAxNjQ6MTY2LDE3MToxNzIsMTUsNiw0LDUsCiAgICAgICAgICAgICAxNjoxOCwyMDoyMiwyNSldKQpgYGAKCiMjIyBHbG9iYWwgR2VuZGVyLCBBcmJlaXRzb3J0IGFuZCBHcm91cApgYGB7cn0Kc3VtbWFyeShkJGdlc2NobGVjaHQpCnN1bW1hcnkoZCRhcmJlaXRzb3J0KQpzdW1tYXJ5KGQkZ3JvdXApCndoaWNoKGlzLm5hKGQkZ3JvdXApKQpgYGAKCiMjIyBNZWFuIGFnZSBhbmQgU0QgcGVyIGdyb3VwCmBgYHtyfQp0YXBwbHkoZCRhbHRlciwgZCRhcmJlaXRzb3J0LCBtZWFuKQp0YXBwbHkoZCRhbHRlciwgZCRhcmJlaXRzb3J0LCBzZCkKYGBgCgojIyMgR2VuZGVyIHBlciBHcm91cApgYGB7cn0KdGFwcGx5KGQkZ2VzY2hsZWNodCwgZCRhcmJlaXRzb3J0LCBzdW1tYXJ5KQpgYGAKCiMjIFBUU1MgZGlmZmVyZW5jZSBpbiBtZWFuIGJldHdlZW4gR3JvdXBzCmBgYHtyIDIsIGZpZy5oZWlnaHQ9MiwgZmlnLndpZHRoPTEwfQpzZXQuc2VlZCgxOTgwKQpwMT1nZ3Bsb3QoZGF0YT1kLCBhZXMoeD1hcmJlaXRzb3J0LCB5PVBUU1NfU2thbGEsIGZpbGw9YXJiZWl0c29ydCkpICsKICBnZW9tX2JhcihzdGF0PSJzdW1tYXJ5IiwgZnVuLnk9Im1lYW4iKSArCiAgdGhlbWUoYXhpcy50ZXh0Lng9ZWxlbWVudF9ibGFuaygpKQoKcDI9Z2dwbG90KGRhdGE9ZCwgYWVzKHg9YXJiZWl0c29ydCwgeT1QVFNTX1NrYWxhLCBmaWxsPWFyYmVpdHNvcnQpKSArCiAgZ2VvbV9ib3hwbG90KCkgKwogIGdlb21fcG9pbnQoc2hhcGU9MSwgY29sb3I9ImdyYXk3MCIsIHNpemU9MC4zLCBwb3NpdGlvbiA9IHBvc2l0aW9uX2ppdHRlcih3aWR0aCA9IDAuMywgaGVpZ2h0ID0gMSkpICsKICB0aGVtZShheGlzLnRleHQueD1lbGVtZW50X2JsYW5rKCkpCgpwbG90X2dyaWQocDEsIHAyLCBuY29sID0gMiwgbnJvdyA9IDEsIHJlbF93aWR0aHMgPSBjKDEsIDEpKQpnZ3NhdmUocGF0aCA9IFBBVEhfRklHVVJFUywgImFyYmVpdHNwbGF0ei5wbmciKQpgYGAKCiMjIyBBTk9WQQpgYGB7cn0KZml0PWFvdihQVFNTX1NrYWxhIH4gYXJiZWl0c29ydCwgZGF0YT1kKQpzdW1tYXJ5KGZpdCkKYGBgCgojIyBWZXJkYWNodApgYGB7cn0KTT1hcnJheShOQSwgZGltPWMoNSwyKSkKTVsxLF0gPSBzdW1tYXJ5KGQkUFNTX0dyW2cxX3Nhbl0pL05fcGVyR3JvdXBbMV0KTVsyLF0gPSBzdW1tYXJ5KGQkUFNTX0dyW2cyX2ZldV0pL05fcGVyR3JvdXBbMl0KTVszLF0gPSBzdW1tYXJ5KGQkUFNTX0dyW2czX3BvbF0pL05fcGVyR3JvdXBbM10KTVs0LF0gPSBzdW1tYXJ5KGQkUFNTX0dyW2c0X3NwaV0pL05fcGVyR3JvdXBbNF0KTVs1LF0gPSBzdW1tYXJ5KGQkUFNTX0dyW2c1X3BzeV0pL05fcGVyR3JvdXBbNV0KCnJvd25hbWVzKE0pPWxhYmVscwpjb2xuYW1lcyhNKT1jKCdrZWluIFZlcmRhY2h0JywgJ1ZlcmRhY2h0JykKcHJpbnQoTSwgZGlnaXRzID0gMikKYGBgCgojIyBNdWx0aXBsZSByZWdyZXNzaW9ucwpXZSBwZXJmb3JtIHN1Ymdyb3VwIGFuYWx5c2VzCgojIyMgQWxsZQpgYGB7cn0KZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArCiAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArIFRyYXVtYUFyYmVpdCArIFRyYXVtYVZvckJlcnVmICsKICAgICAgICAgICBTV0VfU2thbGEgKyBkYXVlciArIGdlc2NobGVjaHQsIGRhdGE9ZCkKdmlmKGZpdCkgPiA0CnN1bW1hcnkoZml0KQpgYGAKCiMjIyBTYW5pdMOkdApgYGB7cn0KZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArCiAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArIFRyYXVtYUFyYmVpdCArIFRyYXVtYVZvckJlcnVmICsKICAgICAgICAgICBTV0VfU2thbGEgKyBkYXVlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nMV9zYW4pCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCiMjIyBGZXVlcndlaHIKYGBge3J9CmZpdCA9IGxtKFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArCiAgICAgICAgICAgU1dFX1NrYWxhICsgZGF1ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzJfZmV1KQp2aWYoZml0KSA+IDQKc3VtbWFyeShmaXQpCmBgYAoKIyMjIFBvbGl6ZWkKYGBge3J9CmZpdCA9IGxtKFBUU1NfU2thbGEgfiBjb3BlX3Byb2JsZm9jX2FjdGl2ZSArIGNvcGVfZHlzZnVuY3Rfc3Vic3QgKwogICAgICAgICAgIGNvcGVfZHlzZnVuY3RfYXZvaWQgKyBUcmF1bWFBcmJlaXQgKyBUcmF1bWFWb3JCZXJ1ZiArCiAgICAgICAgICAgU1dFX1NrYWxhICsgZGF1ZXIgKyBnZXNjaGxlY2h0LCBkYXRhPWQuZzNfcG9sKQp2aWYoZml0KSA+IDQKc3VtbWFyeShmaXQpCmBgYAojIyMgU3BpdGFsbm90ZmFsbApgYGB7cn0KZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArCiAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArIFRyYXVtYUFyYmVpdCArIFRyYXVtYVZvckJlcnVmICsKICAgICAgICAgICBTV0VfU2thbGEgKyBkYXVlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nNF9zcGkpCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCiMjIyBQc3ljaGlhdHJpZQpgYGB7cn0KZml0ID0gbG0oUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgY29wZV9keXNmdW5jdF9zdWJzdCArCiAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZCArIFRyYXVtYUFyYmVpdCArIFRyYXVtYVZvckJlcnVmICsKICAgICAgICAgICBTV0VfU2thbGEgKyBkYXVlciArIGdlc2NobGVjaHQsIGRhdGE9ZC5nNV9wc3kpCnZpZihmaXQpID4gNApzdW1tYXJ5KGZpdCkKYGBgCgojIyMgCmBgYHtyLCBmaWcuaGVpZ2h0PTYsIGZpZy53aWR0aD02fQp0bXA9ZC5nMV9zYW4KeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDEgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nMl9mZXUKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDIgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nM19wb2wKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDMgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nNF9zcGkKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDQgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgp0bXA9ZC5nNV9wc3kKeCA9IGNiaW5kKHRtcCRjb3BlX3Byb2JsZm9jX2FjdGl2ZSwgdG1wJGNvcGVfZHlzZnVuY3Rfc3Vic3QsCiAgICB0bXAkY29wZV9keXNmdW5jdF9hdm9pZCwgdG1wJFRyYXVtYUFyYmVpdCwgdG1wJFRyYXVtYVZvckJlcnVmLCB0bXAkU1dFX1NrYWxhLAogICAgdG1wJGRhdWVyLCB0bXAkYWx0ZXIsIHRtcCRnZXNjaGxlY2h0KQoKcDUgPSBnZ3Bsb3QobWVsdChjb3IoeCkpLCBhZXNfc3RyaW5nKHggPSAiVmFyMSIsIHkgPSAiVmFyMiIsIGZpbGwgPSAidmFsdWUiKSkgKwogIGdlb21fdGlsZShjb2xvciA9ICJncmF5NjAiKSAgKyAKICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3c9J2JsdWUnLCBtaWQ9J3doaXRlJywgaGlnaD0ncmVkJywgbGltaXQgPSBjKC0xLDEpKSArCiAgc2NhbGVfeF9jb250aW51b3VzKGJyZWFrcz0xOjksbGFiZWxzPTE6OSkgKwogIHNjYWxlX3lfcmV2ZXJzZShicmVha3M9MTo5LGxhYmVscz0xOjkpCgpwbG90X2dyaWQocDEsIHAyLCBwMywgcDQgLCBwNSwgbmNvbCA9IDIsIG5yb3cgPSAzKQpgYGAKCiMjIFNFTQpBIGdvb2QgbW9kZWwgZml0IGlzIGNvbnNpZGVyZWQgYXMgZm9sbG93czoKKiBDRkkgaWRlYWxseSBsYXJnZXIgdGhhbiAwLjkKKiBSTVNFQSBiZWxvdyAwLjEwCgpNb2RlbCBzcGVjaWZpY2F0aW9uCgpgPX5gIGZvciBsYXRlbnQgdmFyaWFibGVzCmB+YCAgY2F1c2FsIHJlbGF0aW9uc2hvcApgfn5gIGNvcnJlbGF0aW9uCgpEYXRhIHNjcmVlbmluZy8gU0VNIGFzc3VtcHRpb25zCgoqIE1pc3NpbmcgdmFsdWVzCiogbm9ybWFsaXR5CiogT3V0bGllcnMgCgpgYGB7cn0KIyBpbnN0YWxsLnBhY2thZ2VzKCJsYXZhYW4iKQojIGluc3RhbGwucGFja2FnZXMoInNlbVBsb3QiKQpsaWJyYXJ5KGxhdmFhbikKbGlicmFyeShzZW1QbG90KQpgYGAKCiMjIyBNb2RlbAoKYGBge3J9Cm1vZGVsID0gJ0JlbGFzdHVuZyA9fiBCU0NMX1BTVCArIEJTQ0xfR1NJICsgR0hRX1BzeSArIEdIUV9FbW90CiAgICAgICAgIGR5c2Z1bmN0aW9uYWwgPX4gY29wZV9keXNmdW5jdF9zdWJzdCArCiAgICAgICAgICAgICAgICAgICAgICAgICAgY29wZV9keXNmdW5jdF9hdm9pZAogICAgICAgICBkeXNmdW5jdGlvbmFsIH4gU1dFX1NrYWxhICsgVHJhdW1hVm9yQmVydWYKICAgICAgICAgUFRTU19Ta2FsYSB+IGNvcGVfcHJvYmxmb2NfYWN0aXZlICsgCiAgICAgICAgICAgICAgICAgICAgICBkeXNmdW5jdGlvbmFsICsKICAgICAgICAgICAgICAgICAgICAgIFRyYXVtYUFyYmVpdCArCiAgICAgICAgICAgICAgICAgICAgICBkYXVlciArCiAgICAgICAgICAgICAgICAgICAgICBnZXNjaGxlY2h0CiAgICAgICAgIEJlbGFzdHVuZyB+IFBUU1NfU2thbGEnCmBgYAoKIyMjIEFsbGUKYGBge3J9CmZpdCA9IHNlbShtb2RlbD1tb2RlbCwgZGF0YT1kKQpzdW1tYXJ5KGZpdCwgZml0Lm1lYXN1cmVzPVRSVUUpCgpzZW1QYXRocyhmaXQsIHdoYXQgPSAic3RkIiwgbGF5b3V0ID0gInRyZWUiLCB0aXRsZSA9IEZBTFNFLCAgc3R5bGUgPSAiTElTUkVMIiwKICAgICAgICAgZmlsZXR5cGU9InBuZyIsIGZpbGVuYW1lPWZpbGUucGF0aChQQVRIX0ZJR1VSRVMsIlNFTTAtYWxsIikpCgppbnNwZWN0KGZpdCwgInJzcXVhcmUiKQojIHBhcmFtZXRlckVzdGltYXRlcyhmaXQsIGNpID0gVFJVRSwgYm9vdC5jaS50eXBlID0gIm5vcm0iKQpgYGAKCiMjIyBTYW5pdMOkdApgYGB7cn0KIyBvdXRsaWVyCmQuZzFfc2FuX3JtID0gZC5nMV9zYW5bLXdoaWNoLm1heChkLmcxX3NhbiRQVFNTX1NrYWxhKSxdCgpmaXQgPSBzZW0obW9kZWw9bW9kZWwsIGRhdGE9ZC5nMV9zYW5fcm0pCnN1bW1hcnkoZml0LCBmaXQubWVhc3VyZXM9VFJVRSkKCnNlbVBhdGhzKGZpdCwgd2hhdCA9ICJzdGQiLCBsYXlvdXQgPSAidHJlZSIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9ICJMSVNSRUwiLAogICAgICAgICBmaWxldHlwZT0icG5nIiwgZmlsZW5hbWU9ZmlsZS5wYXRoKFBBVEhfRklHVVJFUywiU0VNMS1TYW4iKSkKYGBgCgojIyMgRmV1ZXJ3ZWhyCmBgYHtyfQpmaXQgPSBzZW0obW9kZWw9bW9kZWwsIGRhdGE9ZC5nMl9mZXUpCnN1bW1hcnkoZml0LCBmaXQubWVhc3VyZXM9VFJVRSkKCnNlbVBhdGhzKGZpdCwgd2hhdCA9ICJzdGQiLCBsYXlvdXQgPSAidHJlZSIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9ICJMSVNSRUwiLAogICAgICAgICBmaWxldHlwZT0icG5nIiwgZmlsZW5hbWU9ZmlsZS5wYXRoKFBBVEhfRklHVVJFUywiU0VNMi1GZXUiKSkKYGBgCgojIyMgUG9saXplaQpgYGB7cn0KZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQuZzNfcG9sKQpzdW1tYXJ5KGZpdCwgZml0Lm1lYXN1cmVzPVRSVUUpCgpzZW1QYXRocyhmaXQsIHdoYXQgPSAic3RkIiwgbGF5b3V0ID0gInRyZWUiLCB0aXRsZSA9IEZBTFNFLCAgc3R5bGUgPSAiTElTUkVMIiwKICAgICAgICAgZmlsZXR5cGU9InBuZyIsIGZpbGVuYW1lPWZpbGUucGF0aChQQVRIX0ZJR1VSRVMsIlNFTTMtUG9sIikpCmBgYAoKIyMjIFNwaXRhbApgYGB7cn0KZml0ID0gc2VtKG1vZGVsPW1vZGVsLCBkYXRhPWQuZzRfc3BpKQpzdW1tYXJ5KGZpdCwgZml0Lm1lYXN1cmVzPVRSVUUpCgpzZW1QYXRocyhmaXQsIHdoYXQgPSAic3RkIiwgbGF5b3V0ID0gInRyZWUiLCB0aXRsZSA9IEZBTFNFLCAgc3R5bGUgPSAiTElTUkVMIiwKICAgICAgICAgZmlsZXR5cGU9InBuZyIsIGZpbGVuYW1lPWZpbGUucGF0aChQQVRIX0ZJR1VSRVMsIlNFTTQtU3BpIikpCmBgYAoKIyMjIFBzeWNoaWF0cmllCmBgYHtyfQpmaXQgPSBzZW0obW9kZWw9bW9kZWwsIGRhdGE9ZC5nNV9wc3kpCnN1bW1hcnkoZml0LCBmaXQubWVhc3VyZXM9VFJVRSkKCnNlbVBhdGhzKGZpdCwgd2hhdCA9ICJzdGQiLCBsYXlvdXQgPSAidHJlZSIsIHRpdGxlID0gRkFMU0UsICBzdHlsZSA9ICJMSVNSRUwiLAogICAgICAgICBmaWxldHlwZT0icG5nIiwgZmlsZW5hbWU9ZmlsZS5wYXRoKFBBVEhfRklHVVJFUywiU0VNNS1Qc3kiKSkKYGBg</div>
 
 
 
