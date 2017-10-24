@@ -1,7 +1,7 @@
 ---
 title: "PTSD"
 author: "Simon Schwab"
-date: "19 Oct 2017"
+date: "24 Oct 2017"
 output: html_notebook
 ---
 
@@ -34,7 +34,7 @@ PATH_FIGURES = file.path(PATH, 'figures')
 
 ## Load data
 ```{r} 
-d = read.spss(file.path(PATH_DATA, 'PTSD_Skalen_1 06 2017_GESAMT.sav'), 
+d = read.spss(file.path(PATH_DATA, 'PTSD_Skalen_1 06 2017_GESAMT_LS.sav'), 
               to.data.frame = T)
 assert(nrow(d) == N)
 
@@ -64,7 +64,7 @@ summary(d$wohnsituation)
 d$id[which(d$wohnsituation=="7")] # 4 cases have factor "7"
 
 summary(d$schwierigesEreignis)
-d$id[which(d$schwierigesEreignis=="4")]
+d$id[which(d$schwierigesEreignis=="4")] # 4 bedeutet 
 ```
 
 
@@ -147,7 +147,7 @@ summary(fit)
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + alter + geschlecht, data=d.g1_san)
+           SWE_Skala + dauer + geschlecht, data=d.g1_san)
 vif(fit) > 4
 summary(fit)
 ```
@@ -155,7 +155,7 @@ summary(fit)
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + alter + geschlecht, data=d.g2_feu)
+           SWE_Skala + dauer + geschlecht, data=d.g2_feu)
 vif(fit) > 4
 summary(fit)
 ```
@@ -164,7 +164,7 @@ summary(fit)
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + alter + geschlecht, data=d.g3_pol)
+           SWE_Skala + dauer + geschlecht, data=d.g3_pol)
 vif(fit) > 4
 summary(fit)
 ```
@@ -172,16 +172,15 @@ summary(fit)
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + alter + geschlecht, data=d.g4_spi)
+           SWE_Skala + dauer + geschlecht, data=d.g4_spi)
 vif(fit) > 4
 summary(fit)
 ```
-
 ### Psychiatrie
 ```{r}
 fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
            cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + alter + geschlecht, data=d.g5_psy)
+           SWE_Skala + dauer + geschlecht, data=d.g5_psy)
 vif(fit) > 4
 summary(fit)
 ```
@@ -247,14 +246,20 @@ plot_grid(p1, p2, p3, p4 , p5, ncol = 2, nrow = 3)
 ```
 
 ## SEM
-Model fit: 
-CFI ideally larger than 0.90,  CFI of .955 is good!
-RMSEA below 0.10
+A good model fit is considered as follows:
+* CFI ideally larger than 0.9
+* RMSEA below 0.10
 
-Legende
+Model specification
 
-=~ latente Variablen
-~  kausale Pfeile
+`=~` for latent variables
+`~`  causal relationshop
+`~~` correlation
+
+Data screening/ SEM assumptions
+* Missing values
+* normality
+* Outliers 
 
 ```{r}
 # install.packages("lavaan")
@@ -264,35 +269,19 @@ library(semPlot)
 ```
 
 ### Model
-```{r}
-model = 'PTSS_Skala ~ cope_problfoc_active + 
-                      cope_dysfunct_subst +
-                      cope_dysfunct_avoid +
-                      TraumaArbeit +
-                      TraumaVorBeruf +
-                      SWE_Skala +
-                      dauer +
-                      geschlecht
-         GHQ =~ GHQ_Psy + GHQ_Emot + GHQ_SUM 
-         BSCL =~ BSCL_GSI + BSCL_PST + BSCL_PSDI
-         BSCL ~ PTSS_Skala
-         GHQ ~ PTSS_Skala
-         suizidgedanken ~ PTSS_Skala'
-```
 
 ```{r}
-# model = 'Stress =~ PTSS_Skala +
-#                       TraumaArbeit +
-#                       TraumaVorBeruf +
-#                       SWE_Skala +
-#                       dauer +
-#                       geschlecht
-#          Coping =~ cope_problfoc_active +
-#                    cope_dysfunct_subst +
-#                    cope_dysfunct_avoid
-#          Wohlbefinden =~ GHQ_Psy + GHQ_Emot + GHQ_SUM 
-#          Belastung =~ BSCL_GSI + BSCL_PST + BSCL_PSDI
-#          Stress ~ Wohlbefinden + Belastung + Coping'
+model = 'Belastung =~ BSCL_PST + BSCL_PSDI + GHQ_Psy + GHQ_Emot
+         dysfunctional =~
+                   cope_dysfunct_subst +
+                   cope_dysfunct_avoid
+         dysfunctional ~ SWE_Skala + TraumaVorBeruf
+         PTSS_Skala ~ cope_problfoc_active + 
+                      dysfunctional +
+                      TraumaArbeit +
+                      dauer +
+                      geschlecht
+         Belastung ~ PTSS_Skala'
 ```
 
 ### Alle
@@ -304,7 +293,7 @@ semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
          filetype="png", filename=file.path(PATH_FIGURES,"SEM0-all"))
 
 #inspect(fit, "rsquare")
-#parameterEstimates(fit, ci = TRUE, boot.ci.type = "norm")
+# parameterEstimates(fit, ci = TRUE, boot.ci.type = "norm")
 ```
 
 ### Sanität
@@ -319,6 +308,7 @@ semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
 ### Feuerwehr
 ```{r}
 fit = sem(model=model, data=d.g2_feu)
+summary(fit, fit.measures=TRUE)
 
 semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
          filetype="png", filename=file.path(PATH_FIGURES,"SEM2-Feu"))
