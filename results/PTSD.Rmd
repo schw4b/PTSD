@@ -1,18 +1,19 @@
 ---
 title: "PTSD"
 author: "Simon Schwab"
-date: "24 Oct 2017"
+date: "04 July 2018"
 output: html_notebook
 ---
 
 ## Libraries
-```{r}
+```{r message=FALSE}
 # install.packages("ggplot2")
 # install.packages("cowplot")
 # install.packages("foreign")
 # install.packages("testit")
 # install.packages("car")
 # install.packages("reshape2")
+# install.packages("caret")
 
 library(ggplot2)
 library(cowplot)
@@ -20,6 +21,7 @@ library(foreign)
 library(testit)
 library(car)
 library(reshape2)
+library(caret)
 ```
 
 ## Variables and paths
@@ -34,163 +36,175 @@ PATH_FIGURES = file.path(PATH, 'figures')
 
 ## Load data
 ```{r} 
-d = read.spss(file.path(PATH_DATA, 'PTSD_Skalen_1 06 2017_GESAMT_LS.sav'), 
+mydata = read.spss(file.path(PATH_DATA, 'PTSD_Skalen_1 06 2017_GESAMT_LS.sav'), 
               to.data.frame = T)
-assert(nrow(d) == N)
+assert(nrow(mydata) == N)
+varNames = names(mydata)
 
 # Some ids are dublicates but in fact different subjects, thus we recreate the IDs
-d$id_new = as.factor(1:N)
+mydata$id_new = as.factor(1:N)
 
-g1_san = d$arbeitsort=='Sanität, Ambulanz'
-g2_feu = d$arbeitsort=='Feuerwehr'
-g3_pol = d$arbeitsort=='Polizei'
-g4_spi = d$arbeitsort=='Spitalnotfall'
-g5_psy = d$arbeitsort=='Psychiatrie'
+mydata$arbeitsort.eng =  as.character(mydata$arbeitsort)
+mydata$arbeitsort.eng[mydata$arbeitsort.eng=="Sanität, Ambulanz"] = "Ambulance service"
+mydata$arbeitsort.eng[mydata$arbeitsort.eng=="Feuerwehr"] = "Fire service"
+mydata$arbeitsort.eng[mydata$arbeitsort.eng=="Polizei"] = "Police"
+mydata$arbeitsort.eng[mydata$arbeitsort.eng=="Spitalnotfall"] = "Emergency staff"
+mydata$arbeitsort.eng[mydata$arbeitsort.eng=="Psychiatrie"] = "Psychiatry"
+mydata$arbeitsort.eng = factor(mydata$arbeitsort.eng, ordered = T,
+                               levels = c("Police", "Fire service", "Ambulance service",
+                                          "Emergency staff", "Psychiatry"))
 
-## Create subgroups
-d.g1_san = subset(d, g1_san)
-d.g2_feu = subset(d, g2_feu)
-d.g3_pol = subset(d, g3_pol)
-d.g4_spi = subset(d, g4_spi)
-d.g5_psy = subset(d, g5_psy)
-
-labels = c('Sanität, Ambulanz', 'Feuerwehr', 'Polizei', 'Spitalnotfall', 'Psychiatrie')
-N_perGroup = summary(d$arbeitsort)
+N_perGroup = summary(mydata$arbeitsort.eng)
 ```
+
 ## Check variables
 ```{r}
+summary(mydata$wohnsituation)
+mydata$id[which(mydata$wohnsituation=="7")] # 4 cases have factor "7"
 
-summary(d$wohnsituation)
-d$id[which(d$wohnsituation=="7")] # 4 cases have factor "7"
-
-summary(d$schwierigesEreignis)
-d$id[which(d$schwierigesEreignis=="4")] # 4 bedeutet 
+summary(mydata$schwierigesEreignis)
+mydata$id[which(mydata$schwierigesEreignis=="4")] # 4 bedeutet 
 ```
 
 
-## Descriptives
+## Demographics
+
+### Summary
 ```{r}
 #names(d)
-summary(d[,c(10,
+summary(mydata[,c(10,
              164:166,171:172,15,6,4,5,
              16:18,20:22,25)])
 ```
 
-### Global Gender, Arbeitsort and Group
+### N per group
 ```{r}
-summary(d$geschlecht)
-summary(d$arbeitsort)
-summary(d$group)
-which(is.na(d$group))
+summary(mydata$arbeitsort.eng)
 ```
 
 ### Mean age and SD per group
 ```{r}
-tapply(d$alter, d$arbeitsort, mean)
-tapply(d$alter, d$arbeitsort, sd)
+round(tapply(mydata$alter, mydata$arbeitsort.eng, mean), digits = 1)
+round(tapply(mydata$alter, mydata$arbeitsort.eng, sd), digits = 2)
 ```
 
 ### Gender per Group
 ```{r}
-tapply(d$geschlecht, d$arbeitsort, summary)
+round(tapply(mydata$geschlecht=='Frau', mydata$arbeitsort.eng, sum)/summary(mydata$arbeitsort.eng), digits = 2)
 ```
 
-## PTSS difference in mean between Groups
-```{r 2, fig.height=2, fig.width=10}
+### Work experience
+```{r}
+round(tapply(mydata$dauer, mydata$arbeitsort.eng, mean), digits = 1)
+round(tapply(mydata$dauer, mydata$arbeitsort.eng, sd), digits = 2)
+```
+
+### Civil status
+```{r}
+round(tapply(mydata$zivilstand == "Verheiratet / feste Partnerschaft",
+             mydata$arbeitsort.eng, sum)/summary(mydata$arbeitsort.eng), digits = 2)
+```
+
+## Clinical variables
+### PTSS
+```{r}
+tapply(mydata$PTSS_Skala, mydata$arbeitsort.eng, median)
+tapply(mydata$PTSS_Skala, mydata$arbeitsort.eng, IQR)
+```
+
+
+```{r, fig.height=2, fig.width=5}
 set.seed(1980)
-p1=ggplot(data=d, aes(x=arbeitsort, y=PTSS_Skala, fill=arbeitsort)) +
-  geom_bar(stat="summary", fun.y="mean") +
-  theme(axis.text.x=element_blank())
 
-p2=ggplot(data=d, aes(x=arbeitsort, y=PTSS_Skala, fill=arbeitsort)) +
+p1 = ggplot(data=mydata, aes(x=arbeitsort, y=PTSS_Skala, fill=arbeitsort.eng)) +
   geom_boxplot() +
-  geom_point(shape=1, color="gray70", size=0.3, position = position_jitter(width = 0.3, height = 1)) +
-  theme(axis.text.x=element_blank())
+  geom_point(shape=1, color="gray70", size=0.3, position = position_jitter(width = 0.3, height = 0)) +
+  theme(axis.text.x=element_blank()) + xlab("occupational group") + ylab("PTSS score")
 
-plot_grid(p1, p2, ncol = 2, nrow = 1, rel_widths = c(1, 1))
-ggsave(path = PATH_FIGURES, "arbeitsplatz.png")
+plot_grid(p1, ncol = 1, nrow = 1, rel_widths = c(1, 1))
+ggsave(path = PATH_FIGURES, "fig_PTSS_per_group.png")
 ```
 
 ### ANOVA
 ```{r}
-fit=aov(PTSS_Skala ~ arbeitsort, data=d)
+fit=aov(PTSS_Skala ~ arbeitsort.eng + dauer + alter + geschlecht, data=mydata)
 summary(fit)
 ```
 
-## Verdacht
+### Verdacht
 ```{r}
-M=array(NA, dim=c(5,2))
-M[1,] = summary(d$PSS_Gr[g1_san])/N_perGroup[1]
-M[2,] = summary(d$PSS_Gr[g2_feu])/N_perGroup[2]
-M[3,] = summary(d$PSS_Gr[g3_pol])/N_perGroup[3]
-M[4,] = summary(d$PSS_Gr[g4_spi])/N_perGroup[4]
-M[5,] = summary(d$PSS_Gr[g5_psy])/N_perGroup[5]
-
-rownames(M)=labels
-colnames(M)=c('kein Verdacht', 'Verdacht')
-print(M, digits = 2)
+x = tapply(mydata$PSS_Gr == "Verdacht auf PTSD > 12.5", mydata$arbeitsort.eng, sum)
+round(x/N_perGroup, digits = 2)
+prop.test(x, summary(mydata$arbeitsort.eng))
 ```
 
-## Multiple regressions
-We perform subgroup analyses
-
-### Alle
+### Trauma before
 ```{r}
-fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
-           cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + geschlecht, data=d)
+x = tapply(mydata$TraumaVorBeruf == ">1 Traumata", mydata$arbeitsort.eng, sum)
+round(x/N_perGroup, digits = 2)
+```
+
+### Trauma during work
+```{r}
+x = tapply(mydata$TraumaArbeit == ">1 Traumata", mydata$arbeitsort.eng, sum)
+round(x/N_perGroup, digits = 2)
+```
+
+### BSCL
+```{r}
+round(tapply(mydata$BSCL_GSI, mydata$arbeitsort.eng, median), digits = 2)
+round(tapply(mydata$BSCL_GSI, mydata$arbeitsort.eng, IQR), digits = 2)
+
+tapply(mydata$BSCL_PST, mydata$arbeitsort.eng, median)
+tapply(mydata$BSCL_PST, mydata$arbeitsort.eng, IQR)
+
+round(tapply(mydata$BSCL_PSDI, mydata$arbeitsort.eng, function(x) median(x, na.rm = T)), digits = 2)
+round(tapply(mydata$BSCL_PSDI, mydata$arbeitsort.eng, function(x) IQR(x, na.rm = T)), digits = 2)
+```
+
+### GHQ
+```{r}
+tapply(mydata$GHQ_SUM, mydata$arbeitsort.eng, median)
+tapply(mydata$GHQ_SUM, mydata$arbeitsort.eng, IQR)
+```
+
+### Self efficacy
+```{r}
+tapply(mydata$SWE_Skala, mydata$arbeitsort.eng, function(x) median(x, na.rm = T))
+tapply(mydata$SWE_Skala, mydata$arbeitsort.eng, function(x) IQR(x, na.rm = T))
+```
+
+## Multiple regression
+
+### Model
+```{r}
+fit = lm(PTSS_Skala ~ arbeitsort + dauer + geschlecht +
+           cope_problfoc_active + cope_dysfunct_subst + cope_dysfunct_avoid + 
+           TraumaArbeit + TraumaVorBeruf +
+           SWE_Skala*arbeitsort
+           , data=mydata)
+
+summary(fit)
+```
+
+### Rel. importance
+```{r}
+x = varImp(fit, scale = FALSE)
+idx = order(x$Overall, decreasing = T)
+table=data.frame(Overall = x[idx,])
+rownames(table) = rownames(x)[idx]
+print(round(table, digits = 2))
+```
+
+### Collinearity
+```{r}
 vif(fit) > 4
-summary(fit)
 ```
 
-### Sanität
-```{r}
-fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
-           cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + geschlecht, data=d.g1_san)
-vif(fit) > 4
-summary(fit)
-```
-### Feuerwehr
-```{r}
-fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
-           cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + geschlecht, data=d.g2_feu)
-vif(fit) > 4
-summary(fit)
-```
-
-### Polizei
-```{r}
-fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
-           cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + geschlecht, data=d.g3_pol)
-vif(fit) > 4
-summary(fit)
-```
-### Spitalnotfall
-```{r}
-fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
-           cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + geschlecht, data=d.g4_spi)
-vif(fit) > 4
-summary(fit)
-```
-### Psychiatrie
-```{r}
-fit = lm(PTSS_Skala ~ cope_problfoc_active + cope_dysfunct_subst +
-           cope_dysfunct_avoid + TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala + dauer + geschlecht, data=d.g5_psy)
-vif(fit) > 4
-summary(fit)
-```
-
-### 
-```{r, fig.height=6, fig.width=6}
-tmp=d.g1_san
-x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
-    tmp$cope_dysfunct_avoid, tmp$TraumaArbeit, tmp$TraumaVorBeruf, tmp$SWE_Skala,
-    tmp$dauer, tmp$alter, tmp$geschlecht)
+```{r, fig.height=2, fig.width=3}
+x = cbind(mydata$cope_problfoc_active, mydata$cope_dysfunct_subst,
+    mydata$cope_dysfunct_avoid, mydata$TraumaArbeit, mydata$TraumaVorBeruf, mydata$SWE_Skala,
+    mydata$dauer, mydata$alter, mydata$geschlecht)
 
 p1 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
   geom_tile(color = "gray60")  + 
@@ -198,51 +212,8 @@ p1 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
   scale_x_continuous(breaks=1:9,labels=1:9) +
   scale_y_reverse(breaks=1:9,labels=1:9)
 
-tmp=d.g2_feu
-x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
-    tmp$cope_dysfunct_avoid, tmp$TraumaArbeit, tmp$TraumaVorBeruf, tmp$SWE_Skala,
-    tmp$dauer, tmp$alter, tmp$geschlecht)
 
-p2 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
-  geom_tile(color = "gray60")  + 
-  scale_fill_gradient2(low='blue', mid='white', high='red', limit = c(-1,1)) +
-  scale_x_continuous(breaks=1:9,labels=1:9) +
-  scale_y_reverse(breaks=1:9,labels=1:9)
-
-tmp=d.g3_pol
-x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
-    tmp$cope_dysfunct_avoid, tmp$TraumaArbeit, tmp$TraumaVorBeruf, tmp$SWE_Skala,
-    tmp$dauer, tmp$alter, tmp$geschlecht)
-
-p3 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
-  geom_tile(color = "gray60")  + 
-  scale_fill_gradient2(low='blue', mid='white', high='red', limit = c(-1,1)) +
-  scale_x_continuous(breaks=1:9,labels=1:9) +
-  scale_y_reverse(breaks=1:9,labels=1:9)
-
-tmp=d.g4_spi
-x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
-    tmp$cope_dysfunct_avoid, tmp$TraumaArbeit, tmp$TraumaVorBeruf, tmp$SWE_Skala,
-    tmp$dauer, tmp$alter, tmp$geschlecht)
-
-p4 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
-  geom_tile(color = "gray60")  + 
-  scale_fill_gradient2(low='blue', mid='white', high='red', limit = c(-1,1)) +
-  scale_x_continuous(breaks=1:9,labels=1:9) +
-  scale_y_reverse(breaks=1:9,labels=1:9)
-
-tmp=d.g5_psy
-x = cbind(tmp$cope_problfoc_active, tmp$cope_dysfunct_subst,
-    tmp$cope_dysfunct_avoid, tmp$TraumaArbeit, tmp$TraumaVorBeruf, tmp$SWE_Skala,
-    tmp$dauer, tmp$alter, tmp$geschlecht)
-
-p5 = ggplot(melt(cor(x)), aes_string(x = "Var1", y = "Var2", fill = "value")) +
-  geom_tile(color = "gray60")  + 
-  scale_fill_gradient2(low='blue', mid='white', high='red', limit = c(-1,1)) +
-  scale_x_continuous(breaks=1:9,labels=1:9) +
-  scale_y_reverse(breaks=1:9,labels=1:9)
-
-plot_grid(p1, p2, p3, p4 , p5, ncol = 2, nrow = 3)
+plot_grid(p1, ncol = 1, nrow = 1)
 ```
 
 ## SEM
@@ -264,82 +235,33 @@ Data screening/ SEM assumptions
 
 ```{r}
 # install.packages("lavaan")
-# install.packages("semPlot")
 library(lavaan)
-library(semPlot)
 ```
 
-### Model
+### Model specification
 
 ```{r}
 model = 'Belastung =~ BSCL_PST + BSCL_GSI + GHQ_Psy + GHQ_Emot
          dysfunctional =~ cope_dysfunct_subst +
                           cope_dysfunct_avoid
-         dysfunctional ~ SWE_Skala + TraumaVorBeruf
+         dysfunctional ~ SWE_Skala + TraumaVorBeruf + TraumaArbeit
          PTSS_Skala ~ cope_problfoc_active + 
                       dysfunctional +
-                      TraumaArbeit +
                       dauer +
                       geschlecht
          Belastung ~ PTSS_Skala'
 ```
 
-### Alle
+### Fit
 ```{r}
-fit = sem(model=model, data=d)
-summary(fit, fit.measures=TRUE)
+fit = sem(model=model, data=mydata, group = "arbeitsort.eng")
 
-semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename=file.path(PATH_FIGURES,"SEM0-all"))
+# summary(fit, fit.measures=TRUE)
+summary(fit, standardized=TRUE)
+```
 
+### Variance explained
+```{r}
 inspect(fit, "rsquare")
 # parameterEstimates(fit, ci = TRUE, boot.ci.type = "norm")
-```
-
-### Sanität
-```{r}
-# outlier
-d.g1_san_rm = d.g1_san[-which.max(d.g1_san$PTSS_Skala),]
-
-fit = sem(model=model, data=d.g1_san_rm)
-summary(fit, fit.measures=TRUE)
-
-semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename=file.path(PATH_FIGURES,"SEM1-San"))
-```
-
-### Feuerwehr
-```{r}
-fit = sem(model=model, data=d.g2_feu)
-summary(fit, fit.measures=TRUE)
-
-semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename=file.path(PATH_FIGURES,"SEM2-Feu"))
-```
-
-### Polizei
-```{r}
-fit = sem(model=model, data=d.g3_pol)
-summary(fit, fit.measures=TRUE)
-
-semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename=file.path(PATH_FIGURES,"SEM3-Pol"))
-```
-
-### Spital
-```{r}
-fit = sem(model=model, data=d.g4_spi)
-summary(fit, fit.measures=TRUE)
-
-semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename=file.path(PATH_FIGURES,"SEM4-Spi"))
-```
-
-### Psychiatrie
-```{r}
-fit = sem(model=model, data=d.g5_psy)
-summary(fit, fit.measures=TRUE)
-
-semPaths(fit, what = "std", layout = "tree", title = FALSE,  style = "LISREL",
-         filetype="png", filename=file.path(PATH_FIGURES,"SEM5-Psy"))
 ```
