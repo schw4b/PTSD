@@ -256,8 +256,7 @@ model = 'Belastung =~ BSCL_PST + BSCL_GSI + GHQ_Psy + GHQ_Emot
 ```{r}
 fit = sem(model=model, data=mydata, group = "arbeitsort.eng")
 
-# summary(fit, fit.measures=TRUE)
-summary(fit, standardized=TRUE)
+summary(fit, fit.measures=TRUE, standardized=TRUE)
 ```
 
 ### Variance explained
