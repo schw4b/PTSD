@@ -1,19 +1,21 @@
 ---
 title: "PTSD"
 author: "Simon Schwab"
-date: "16 July 2018"
+date: "26 July 2018"
 output: html_notebook
 ---
 
 ## Libraries
 ```{r message=FALSE}
-# install.packages("ggplot2")
-# install.packages("cowplot")
-# install.packages("foreign")
-# install.packages("testit")
-# install.packages("car")
-# install.packages("reshape2")
-# install.packages("caret")
+ # install.packages("ggplot2")
+ # install.packages("cowplot")
+ # install.packages("foreign")
+ # install.packages("testit")
+ # 
+ # # sudo apt-get install libcurl4-openssl-dev
+ # install.packages("car")
+ # install.packages("reshape2")
+ # install.packages("caret")
 
 library(ggplot2)
 library(cowplot)
