@@ -30,7 +30,8 @@ library(caret)
 ```{r}
 N = 1002
 
-PATH_HOME = '/home/simon'
+#PATH_HOME = '/home/simon'
+PATH_HOME = '/Users/simonschwab'
 PATH = file.path(PATH_HOME, 'Dropbox', 'Data', 'PTSD')
 PATH_DATA = file.path(PATH, 'data')
 PATH_FIGURES = file.path(PATH, 'figures')
@@ -58,6 +59,41 @@ mydata$arbeitsort.eng = factor(mydata$arbeitsort.eng, ordered = T,
 
 N_perGroup = summary(mydata$arbeitsort.eng)
 ```
+
+## Create variables
+```{r}
+mydata$s001 = rep(NA, N)
+
+mydata$s001[mydata$hilfeBelastEinsatz_SQ001 == "gar nicht"] = 1
+mydata$s001[mydata$hilfeBelastEinsatz_SQ001 == "wenig"] = 2
+mydata$s001[mydata$hilfeBelastEinsatz_SQ001 == "etwas"] = 3
+mydata$s001[mydata$hilfeBelastEinsatz_SQ001 == "stark"] = 4
+mydata$s001[mydata$hilfeBelastEinsatz_SQ001 == "sehr stark"] = 5
+
+mydata$s012 = rep(NA, N)
+
+mydata$s012[mydata$hilfeBelastEinsatz_SQ012 == "gar nicht"] = 1
+mydata$s012[mydata$hilfeBelastEinsatz_SQ012 == "wenig"] = 2
+mydata$s012[mydata$hilfeBelastEinsatz_SQ012 == "etwas"] = 3
+mydata$s012[mydata$hilfeBelastEinsatz_SQ012 == "stark"] = 4
+mydata$s012[mydata$hilfeBelastEinsatz_SQ012 == "sehr stark"] = 5
+
+mydata$s013 = rep(NA, N)
+
+mydata$s013[mydata$hilfeBelastEinsatz_SQ013 == "gar nicht"] = 1
+mydata$s013[mydata$hilfeBelastEinsatz_SQ013 == "wenig"] = 2
+mydata$s013[mydata$hilfeBelastEinsatz_SQ013 == "etwas"] = 3
+mydata$s013[mydata$hilfeBelastEinsatz_SQ013 == "stark"] = 4
+mydata$s013[mydata$hilfeBelastEinsatz_SQ013 == "sehr stark"] = 5
+
+assert(all(!is.na(mydata$s001)))
+assert(all(!is.na(mydata$s012)))
+assert(all(!is.na(mydata$s013)))
+
+mydata$support = (mydata$s001 + mydata$s012 + mydata$s013)/3
+
+```
+
 
 ## Check variables
 ```{r}
@@ -183,7 +219,7 @@ tapply(mydata$SWE_Skala, mydata$arbeitsort.eng, function(x) IQR(x, na.rm = T))
 fit = lm(PTSS_Skala ~ arbeitsort + dauer + geschlecht +
            cope_problfoc_active + cope_dysfunct_subst + cope_dysfunct_avoid + 
            TraumaArbeit + TraumaVorBeruf +
-           SWE_Skala*arbeitsort
+           SWE_Skala*arbeitsort + support
            , data=mydata)
 
 summary(fit)
@@ -243,15 +279,40 @@ library(lavaan)
 ### Model specification
 
 ```{r}
+# model = 'Belastung =~ BSCL_PST + BSCL_GSI + GHQ_Psy + GHQ_Emot
+#          dysfunctional =~ cope_dysfunct_subst +
+#                           cope_dysfunct_avoid
+#          dysfunctional ~ SWE_Skala + TraumaVorBeruf + TraumaArbeit
+#          PTSS_Skala ~ cope_problfoc_active + 
+#                       dysfunctional +
+#                       dauer +
+#                       geschlecht
+#          Belastung ~ PTSS_Skala'
+
 model = 'Belastung =~ BSCL_PST + BSCL_GSI + GHQ_Psy + GHQ_Emot
          dysfunctional =~ cope_dysfunct_subst +
                           cope_dysfunct_avoid
-         dysfunctional ~ SWE_Skala + TraumaVorBeruf + TraumaArbeit
          PTSS_Skala ~ cope_problfoc_active + 
+                      SWE_Skala + 
+                      TraumaVorBeruf +
+                      TraumaArbeit +
                       dysfunctional +
                       dauer +
                       geschlecht
          Belastung ~ PTSS_Skala'
+
+# model = 'Belastung =~ BSCL_PST + BSCL_GSI + GHQ_Psy + GHQ_Emot
+#          dysfunctional =~ cope_dysfunct_subst +
+#                           cope_dysfunct_avoid
+#          PTSS_Skala ~ cope_problfoc_active + 
+#                       SWE_Skala + 
+#                       TraumaVorBeruf +
+#                       TraumaArbeit +
+#                       dysfunctional +
+#                       dauer +
+#                       geschlecht +
+#                       s013
+#          Belastung ~ PTSS_Skala'
 ```
 
 ### Fit
