@@ -1,7 +1,7 @@
 ---
 title: "PTSD"
 author: "Simon Schwab"
-date: "11 Sep 2018"
+date: "14 Sep 2018"
 output: html_notebook
 ---
 
@@ -69,6 +69,12 @@ mydata$id[which(mydata$wohnsituation=="7")] # 4 cases have factor "7"
 
 summary(mydata$schwierigesEreignis)
 mydata$id[which(mydata$schwierigesEreignis=="4")] 
+```
+
+### Missings
+```{r}
+sum(is.na(mydata$SWE_Skala))/N
+mydata$occupation.r[is.na(mydata$SWE_Skala)]
 ```
 
 ### Create variables
@@ -257,7 +263,7 @@ fit1 = lm(PTSS_Skala ~ occupation.r + dauer + geschlecht +
             cope_dysfunct_avoid + cope_dysfunct_subst + cope_dysfunct_dist +
             cope_problfoc_active + cope_problfoc_instr_sup +
             cope_emo_foc +
-            TraumaArbeit + TraumaVorBeruf +
+            TraumaArbeit + TraumaVorBeruf + suizidgedanken +
             SWE_Skala*occupation.r, data=mydata)
 summary(fit1)
 ```
@@ -280,7 +286,7 @@ fit2 = lm(PTSS_Skala ~ occupation.r + dauer + geschlecht +
             cope_dysfunct_avoid + cope_dysfunct_subst + cope_dysfunct_dist +
             cope_problfoc_active + cope_problfoc_instr_sup +
             cope_emo_foc +
-            TraumaArbeit + TraumaVorBeruf +
+            TraumaArbeit + TraumaVorBeruf + suizidgedanken +
             belastung_beruf*occupation.r + belastung_menschen*occupation.r +
             SWE_Skala*occupation.r, data=mydata)
 
@@ -302,6 +308,60 @@ AIC(fit1, fit2)
 ### Collinearity
 ```{r}
 vif(fit1) > 4
+```
+
+## Predict suspected PTSD with logistic regression
+
+### Create categories
+```{r}
+# SWE
+mydata$SWE_Skala.cat = rep("Lower", nrow(mydata))
+m = median(mydata$SWE_Skala, na.rm = T)
+mydata$SWE_Skala.cat[mydata$SWE_Skala > m] = "Upper"
+mydata$SWE_Skala.cat = factor(mydata$SWE_Skala.cat, levels = c("Lower", "Upper"))
+
+mydata$dauer.cat = rep('<= 12', nrow(mydata))
+m = median(mydata$dauer, na.rm = T)
+mydata$dauer.cat[mydata$dauer > m] = "> 12"
+mydata$dauer.cat = factor(mydata$dauer.cat, levels = c("<= 12", "> 12"))
+
+
+# keine wenig etwas stark sehr stark (Ausmass der Belastung)
+# 0     1     2     3     4
+mydata$belastung_beruf.cat = rep("Low", nrow(mydata))
+mydata$belastung_beruf.cat[mydata$belastung_beruf >= 2.5] = "High"
+mydata$belastung_beruf.cat = factor(mydata$belastung_beruf.cat, levels = c("Low", "High"))
+
+mydata$belastung_menschen.cat = rep("Low", nrow(mydata))
+mydata$belastung_menschen.cat[mydata$belastung_menschen >= 2.5] = "High"
+mydata$belastung_menschen.cat = factor(mydata$belastung_menschen.cat, levels = c("Low", "High"))
+```
+
+### Model
+```{r}
+fit3 = glm(PSS_Gr ~ occupation.r + dauer.cat + geschlecht +
+             cope_dysfunct_avoid + cope_dysfunct_subst + cope_dysfunct_dist +
+             cope_problfoc_active + cope_problfoc_instr_sup + cope_emo_foc +
+             anzTraumEreignisse + TraumaVorBeruf +
+             belastung_beruf.cat*occupation.r + belastung_menschen.cat*occupation.r +
+             SWE_Skala.cat*occupation.r +
+             suizidgedanken,
+           data = mydata, family = binomial())
+
+tab = summary(fit3)$coefficients
+
+# Create Table
+out = as.data.frame(tab)
+
+idx = order(abs(out$`z value`), decreasing = TRUE)
+
+out$`Odds ratio` = exp(out$Estimate)
+out$`Odds ratio`= as.character(round(out$Odds, digits = 2))
+out$`95% CI` = formatCI(exp(confint(fit3)), text = "english")
+out$`Pr(>|z|)` = formatPval(out$`Pr(>|z|)`)
+out$`z value` = as.character(signif(out$`z value`, digits = 3))
+
+print(out[idx, c('Odds ratio', '95% CI', 'z value', "Pr(>|z|)")])
 ```
 
 ## SEM
@@ -340,6 +400,8 @@ model = 'Belastung =~ BSCL_PST + BSCL_GSI + GHQ_Psy + GHQ_Emot
                       geschlecht
          Belastung ~ PTSS_Skala + suizidgedanken'
 ```
+
+
 
 ### Fit
 ```{r}
