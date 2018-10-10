@@ -74,7 +74,6 @@ mydata$id[which(mydata$schwierigesEreignis=="4")]
 ### Missings
 ```{r}
 sum(is.na(mydata$SWE_Skala))/N
-mydata$occupation.r[is.na(mydata$SWE_Skala)]
 ```
 
 ### Create variables
@@ -171,7 +170,7 @@ plot_grid(plotlist = p, ncol = 3, nrow = 5)
 ggsave(path = PATH_FIGURES, filename = "Belastung.png")
 ```
 
-## Demographics & clinical characteristics
+## Table 1: Demographics & clinical characteristics
 ```{r}
 # helper functions
 mean.sd <- function(x) sprintf("%.1f (%.1f)", mean(x), sd(x))
@@ -201,6 +200,8 @@ table$BSCL_PSDI = tapply(mydata$BSCL_PSDI, mydata$occupation, median.iqr, 2)
 table$GHQ = tapply(mydata$GHQ_SUM, mydata$occupation, median.iqr)
 table$SWE = tapply(mydata$SWE_Skala, mydata$occupation, median.iqr)
 
+table$`Suicidal ideation` = round(tapply(mydata$suizidgedanken=="Ja", mydata$occupation, function(x) sum(x, na.rm = T))/Ng*100, digits = 1)
+
 table$Belastung_Beruf =  tapply(mydata$belastung_beruf, mydata$occupation, median.iqr, 2)
 table$Belastung_Mensch = tapply(mydata$belastung_menschen, mydata$occupation, median.iqr, 2)
 
@@ -210,10 +211,10 @@ kable(t(table))
 ### Additional global descriptives
 ```{r}
 round(summary(mydata$zivilstand)/N*100)
+summary(mydata$alter)
 c(mean(mydata$alter), sd(mydata$alter))
 c(mean(mydata$dauer), sd(mydata$dauer))
 ```
-
 
 ## Figure PTSS
 ```{r, fig.height=2, fig.width=5}
@@ -242,10 +243,26 @@ prop.test(tapply(mydata$PSS_Gr == "Verdacht auf PTSD > 12.5", mydata$occupation,
           summary(mydata$occupation))
 ```
 
+### Suicidal ideation
+```{r}
+prop.test(tapply(mydata$suizidgedanken == "Ja", mydata$occupation, function(x) sum(x, na.rm=T)),
+          summary(mydata$occupation))
+```
+
+
 ### Belastung Beruf
 ```{r}
 summary(aov(belastung_beruf ~ occupation, data=mydata))
 summary(aov(belastung_menschen ~ occupation, data=mydata))
+```
+
+### Zusammenhang exposure to trauma und work expeirence
+```{r}
+mean.sd <- function(x) sprintf("%.1f (%.1f)", mean(x, na.rm=T), sd(x, na.rm=T))
+tmp = subset(mydata, subset = mydata$occupation == "Emergency staff" | mydata$occupation ==  "Psychiatry")
+
+tapply(tmp$dauer, tmp$TraumaArbeit, mean.sd)
+t.test(tmp$dauer ~ tmp$TraumaArbeit)
 ```
 
 ## Multiple regression
@@ -268,7 +285,7 @@ fit1 = lm(PTSS_Skala ~ occupation.r + dauer + geschlecht +
 summary(fit1)
 ```
 
-### Table for paper
+### Table 2
 ```{r}
 tab = summary(fit1)
 idx = order(abs(summary(fit1)$coefficients[,3]), decreasing = TRUE) # sorted by rel. importance, i.e. t-value
@@ -297,7 +314,7 @@ idx = order(abs(summary(fit2)$coefficients[,3]), decreasing = TRUE) # sorted by 
 tab.nice = tableRegression(fit2, xtable = F)
 tab.nice$`t-value` = round(tab$coefficients[,'t value'], digits = 2)
 tab.nice.s = tab.nice[idx,c('Coefficient', '95\\%-confidence interval', 't-value', '$p$-value')]
-print(tab.nice.s, row.names = F)
+print(tab.nice.s)
 ```
 ### Compare models
 ```{r}
@@ -363,6 +380,12 @@ out$`z value` = as.character(signif(out$`z value`, digits = 3))
 
 print(out[idx, c('Odds ratio', '95% CI', 'z value', "Pr(>|z|)")])
 ```
+### Example
+```{r}
+summary(mydata$PSS_Gr[mydata$occupation.r == "Psychiatry" & mydata$SWE_Skala.cat == "Upper"])
+summary(mydata$PSS_Gr[mydata$occupation.r == "Psychiatry" & mydata$SWE_Skala.cat == "Lower"])
+```
+
 
 ## SEM
 A good model fit is considered as follows:
@@ -389,6 +412,10 @@ library(lavaan)
 ### Model specification
 
 ```{r}
+# Infos about categorial variables:
+# http://lavaan.ugent.be/tutorial/cat.html
+
+mydata$suizidgedanken.ord = factor(mydata$suizidgedanken, levels = c("Nein", "Ja"), ordered = T)
 model = 'Belastung =~ BSCL_PST + BSCL_GSI + GHQ_Psy + GHQ_Emot
          dysfunctional =~ cope_dysfunct_subst + cope_dysfunct_avoid + cope_dysfunct_dist
          PTSS_Skala ~ dysfunctional + 
@@ -398,10 +425,8 @@ model = 'Belastung =~ BSCL_PST + BSCL_GSI + GHQ_Psy + GHQ_Emot
                       TraumaArbeit +
                       dauer +
                       geschlecht
-         Belastung ~ PTSS_Skala + suizidgedanken'
+         Belastung ~ PTSS_Skala'
 ```
-
-
 
 ### Fit
 ```{r}
@@ -409,7 +434,7 @@ fit = sem(model=model, data=mydata, group = "occupation")
 summary(fit, fit.measures=TRUE, standardized=TRUE)
 tab = standardizedSolution(fit)
 ```
-### Table
+### Table 3
 ```{r}
 tab$group.name = levels(mydata$occupation)[tab$group]
 out = tab[tab$op == "~", c("group.name", "lhs", "rhs", "est.std", "ci.lower", "ci.upper", "pvalue")]
